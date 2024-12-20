@@ -20,6 +20,7 @@ require('plugins/vimtex')
 require('plugins/tree')
 require('plugins/nvim-web-devicons')
 require('plugins/telescope')
+require('plugins/markdownPreview')
 --require('plugins/harpoon')
 -- Autocompletado
 require('autocompletado')
@@ -34,6 +35,5 @@ require("luasnip.loaders.from_lua").load({ paths = snippet_paths})
 -- Comentarios 
 require('plugins/comment')
 require('templates')
-require('plugins/markdownPreview')-- por configurar
--- Activar el clipboard externo
+-- Lo copiado o cortado en Neovim aparecerá en el clipboard externo
 vim.o.clipboard = "unnamedplus"

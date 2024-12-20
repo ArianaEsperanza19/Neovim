@@ -41,8 +41,6 @@ use({
 })
 
 
-use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
-
   -- Autocompletion
  use 'hrsh7th/nvim-cmp' -- Motor principal de autocompletado
   use 'hrsh7th/cmp-nvim-lsp' -- Integración con LSP
@@ -80,4 +78,11 @@ use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = fun
        'nvim-lua/plenary.nvim',
        'nvim-telescope/telescope.nvim'
      }}
+  use {
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    config = function()
+        require("nvim-autopairs").setup {}
+    end
+  }
 end)

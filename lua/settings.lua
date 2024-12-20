@@ -7,7 +7,7 @@ local g = vim.g
 local opt = vim.opt
 -- General
 g.mapleader = ';'
--- VI
+-- Numeracion relativa
 opt.number = true
 opt.relativenumber = true
 -- Ortografia

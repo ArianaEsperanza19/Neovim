@@ -9,7 +9,7 @@ end
 
 -- Crear autocomando para cargar plantillas en archivos nuevos
 vim.api.nvim_create_autocmd("BufNewFile", {
-    pattern = {"*.html", "*.css", "*.tex"},
+    pattern = {"*.html", "*.css", "*.tex","*.c"},
     callback = function()
         local file_extension = vim.fn.expand("%:e")
         local template_path = string.format("%s/templates/%s.tpl", vim.fn.stdpath("config"), file_extension)
