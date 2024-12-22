@@ -56,6 +56,10 @@ require('nvim-tree').setup {
     side = 'left',
     -- auto_close = true,
   },
+  actions = { open_file = {
+  quit_on_open = true,
+  }}
+-- Cierra Neo-tree al abrir un archivo
 }
 
 -- Mapeo para abrir y cerrar Neotree con <leader>m

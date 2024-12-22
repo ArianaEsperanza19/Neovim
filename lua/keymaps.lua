@@ -18,7 +18,7 @@ vim.api.nvim_set_keymap('i', '<A-u>', 'ú', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('i', '<A-S-u>', 'Ú', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('i', '<C-e>', 'ĕ', { noremap = true, silent = true })
 -- Mapea Control + / para insertar '¿'
-vim.api.nvim_set_keymap('i', '<leader>/', '¿', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<Tab>/', '¿', { noremap = true, silent = true })
 
 -- Mapeo para cortar (delete y yank) la selección en modo visual con dy
 vim.api.nvim_set_keymap('v', 'dy', '"*d', { noremap = true, silent = true })
