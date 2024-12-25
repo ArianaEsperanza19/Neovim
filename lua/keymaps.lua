@@ -1,8 +1,10 @@
 -- <leader>
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>")
--- Deshabilitar tabulacion de Alt+i 
+
+-- Deshabilitar tabulación de Alt+i
 vim.api.nvim_set_keymap('i', '<C-i>', '<Nop>', { noremap = true, silent = true })
+
 -- La letra ñ en el teclado
 vim.api.nvim_set_keymap('i', '<A-n>', 'ñ', { noremap = true, silent = true })
 -- Mapas para vocales acentuadas en modo inserción
@@ -17,21 +19,21 @@ vim.api.nvim_set_keymap('i', '<A-S-o>', 'Ó', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('i', '<A-u>', 'ú', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('i', '<A-S-u>', 'Ú', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('i', '<C-e>', 'ĕ', { noremap = true, silent = true })
--- Mapea Control + / para insertar '¿'
-vim.api.nvim_set_keymap('i', '<Tab>/', '¿', { noremap = true, silent = true })
+-- Mapeo para Control + / para insertar '¿'
+vim.api.nvim_set_keymap('i', '<F2>/', '¿', { noremap = true, silent = true })
 
--- Mapeo para cortar (delete y yank) la selección en modo visual con dy
-vim.api.nvim_set_keymap('v', 'dy', '"*d', { noremap = true, silent = true })
--- Mapeo para cortar (delete y yank) una línea completa con dyy
-vim.api.nvim_set_keymap('n', 'dyy', '"*dd', { noremap = true, silent = true })
--- Mapeo para cortar (delete y yank) una palabra con diw
-vim.api.nvim_set_keymap('n', 'dyw', '"*diw', { noremap = true, silent = true })
--- Mapeo para cortar un parrafo con dip
-vim.api.nvim_set_keymap('n', 'dyp', '"*dip', { noremap = true, silent = true })
--- Mapeo para cortar el contenido de un parentesis con dib
-vim.api.nvim_set_keymap('n', 'dyb', '"*dib', { noremap = true, silent = true })
--- Mapeo para cortar el contenido de un parentesis con dab 
-vim.api.nvim_set_keymap('n', 'dyab', '"*dab', { noremap = true, silent = true })
+-- Asegurarnos de que los atajos nativos con d solo borren
+vim.api.nvim_set_keymap('v', 'd', 'd', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'd', 'd', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'dw', 'dw', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'daw', 'daw', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'dip', 'dip', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'dib', 'dib', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'dab', 'dab', { noremap = true, silent = true })
+
+-- Mapeo para borrar el contenido del portapapeles con <leader>bp
+vim.api.nvim_set_keymap('n', '<leader>bp', ':let @*="" | let @+="" | let @=""<CR>', { noremap = true, silent = true })
+
 
 -- Crear una nueva línea debajo de la línea actual sin cambiar de modo
 vim.api.nvim_set_keymap('n', '<leader>o', 'o<Esc>', { noremap = true, silent = true })
@@ -46,13 +48,12 @@ vim.api.nvim_set_keymap('n', '<leader>k', 'gk', { noremap = true, silent = true 
 -- Aliases
 local map = vim.api.nvim_set_keymap
 local default_opt = {noremap = true, silent = true}
-local cmd = vim.cmd
 
---- Bloquear flechas fuera del modo insertar
-map('','<up>','<nop>', {noremap = true})
-map('','<down>','<nop>', {noremap = true})
-map('','<left>','<nop>', {noremap = true})
-map('','<right>','<nop>', {noremap = true})
+-- Bloquear flechas fuera del modo insertar
+map('', '<up>', '<nop>', {noremap = true})
+map('', '<down>', '<nop>', {noremap = true})
+map('', '<left>', '<nop>', {noremap = true})
+map('', '<right>', '<nop>', {noremap = true})
 
 -- Función para abrir o cerrar la terminal
 function ToggleTerminal()
@@ -71,8 +72,11 @@ vim.api.nvim_set_keymap('n', '<C-\\>', ':lua ToggleTerminal()<CR>', { noremap = 
 vim.api.nvim_set_keymap('t', '<C-\\>', '<C-\\><C-n>:lua ToggleTerminal()<CR>', { noremap = true, silent = true })
 
 -- Moverse en el buffer
--- Cambiar al siguiente buffer con b + flecha abajo
-vim.api.nvim_set_keymap('n', '<tab><Down>', ':bnext<CR>', { noremap = true, silent = true })
--- Cambiar al buffer anterior con b + flecha arriba
-vim.api.nvim_set_keymap('n', '<tab><Up>', ':bprevious<CR>', { noremap = true, silent = true })
-
+-- Cambiar al siguiente buffer con z + flecha derecha
+vim.api.nvim_set_keymap('n', 'z<right>', ':bnext<CR>', { noremap = true, silent = true })
+-- Cambiar al buffer anterior con z + flecha izquierda
+vim.api.nvim_set_keymap('n', 'z<left>', ':bprevious<CR>', { noremap = true, silent = true })
+-- Mapeo para cerrar el buffer actualmente abierto
+vim.api.nvim_set_keymap('n', 'z<down>', ':bd<CR>', { noremap = true, silent = true })
+-- Mapeo para cerrar el buffer actualmente abierto sin guardar cambios
+vim.api.nvim_set_keymap('n', 'zx<down>', ':bd!<CR>', { noremap = true, silent = true })

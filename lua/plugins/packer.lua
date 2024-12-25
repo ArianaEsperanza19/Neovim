@@ -20,6 +20,9 @@ return require('packer').startup(function(use)
   use 'VonHeikemen/lsp-zero.nvim'
   use 'williamboman/mason-lspconfig.nvim'
   use { 'jose-elias-alvarez/null-ls.nvim', requires = { 'nvim-lua/plenary.nvim' } }
+  --Pestañas
+  use {'akinsho/bufferline.nvim', tag = '*'}
+
   -- Markdown
 use({
   "iamcco/markdown-preview.nvim",

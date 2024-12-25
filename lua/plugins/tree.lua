@@ -25,7 +25,7 @@ require('nvim-web-devicons').setup {
 
 -- Configurar Neotree para usar nvim-web-devicons
 require('nvim-tree').setup {
-  on_attach = my_on_attach,
+  on_attach = my_on_attach,  -- Función my_on_attach para manejar eventos adjuntos
   renderer = {
     icons = {
       glyphs = {
@@ -52,16 +52,16 @@ require('nvim-tree').setup {
     },
   },
   view = {
-    width = 30,
-    side = 'left',
-    -- auto_close = true,
+    width = 30,  -- Ancho del panel lateral
+    side = 'left',  -- Lado en el que se abrirá Neotree
+    -- auto_close = true,  -- Opción comentada para cerrar automáticamente
   },
-  actions = { open_file = {
-  quit_on_open = true,
-  }}
--- Cierra Neo-tree al abrir un archivo
+  actions = { 
+    open_file = {
+      quit_on_open = true,  -- Cierra Neo-tree al abrir un archivo
+    }
+  }
 }
 
 -- Mapeo para abrir y cerrar Neotree con <leader>m
 vim.api.nvim_set_keymap('n', '<leader>m', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
-

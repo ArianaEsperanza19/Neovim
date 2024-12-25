@@ -29,4 +29,4 @@ end, {})
 
 -- Para ver las sugerencias de las palabras mal escritas -> z= sobre la palabra en cuestion
 -- Para agregar palabra al diccionario -> zg sobre la palabra
---
+

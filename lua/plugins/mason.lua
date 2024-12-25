@@ -7,31 +7,26 @@ local lsp_zero = require('lsp-zero')
 -- Configurar servidores LSP
 lsp_zero.setup_servers({
     'ts_ls',   -- TypeScript Server (cambiar de 'ts_ls' a 'tsserver')
-    'rust_analyzer',
-    'pyright',
     'bashls',
     'lua_ls',
-    'markdown_oxide',
     'marksman',
     'texlab',
     "clangd",
-    -- 'phpcbf' no es un servidor LSP, sino una herramienta de formateo
+    "intelephense",
 })
 
 -- Integrar Mason con nvim-lspconfig
 require("mason-lspconfig").setup({
     handlers = {lsp_zero.default_setup},
-    ensure_installed = { "pyright", "ts_ls", "bashls", "markdown_oxide", "marksman", "texlab", "lua_ls",
-    "clangd"},
+    ensure_installed = { "pyright", "ts_ls", "bashls", "marksman", "texlab", "lua_ls",
+    "clangd","intelephense" }
 })
 
--- Configurar phpcbf como formateador
-local null_ls = require("null-ls")
-null_ls.setup({
-    sources = {
-        null_ls.builtins.formatting.phpcbf
-    }
-})
+-- Formateadores
+-- clang-format
+-- shfmt
+-- phpcbf
+-- latexindent
 
 local lspconfig = require('lspconfig')
 lspconfig.texlab.setup {
