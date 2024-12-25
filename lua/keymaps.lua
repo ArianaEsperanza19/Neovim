@@ -39,6 +39,14 @@ vim.api.nvim_set_keymap('n', '<leader>bp', ':let @*="" | let @+="" | let @=""<CR
 vim.api.nvim_set_keymap('n', '<leader>o', 'o<Esc>', { noremap = true, silent = true })
 -- Crear una nueva línea encima de la línea actual sin cambiar de modo
 vim.api.nvim_set_keymap('n', '<leader>O', 'O<Esc>', { noremap = true, silent = true })
+-- Mover línea o selección hacia arriba con `m+Up`
+vim.api.nvim_set_keymap('n', 'm<Up>', ':m .-2<CR>==', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', 'm<Up>', ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
+-- Mover línea o selección hacia abajo con `m+Down`
+vim.api.nvim_set_keymap('n', 'm<Down>', ':m .+1<CR>==', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', 'm<Down>', ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
+
+
 
 -- Remapear <leader>j para moverse visualmente hacia abajo una línea
 vim.api.nvim_set_keymap('n', '<leader>j', 'gj', { noremap = true, silent = true })

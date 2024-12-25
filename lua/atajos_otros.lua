@@ -8,6 +8,9 @@ M.show_keymaps = function()
     Abrir o Cerrar la Terminal:
         Normal Mode <Ctrl+\>: :lua ToggleTerminal()<CR>
         Terminal Mode <Ctrl+\>: <Ctrl+\><Ctrl+n>:lua ToggleTerminal()<CR>
+
+    Aceptar sugerencias de Codeium:
+      <F3>: codeium#Accept()
   ]]
 
   vim.api.nvim_echo({{keymaps, "Normal"}}, true, {})
