@@ -23,6 +23,3 @@ vim.api.nvim_set_keymap('i', '<Tab>', '<Nop>', { noremap = true, silent = true }
 
 -- Abrir y cerrar el chat de Codeium con F4 
 vim.api.nvim_set_keymap('n', '<F4>', ':Codeium Chat<CR>', { noremap = true, silent = true })
-
-
-

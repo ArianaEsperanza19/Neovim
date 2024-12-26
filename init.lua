@@ -61,4 +61,3 @@ require('templates')
 vim.o.clipboard = "unnamedplus"
 -- IA ------------------
 require('plugins/codeium')
-

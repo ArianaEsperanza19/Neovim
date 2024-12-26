@@ -1,5 +1,3 @@
--- ~/.config/nvim/lua/keymaps.lua
-
 local M = {}
 
 M.show_keymaps = function()
@@ -31,9 +29,18 @@ M.show_keymaps = function()
         p: Pegar archivo
         x: Cortar archivo
         y: Copiar nombre del archivo
-        <C-r>: Refresh
         <C-n>: Navegar al siguiente nodo
         <C-p>: Navegar al nodo anterior
+
+    Gestión de Marcas con vim-bookmarks:
+        mm: :BookmarkToggle<CR>
+        mi: :BookmarkAnnotate<CR>
+        ma: :BookmarkShowAll<CR>
+        mn: :BookmarkNext<CR>
+        mp: :BookmarkPrev<CR>
+
+    Abrir Telescope marks:
+        <leader>fm: :Telescope marks<CR>
   ]]
 
   vim.api.nvim_echo({{keymaps, "Normal"}}, true, {})
