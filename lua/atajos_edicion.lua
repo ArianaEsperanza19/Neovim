@@ -2,17 +2,17 @@ local M = {}
 
 M.show_keymaps = function()
   local keymaps = [[
-    Crear Nuevas Líneas Sin Cambiar de Modo:
+    Create New Lines Without Changing Mode:
        <leader>o: o<Esc>
        <leader>O: O<Esc>
 
-    Mover línea o selección:
-      m+Up: Mover línea/selección hacia arriba
-      m+Down: Mover línea/selección hacia abajo
-      Nota: Ten en cuenta que si hay texto directamente en la linea superior o inferior, solo intercambiara las lineas.
+    Move line or selection:
+      m+Up: Move line/selection up
+      m+Down: Move line/selection down
+      Note: Keep in mind that if there is text directly in the upper or lower line, it will just swap the lines.
 
-    Formatear con LSP: 
-      <leader>F: 
+    Format with LSP:
+      <leader>F:
       :lua vim.lsp.buf.format({ bufnr = bufnr, filter = function(client) return client.name == "null-ls" end })<CR>
   ]]
 

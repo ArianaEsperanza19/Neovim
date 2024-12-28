@@ -2,44 +2,44 @@ local M = {}
 
 M.show_keymaps = function()
   local keymaps = [[
-    Eliminar resaltado de búsqueda:
+    Clear Search Highlight:
        <leader>h: :nohlsearch<CR>
 
-    Navegación Visual:
+    Visual Navigation:
        <leader>j: gj
        <leader>k: gk
 
-    Navegación entre Buffers:
-        -- Mapeo para cambiar al siguiente buffer
+    Buffer Navigation:
+        -- Key mapping to switch to the next buffer
         z<right>: :bnext<CR>
         z<left>: :bprevious<CR>
-        -- Mapeo para cerrar el buffer actual guardando cambios
+        -- Key mapping to close the current buffer with saving changes
         z<down>: :bd<CR>
-        -- Mapeo para cerrar el buffer actual sin guardar cambios
+        -- Key mapping to close the current buffer without saving changes
         zx<down>: :bd!<CR>
 
-    Manipulación de Archivos en Neotree:
-        -- Mapeo para abrir Neotree
+    File Manipulation in Neotree:
+        -- Key mapping to open Neotree
         <leader>m: :NvimTreeToggle<CR>
-        -- Atajos predeterminados para manipular archivos
-        a: Crear un nuevo archivo
-        d: Eliminar archivo
-        r: Renombrar archivo
-        c: Copiar archivo
-        p: Pegar archivo
-        x: Cortar archivo
-        y: Copiar nombre del archivo
-        <C-n>: Navegar al siguiente nodo
-        <C-p>: Navegar al nodo anterior
+        -- Default shortcuts to manipulate files
+        a: Create a new file
+        d: Delete file
+        r: Rename file
+        c: Copy file
+        p: Paste file
+        x: Cut file
+        y: Copy file name
+        <C-n>: Navigate to the next node
+        <C-p>: Navigate to the previous node
 
-    Gestión de Marcas con vim-bookmarks:
+    Bookmark Management with vim-bookmarks:
         mm: :BookmarkToggle<CR>
         mi: :BookmarkAnnotate<CR>
         ma: :BookmarkShowAll<CR>
         mn: :BookmarkNext<CR>
         mp: :BookmarkPrev<CR>
 
-    Abrir Telescope marks:
+    Open Telescope marks:
         <leader>fm: :Telescope marks<CR>
   ]]
 

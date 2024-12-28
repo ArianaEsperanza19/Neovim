@@ -2,30 +2,29 @@ local M = {}
 
 M.show_spell_keymaps = function()
   local spell_keymaps = [[
-    Atajos y Comandos para Corrección Ortográfica:
+    Shortcuts and Commands for Spell Check:
 
-    1. Corrección Ortográfica:
-       - `z=`: Ver sugerencias de palabras mal escritas
-       - `zg`: Agregar palabra al diccionario
-       - `zug`: Deshacer agregar palabra al diccionario
-       - `zw`: Marcar palabra como mal escrita
-       - `zuw`: Deshacer marcar palabra como mal escrita
+    1. Spell Check:
+       - `z=`: See suggestions for misspelled words
+       - `zg`: Add word to the dictionary
+       - `zug`: Undo add word to the dictionary
+       - `zw`: Mark word as misspelled
+       - `zuw`: Undo mark word as misspelled
     
-    2. Comandos para Cambiar el Idioma de Corrección Ortográfica:
-       - `:SpellLangEn`: Cambia el idioma de corrección ortográfica a inglés
-       - `:SpellLangEs`: Cambia el idioma de corrección ortográfica a español
-       - `:DisableSpell`: Desactiva la corrección ortográfica
+    2. Commands to Change Spell Check Language:
+       - `:SpellLangEn`: Change spell check language to English
+       - `:SpellLangEs`: Change spell check language to Spanish
+       - `:DisableSpell`: Disable spell check
     
-    3. Comandos Útiles:
-       - `:set spell`: Activar la corrección ortográfica
-       - `:set nospell`: Desactivar la corrección ortográfica
-       - `]s`: Saltar a la siguiente palabra mal escrita
-       - `[s`: Saltar a la palabra mal escrita anterior
+    3. Useful Commands:
+       - `:set spell`: Enable spell check
+       - `:set nospell`: Disable spell check
+       - `]s`: Jump to the next misspelled word
+       - `[s`: Jump to the previous misspelled word
   ]]
 
   vim.api.nvim_echo({{spell_keymaps, "Normal"}}, true, {})
 end
 
 return M
-
 

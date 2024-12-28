@@ -2,7 +2,7 @@ local M = {}
 
 M.show_keymaps = function()
   local keymaps = [[
-    Caracteres Especiales en Modo Inserción:
+    Special Characters in Insert Mode:
        Alt+n: ñ
        Alt+a: á
        Alt+Shift+a: Á
