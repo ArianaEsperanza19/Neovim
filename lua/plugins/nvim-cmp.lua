@@ -1,3 +1,4 @@
+-- nvim-cmp is a completion plugin for Neovim that provides a powerful and highly configurable autocomplete experience. It supports a wide variety of completion sources, including LSP servers, buffers, file paths, snippets, and more. This plugin greatly enhances productivity by offering contextual and accurate suggestions as you type.
 -- Requerir los módulos necesarios
 local cmp = require('cmp')
 local lspconfig = require('lspconfig')

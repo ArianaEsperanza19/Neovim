@@ -1,3 +1,4 @@
+-- Bufferline provides a visual tab bar for open buffers in Neovim, allowing for easier and more intuitive management of multiple buffers. It helps to quickly navigate between open files and visually track which files are currently open, enhancing productivity and workflow.
 require('bufferline').setup {
   options = {
     numbers = "ordinal",  -- Mostrar números ordinales

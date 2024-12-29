@@ -142,8 +142,7 @@ _G.packer_plugins = {
     url = "https://github.com/VonHeikemen/lsp-zero.nvim"
   },
   ["markdown-preview.nvim"] = {
-    commands = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-    config = { "\27LJ\2\n¦\2\0\0\3\0\a\0\r6\0\0\0009\0\1\0'\2\2\0B\0\2\0016\0\0\0009\0\1\0'\2\3\0B\0\2\0016\0\0\0009\0\4\0'\1\6\0=\1\5\0K\0\1\0\24OpenMarkdownPreview\21mkdp_browserfunc\6g¬\1        function! OpenMarkdownPreview(url)\n          let cmd = \"firefox --new-window \" . shellescape(a:url) . \" &\n          call system(cmd)\n        endfunction\n      \23doautocmd FileType\bcmd\bvim\0" },
+    commands = { "MarkdownPreview", "MarkdownPreviewStop", "MarkdownPreviewToggle" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,

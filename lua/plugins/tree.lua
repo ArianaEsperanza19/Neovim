@@ -1,5 +1,4 @@
--- ~/.config/nvim/lua/neotree.lua
-
+ -- NeoTree is a plugin for Neovim that provides a modern and highly configurable file explorer. It is similar to NERDTree but offers more functionalities and a more user-friendly interface. NeoTree allows you to navigate, create, delete, and rename files and folders directly from Neovim, improving project management efficiency.
 -- Habilitar colores de terminal en Neovim
 vim.opt.termguicolors = true
 

@@ -1,3 +1,4 @@
+-- LuaSnip is a highly flexible and extensible snippet plugin for Neovim, written in Lua. It allows users to define and use code snippets efficiently, helping to speed up the coding process by providing reusable templates that can be quickly expanded. LuaSnip supports various programming languages and integrates seamlessly with other plugins, enhancing overall productivity.
 -- Configurar LuaSnip
 -- Requiere LuaSnip
 local luasnip = require('luasnip')

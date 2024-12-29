@@ -1,3 +1,4 @@
+-- vim-bookmarks is a Vim plugin that allows setting and managing bookmarks in specific lines of your files. These bookmarks can be used to mark important lines, and you can navigate between them easily. Annotations can also be added to bookmarks, which is useful for preparing code reviews.
 -- Requerir y configurar los plugins
 require('telescope').load_extension('marks')
 require('vim-bookmarks')

@@ -2,6 +2,9 @@ local M = {}
 
 M.show_keymaps = function()
   local keymaps = [[
+
+    Hide Warnings:
+    <leader>td: <cmd>lua require("diagnostics").toggle_diagnostics()<CR>
     Command to Clear Clipboard Contents:
        <leader>bp: :let @*="" | let @+="" | let @=""<CR>
 

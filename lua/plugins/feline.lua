@@ -1,3 +1,4 @@
+-- Feline is a highly configurable and customizable statusline plugin for Neovim. It allows you to create a statusline that perfectly fits your needs and preferences, displaying useful information at a glance. Feline enhances your productivity by providing an informative and visually appealing statusline that can be tailored to show exactly what you want.
 local feline = require('feline')
 
 local function spell_lang()

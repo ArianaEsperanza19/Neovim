@@ -7,7 +7,6 @@ vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 -- Archivos requeridos -
 require('settings')
 require('keymaps')
-
 vim.api.nvim_create_user_command('KeymapsEdicion', function()
   require('atajos/atajos_edicion').show_keymaps()
 end, { nargs = 0 })
@@ -24,8 +23,12 @@ vim.api.nvim_create_user_command('KeymapsLS', function()
   require('atajos/atajos_letras_simbolos').show_keymaps()
 end, { nargs = 0 })
 
-vim.api.nvim_create_user_command('KeymapsHtml', function()
+vim.api.nvim_create_user_command('KeymapscHtml', function()
   require('atajos/atajos_html').show_keymaps()
+end, { nargs = 0 })
+
+vim.api.nvim_create_user_command('KeymapscTex', function()
+  require('atajos/atajos_Tex').show_keymaps()
 end, { nargs = 0 })
 
 vim.api.nvim_create_user_command('KeymapsOtros', function()
@@ -48,6 +51,7 @@ require('plugins/nvim-web-devicons')
 require('plugins/bufferLine')
 require('plugins/telescope')
 require('plugins/markdownPreview')
+require('plugins.markdownPreview').setup()
 --require('plugins/harpoon')
 -- Autocompletado ------
 require('autocompletado')

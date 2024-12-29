@@ -1,4 +1,4 @@
--- ~/.config/nvim/init.lua
+-- Codeium is an AI-powered autocompletion plugin for Neovim that enhances coding efficiency by providing intelligent and contextual code suggestions. It helps developers write code faster and more accurately by understanding the context and suggesting completions based on common patterns and best practices.
 
 -- Función para aceptar sugerencia de Codeium o pasar la acción de Tab
 function _G.check_codeium_and_tab()

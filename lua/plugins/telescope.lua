@@ -1,3 +1,4 @@
+-- Telescope is a powerful search plugin for Neovim that provides a highly extensible and configurable command-line interface for searching files, text, and more. It uses a popup-based interface to display search results clearly and efficiently, greatly enhancing developer productivity.
 local builtin = require('telescope.builtin')
 -- Asigna la combinación de teclas <leader>ff al comando de Telescope para buscar archivos
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })

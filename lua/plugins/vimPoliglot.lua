@@ -1,3 +1,4 @@
+-- vim-polyglot is a plugin for Vim that provides syntax and configuration support for a wide variety of programming languages and file formats. It is a "language pack" that includes support for over 120 languages, making it very useful for developers working with multiple languages in a single environment.
 -- Se aplicara la correcion a los archivos md, tex y txt
 vim.api.nvim_create_autocmd({"FileType"}, {
   pattern = {"markdown", "tex", "text"},
