@@ -9,25 +9,30 @@ require('settings')
 require('keymaps')
 
 vim.api.nvim_create_user_command('KeymapsEdicion', function()
-  require('atajos_edicion').show_keymaps()
+  require('atajos/atajos_edicion').show_keymaps()
 end, { nargs = 0 })
 
 vim.api.nvim_create_user_command('KeymapsNavegacion', function()
-  require('atajos_navegacion').show_keymaps()
+  require('atajos/atajos_navegacion').show_keymaps()
 end, { nargs = 0 })
 
 vim.api.nvim_create_user_command('KeymapsOrtografia', function()
-  require('atajos_ortografia').show_spell_keymaps()
+  require('atajos/atajos_ortografia').show_spell_keymaps()
 end, { nargs = 0 })
 
 vim.api.nvim_create_user_command('KeymapsLS', function()
-  require('atajos_letras_simbolos').show_keymaps()
+  require('atajos/atajos_letras_simbolos').show_keymaps()
+end, { nargs = 0 })
+
+vim.api.nvim_create_user_command('KeymapsHtml', function()
+  require('atajos/atajos_html').show_keymaps()
 end, { nargs = 0 })
 
 vim.api.nvim_create_user_command('KeymapsOtros', function()
-  require('atajos_otros').show_keymaps()
+  require('atajos/atajos_otros').show_keymaps()
 end, { nargs = 0 })
 
+--require('plugins/bootstrap')
 require('plugins/packer')
 --require('plugins/tokyodark')
 require('plugins/iceberg')
@@ -37,6 +42,7 @@ require('plugins/feline')
 require('plugins/vimPoliglot')
 require('plugins/vimtex')
 -- Visor ---------------
+require('plugins/treesitter')
 require('plugins/tree')
 require('plugins/nvim-web-devicons')
 require('plugins/bufferLine')
@@ -57,6 +63,8 @@ require('plugins/nullLS')
 -- Comentarios ---------
 require('plugins/comment')
 require('templates')
+-- Marcar de etiquetas
+require('plugins/jumpTag')
 -- Lo copiado o cortado en Neovim aparecerá en el clipboard externo
 vim.o.clipboard = "unnamedplus"
 -- IA ------------------

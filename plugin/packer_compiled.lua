@@ -110,8 +110,10 @@ _G.packer_plugins = {
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
   ["codeium.vim"] = {
-    loaded = true,
-    path = "/home/ariana/.local/share/nvim/site/pack/packer/start/codeium.vim",
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/ariana/.local/share/nvim/site/pack/packer/opt/codeium.vim",
     url = "https://github.com/Exafunction/codeium.vim"
   },
   ["feline.nvim"] = {
@@ -129,6 +131,11 @@ _G.packer_plugins = {
     path = "/home/ariana/.local/share/nvim/site/pack/packer/start/iceberg.vim",
     url = "https://github.com/cocopon/iceberg.vim"
   },
+  ["jump-tag"] = {
+    loaded = true,
+    path = "/home/ariana/.local/share/nvim/site/pack/packer/start/jump-tag",
+    url = "https://github.com/harrisoncramer/jump-tag"
+  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "/home/ariana/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
@@ -136,7 +143,7 @@ _G.packer_plugins = {
   },
   ["markdown-preview.nvim"] = {
     commands = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-    config = { "\27LJ\2\nù\2\0\0\3\0\a\0\r6\0\0\0009\0\1\0'\2\2\0B\0\2\0016\0\0\0009\0\1\0'\2\3\0B\0\2\0016\0\0\0009\0\4\0'\1\6\0=\1\5\0K\0\1\0\24OpenMarkdownPreview\21mkdp_browserfunc\6g£\1      function! OpenMarkdownPreview(url)\n        let cmd = \"firefox --new-window \" . shellescape(a:url) . \" &\"\n        call system(cmd)\n      endfunction\n    \23doautocmd FileType\bcmd\bvim\0" },
+    config = { "\27LJ\2\n¶\2\0\0\3\0\a\0\r6\0\0\0009\0\1\0'\2\2\0B\0\2\0016\0\0\0009\0\1\0'\2\3\0B\0\2\0016\0\0\0009\0\4\0'\1\6\0=\1\5\0K\0\1\0\24OpenMarkdownPreview\21mkdp_browserfunc\6g¨\1        function! OpenMarkdownPreview(url)\n          let cmd = \"firefox --new-window \" . shellescape(a:url) . \" &\n          call system(cmd)\n        endfunction\n      \23doautocmd FileType\bcmd\bvim\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -180,6 +187,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ariana/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
     url = "https://github.com/nvim-tree/nvim-tree.lua"
+  },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/home/ariana/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
@@ -232,6 +244,13 @@ time([[Defining packer_plugins]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
+pcall(vim.api.nvim_create_user_command, 'MarkdownPreviewStop', function(cmdargs)
+          require('packer.load')({'markdown-preview.nvim'}, { cmd = 'MarkdownPreviewStop', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'markdown-preview.nvim'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('MarkdownPreviewStop ', 'cmdline')
+      end})
 pcall(vim.api.nvim_create_user_command, 'MarkdownPreviewToggle', function(cmdargs)
           require('packer.load')({'markdown-preview.nvim'}, { cmd = 'MarkdownPreviewToggle', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
         end,
@@ -246,13 +265,6 @@ pcall(vim.api.nvim_create_user_command, 'MarkdownPreview', function(cmdargs)
           require('packer.load')({'markdown-preview.nvim'}, {}, _G.packer_plugins)
           return vim.fn.getcompletion('MarkdownPreview ', 'cmdline')
       end})
-pcall(vim.api.nvim_create_user_command, 'MarkdownPreviewStop', function(cmdargs)
-          require('packer.load')({'markdown-preview.nvim'}, { cmd = 'MarkdownPreviewStop', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
-        end,
-        {nargs = '*', range = true, bang = true, complete = function()
-          require('packer.load')({'markdown-preview.nvim'}, {}, _G.packer_plugins)
-          return vim.fn.getcompletion('MarkdownPreviewStop ', 'cmdline')
-      end})
 time([[Defining lazy-load commands]], false)
 
 vim.cmd [[augroup packer_load_aucmds]]
@@ -263,6 +275,7 @@ vim.cmd [[au FileType markdown ++once lua require("packer.load")({'markdown-prev
 time([[Defining lazy-load filetype autocommands]], false)
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
+vim.cmd [[au BufEnter * ++once lua require("packer.load")({'codeium.vim'}, { event = "BufEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'nvim-autopairs'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
