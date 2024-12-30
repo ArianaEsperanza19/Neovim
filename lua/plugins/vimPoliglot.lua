@@ -31,3 +31,31 @@ end, {})
 -- Para ver las sugerencias de las palabras mal escritas -> z= sobre la palabra en cuestion
 -- Para agregar palabra al diccionario -> zg sobre la palabra
 
+-- Atajos para Esperanto
+-- Mover al siguiente error ortográfico
+vim.api.nvim_set_keymap('n', 'ĵs', '[s', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'ĥs', ']s', { noremap = true, silent = true })
+
+-- Eliminar o cortar
+vim.api.nvim_set_keymap('n', 'ĝ', 'w', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'Ĝ', 'W', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'Ĝ', 'W', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'diĝ', 'diw', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'daĝ', 'daw', { noremap = true, silent = true })
+
+-- Copiar
+vim.api.nvim_set_keymap('n', 'ŭ', 'y', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'ŭŭ', 'yy', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'ŭnŭ', 'yny', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'ŭĝ', 'yw', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'ŭip', 'yip', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'ŭib', 'yib', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'ŭap', 'yap', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'ŭab', 'yab', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'ŭaĝ', 'yaw', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'ŭiĝ', 'yiw', { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap('n', 'ĉ', 'x', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'Ĉ', 'X', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'ŝ', 'q', { noremap = true, silent = true })
+-- ŝĝĉŭĥĵ

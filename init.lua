@@ -31,6 +31,10 @@ vim.api.nvim_create_user_command('KeymapscTex', function()
   require('atajos/atajos_Tex').show_keymaps()
 end, { nargs = 0 })
 
+vim.api.nvim_create_user_command('KeymapscMd', function()
+  require('atajos/atajos_Md').show_keymaps()
+end, { nargs = 0 })
+
 vim.api.nvim_create_user_command('KeymapsOtros', function()
   require('atajos/atajos_otros').show_keymaps()
 end, { nargs = 0 })
@@ -50,8 +54,8 @@ require('plugins/tree')
 require('plugins/nvim-web-devicons')
 require('plugins/bufferLine')
 require('plugins/telescope')
-require('plugins/markdownPreview')
-require('plugins.markdownPreview').setup()
+-- require('plugins/markdownPreview')
+require('plugins/peek')
 --require('plugins/harpoon')
 -- Autocompletado ------
 require('autocompletado')
@@ -69,6 +73,8 @@ require('plugins/comment')
 require('templates')
 -- Marcar de etiquetas
 require('plugins/jumpTag')
+-- Errores ------------- fallos en su implementacion
+-- require('plugins/trouble')
 -- Lo copiado o cortado en Neovim aparecerá en el clipboard externo
 vim.o.clipboard = "unnamedplus"
 -- IA ------------------

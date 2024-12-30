@@ -11,6 +11,9 @@ M.show_keymaps = function()
       m+Down: Move line/selection down
       Note: Keep in mind that if there is text directly in the upper or lower line, it will just swap the lines.
 
+    Paste Over Selection with Clipboard Content:
+      <C-v>: "_dP (Visual Mode)
+
     Format with LSP:
       <leader>F:
       :lua vim.lsp.buf.format({ bufnr = bufnr, filter = function(client) return client.name == "null-ls" end })<CR>

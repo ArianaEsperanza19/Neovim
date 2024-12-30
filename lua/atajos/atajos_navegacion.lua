@@ -5,6 +5,13 @@ M.show_keymaps = function()
     Clear Search Highlight:
        <leader>h: :nohlsearch<CR>
 
+    Go to end 
+    <leader><right>: $
+    Go to beginning
+    <leader><left>: ^
+
+    Ir a linea: nG 
+
     Visual Navigation:
        <leader>j: gj
        <leader>k: gk

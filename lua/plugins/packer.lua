@@ -25,13 +25,7 @@ return require('packer').startup(function(use)
   use {'akinsho/bufferline.nvim', tag = '*'}
 
   -- Markdown
-use {
-  "iamcco/markdown-preview.nvim",
-  run = function() vim.fn["mkdp#util#install"]() end,
-  ft = { "markdown" },
-  cmd = { "MarkdownPreview", "MarkdownPreviewStop", "MarkdownPreviewToggle" },
-}
-
+use {'toppair/peek.nvim'}
   -- Autocompletion
   use 'hrsh7th/nvim-cmp' -- Motor principal de autocompletado
   use 'hrsh7th/cmp-nvim-lsp' -- Integración con LSP
@@ -85,6 +79,7 @@ use {
   
   -- Jump Tag
   use 'harrisoncramer/jump-tag'
+  use 'folke/trouble.nvim'
 
   if packer_bootstrap then
     require('packer').sync()

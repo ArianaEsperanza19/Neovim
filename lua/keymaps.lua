@@ -1,6 +1,24 @@
 -- <leader>
 vim.g.mapleader = " "
+-- Desmarcar busqueda
 vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>")
+-- Asignar un atajo para pegar el contenido del portapapeles sustituyendo la selección actual
+vim.api.nvim_set_keymap('v', '<C-v>', '"_dP', { noremap = true, silent = true })
+
+-- Asignar Control+S para guardar el archivo actual
+vim.api.nvim_set_keymap('n', '<C-s>', ':w<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<C-s>', '<Esc>:w<CR>a', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<C-s>', '<Esc>:w<CR>gv', { noremap = true, silent = true })
+-- Guardar y salir
+vim.api.nvim_set_keymap('n', '<leader><ESC>', ':x<CR>', { noremap = true, silent = true })
+-- Salir sin guardar
+vim.api.nvim_set_keymap('n', 'z<ESC>', ':q<CR>', { noremap = true, silent = true })
+-- Asignar <leader>left para ir al principio de la línea
+vim.api.nvim_set_keymap('n', '<leader><left>', '^', { noremap = true, silent = true })
+
+-- Asignar <leader>right para ir al final de la línea
+vim.api.nvim_set_keymap('n', '<leader><right>', '$', { noremap = true, silent = true })
+
 
 -- Deshabilitar tabulación de Alt+i
 vim.api.nvim_set_keymap('i', '<C-i>', '<Nop>', { noremap = true, silent = true })
