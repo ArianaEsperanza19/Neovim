@@ -20,7 +20,7 @@ M.show_keymaps = function()
   :Gitsigns reset_buffer_index<CR>
   -- Show differences in buffer
   :Gitsigns diffthis<CR>
-  :Gvimdiffsplit<CR>
+  :Gvimdiffsplit <bratch o commit><CR>
   ]]
 
   vim.api.nvim_echo({{keymaps, "Normal"}}, true, {})
