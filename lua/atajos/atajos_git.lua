@@ -2,7 +2,6 @@ local M = {}
 
 M.show_keymaps = function()
   local keymaps = [[
-
   -- Gitsigns
   -- Watch current hunk (enter to leave)
   <leader><F4>: :Gitsigns preview_hunk<CR>
@@ -15,10 +14,13 @@ M.show_keymaps = function()
   -- Show current line blame
   <F4>: :Gitsigns toggle_current_line_blame<CR>
 
-  -- Borrar buffer actual
+  -- Reset current buffer
   :Gitsigns reset_buffer<CR>
-
-
+  -- Reset buffer to all
+  :Gitsigns reset_buffer_index<CR>
+  -- Show differences in buffer
+  :Gitsigns diffthis<CR>
+  :Gvimdiffsplit<CR>
   ]]
 
   vim.api.nvim_echo({{keymaps, "Normal"}}, true, {})
