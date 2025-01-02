@@ -81,7 +81,7 @@ telescope.setup({
 })
 
 -- Asigna la combinación de teclas <leader>sr a la nueva función de buscar y reemplazar
-vim.api.nvim_set_keymap('n', '<leader>er', '<cmd>lua require("plugins.my_telescope").search_and_replace()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>rr', '<cmd>lua require("plugins.my_telescope").search_and_replace()<CR>', { noremap = true, silent = true })
 
  -- Asigna la combinación de teclas <leader>sg a la nueva función de buscar y reemplazar globalmente
-vim.api.nvim_set_keymap('n', '<leader>eg', '<cmd>lua require("plugins.my_telescope").search_and_replace_global()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>r', '<cmd>lua require("plugins.my_telescope").search_and_replace_global()<CR>', { noremap = true, silent = true })

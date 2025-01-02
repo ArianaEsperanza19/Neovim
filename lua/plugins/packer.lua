@@ -86,6 +86,7 @@ use {'toppair/peek.nvim'}
     require('packer').sync()
   end
   -- git
+  use 'tpope/vim-fugitive'
   use 'lewis6991/gitsigns.nvim'
 end) -- Fin
 

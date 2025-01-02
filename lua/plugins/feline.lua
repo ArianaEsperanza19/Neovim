@@ -60,16 +60,16 @@ table.insert(components.active[1], {
 })
 
 -- Titulo de archivo
-table.insert(components.active[1], {
-  provider = function()
-    return vim.fn.expand('%:t:r')
-  end,
-  hl = {
-    fg = colors.red,
-    style = 'bold'
-  },
-  right_sep = ' '
-})
+-- table.insert(components.active[1], {
+--   provider = function()
+--     return vim.fn.expand('%:t:r')
+--   end,
+--   hl = {
+--     fg = colors.red,
+--     style = 'bold'
+--   },
+--   right_sep = ' '
+-- })
 
 -- Errores de compilación u ortografía
 table.insert(components.active[1], {
@@ -86,6 +86,24 @@ table.insert(components.active[1], {
   provider = 'diagnostic_warnings',
   hl = {
     fg = colors.yellow,
+    style = 'bold'
+  },
+  right_sep = ' '
+})
+
+
+-- Nombre de la rama actual
+table.insert(components.active[3], {
+  provider = function()
+    local branch = vim.fn.FugitiveHead()
+    if branch ~= '' then
+      return ' ' .. branch
+    else
+      return vim.fn.expand('%:t:r')
+    end
+  end,
+  hl = {
+    fg = colors.red,
     style = 'bold'
   },
   right_sep = ' '

@@ -7,6 +7,11 @@ vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 -- Archivos requeridos -
 require('settings')
 require('keymaps')
+
+vim.api.nvim_create_user_command('KeymapsGit', function()
+  require('atajos/atajos_git').show_keymaps()
+end, { nargs = 0 })
+
 vim.api.nvim_create_user_command('KeymapsEdicion', function()
   require('atajos/atajos_edicion').show_keymaps()
 end, { nargs = 0 })
@@ -82,3 +87,4 @@ vim.o.clipboard = "unnamedplus"
 require('plugins/codeium')
 -- Git -------------
 require('plugins/gitsigns')
+require('plugins/git-fugitive')

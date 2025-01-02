@@ -15,6 +15,9 @@ M.show_keymaps = function()
   -- Show current line blame
   <F4>: :Gitsigns toggle_current_line_blame<CR>
 
+  -- Borrar buffer actual
+  :Gitsigns reset_buffer<CR>
+
 
   ]]
 

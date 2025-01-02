@@ -64,8 +64,6 @@ vim.api.nvim_set_keymap('v', 'm<Up>', ":m '<-2<CR>gv=gv", { noremap = true, sile
 vim.api.nvim_set_keymap('n', 'm<Down>', ':m .+1<CR>==', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', 'm<Down>', ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
 
-
-
 -- Remapear <leader>j para moverse visualmente hacia abajo una línea
 vim.api.nvim_set_keymap('n', '<leader>j', 'gj', { noremap = true, silent = true })
 -- Remapear <leader>k para moverse visualmente hacia arriba una línea
