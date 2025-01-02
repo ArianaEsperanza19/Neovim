@@ -121,6 +121,11 @@ _G.packer_plugins = {
     path = "/home/ariana/.local/share/nvim/site/pack/packer/start/feline.nvim",
     url = "https://github.com/feline-nvim/feline.nvim"
   },
+  ["gitsigns.nvim"] = {
+    loaded = true,
+    path = "/home/ariana/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
   harpoon = {
     loaded = true,
     path = "/home/ariana/.local/share/nvim/site/pack/packer/start/harpoon",
@@ -251,8 +256,8 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'nvim-autopairs'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au BufEnter * ++once lua require("packer.load")({'codeium.vim'}, { event = "BufEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'nvim-autopairs'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 

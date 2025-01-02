@@ -8,9 +8,9 @@ M.show_keymaps = function()
 
     Command to Clear Clipboard Contents:
        <leader>bp: :let @*="" | let @+="" | let @=""<CR>
-        
+
     Save Current File:
-      <C-s> 
+      <C-s>
       :w<CR> (Normal Mode)
       : <Esc>:w<CR>a (Insert Mode)
       : <Esc>:w<CR>gv (Visual Mode)
@@ -26,7 +26,9 @@ M.show_keymaps = function()
         Terminal Mode <Ctrl+\>: <Ctrl+\><Ctrl+n>:lua ToggleTerminal()<CR>
 
     Accept Codeium Suggestions:
-      <F3>: codeium#Accept()
+      <F1><F1>: codeium#Accept()
+    Open Codeium Chat:
+      <F3>: Codeium Chat
 
   ]]
 

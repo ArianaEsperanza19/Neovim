@@ -1,4 +1,4 @@
--- init.lua ------------
+-- init.lua -----------
 vim.opt.termguicolors = true
 vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>")
 vim.keymap.set("x", "<leader>p", [["_dP]])
@@ -80,3 +80,5 @@ require('plugins/trouble')
 vim.o.clipboard = "unnamedplus"
 -- IA ------------------
 require('plugins/codeium')
+-- Git -------------
+require('plugins/gitsigns')

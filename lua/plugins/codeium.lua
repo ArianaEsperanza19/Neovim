@@ -15,11 +15,11 @@ function t(str)
   return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
 
--- Asignar <F3> para aceptar las sugerencias de Codeium
-vim.api.nvim_set_keymap('i', '<F3>', 'codeium#Accept()', { noremap = true, silent = true, expr = true })
-
 -- Usar <Tab> normalmente si no hay sugerencia de Codeium activa
 vim.api.nvim_set_keymap('i', '<Tab>', '<Nop>', { noremap = true, silent = true })
 
--- Abrir y cerrar el chat de Codeium con F4 
-vim.api.nvim_set_keymap('n', '<F4>', ':Codeium Chat<CR>', { noremap = true, silent = true })
+-- Asignar <F3> para aceptar las sugerencias de Codeium
+vim.api.nvim_set_keymap('i', '<F1><F1>', 'codeium#Accept()', { noremap = true, silent = true, expr = true })
+
+-- Abrir y cerrar el chat de Codeium con F4
+vim.api.nvim_set_keymap('n', '<F3>', ':Codeium Chat<CR>', { noremap = true, silent = true })

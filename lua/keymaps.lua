@@ -38,7 +38,7 @@ vim.api.nvim_set_keymap('i', '<A-u>', 'ú', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('i', '<A-S-u>', 'Ú', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('i', '<C-e>', 'ĕ', { noremap = true, silent = true })
 -- Mapeo para Control + / para insertar '¿'
-vim.api.nvim_set_keymap('i', '<F2>/', '¿', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<F1>/', '¿', { noremap = true, silent = true })
 
 -- Asegurarnos de que los atajos nativos con d solo borren
 vim.api.nvim_set_keymap('v', 'd', 'd', { noremap = true, silent = true })
