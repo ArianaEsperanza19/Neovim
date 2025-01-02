@@ -1,3 +1,11 @@
+-- Git Fugitive y GitSigns: una combinación poderosa para trabajar con Git en Neovim.
+-- Git Fugitive: proporciona una interfaz de usuario para gestionar repositorios Git, permitiendo realizar operaciones de Git como commit, push, pull, merge, etc.
+-- GitSigns: proporciona una serie de características para visualizar y gestionar los cambios en el repositorio Git, como:
+--   - Señales de cambios: muestra señales visuales en el editor para indicar los cambios realizados en el archivo.
+--   - Diferencias: muestra las diferencias entre versiones del archivo.
+--   - Estado del archivo: muestra el estado del archivo en el repositorio Git (modificado, agregado, eliminado, etc.).
+--   - Navegación: permite navegar entre los cambios realizados en el archivo.
+-- La combinación de Git Fugitive y GitSigns proporciona una experiencia de usuario completa para trabajar con Git en Neovim, permitiendo gestionar y visualizar los cambios en el repositorio de manera eficiente.
 require('gitsigns').setup {
   -- ... (resto de la configuración)
 
