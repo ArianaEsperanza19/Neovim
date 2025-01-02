@@ -7,6 +7,10 @@ vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 -- Archivos requeridos-
 require('settings')
 require('keymaps')
+-- Temas
+--require('plugins/temas/iceberg')
+-- require('plugins/temas/catppucin')
+require('plugins/temas/gruvbox')
 
 vim.api.nvim_create_user_command('KeymapsGit', function()
   require('atajos/atajos_git').show_keymaps()
@@ -46,8 +50,6 @@ end, { nargs = 0 })
 
 --require('plugins/bootstrap')
 require('plugins/packer')
--- require('plugins/tokyodark')
-require('plugins/iceberg')
 -- Barra inferior ------
 require('plugins/feline')
 -- Buffer --------------

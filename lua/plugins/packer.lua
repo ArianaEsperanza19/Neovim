@@ -8,8 +8,10 @@ end
 
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim' -- Packer
-  use 'tiagovla/tokyodark.nvim' -- Tema
-  use 'cocopon/iceberg.vim' -- Tema
+  -- Temas
+  use 'cocopon/iceberg.vim'
+  use 'catppuccin/nvim'
+  use 'ellisonleao/gruvbox.nvim'
   use 'nvim-tree/nvim-web-devicons' -- Iconos
   use 'feline-nvim/feline.nvim' -- Barra
   use 'sheerun/vim-polyglot' -- Corrector
@@ -87,6 +89,6 @@ use {'toppair/peek.nvim'}
   end
   -- git
   use 'tpope/vim-fugitive'
-  use 'lewis6991/gitsigns.nvim'
+  use {'lewis6991/gitsigns.nvim', commit = ' 0b04035'}
 end) -- Fin
 
