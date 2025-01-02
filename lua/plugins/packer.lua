@@ -43,8 +43,9 @@ use {'toppair/peek.nvim'}
     'nvim-telescope/telescope.nvim', tag = '0.1.8',
     requires = { 'nvim-lua/plenary.nvim' }
   }
-  use 'tom-pollak/telescope-marks.nvim'
-  use 'MattesGroeger/vim-bookmarks'
+  use 'tom-pollak/telescope-marks.nvim' -- Marcas
+  use 'MattesGroeger/vim-bookmarks' -- Marcas
+  use 'tpope/vim-abolish' -- Busqueda y sustitucion avanzada
 
   -- Treesitter
   use {
