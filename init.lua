@@ -61,9 +61,9 @@ require('plugins/peek')
 require('autocompletado')
 -- LuaSnip -------------
 require('plugins/luasnip')
--- Ruta a tu carpeta de snippets 
+-- Ruta a tu carpeta de snippets
 local snippet_paths = vim.fn.stdpath("config") .. "/luasnippets/"
--- Cargar todos los archivos de snippets en la carpeta 
+-- Cargar todos los archivos de snippets en la carpeta
 require("luasnip.loaders.from_lua").load({ paths = snippet_paths})
 -- LPS y Mason ---------
 require('plugins/mason')

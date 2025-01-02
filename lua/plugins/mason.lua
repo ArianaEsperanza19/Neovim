@@ -14,13 +14,14 @@ lsp_zero.setup_servers({
     'texlab',
     "clangd",
     "intelephense",
+    -- "html-lsp",
 })
 
 -- Integrar Mason con nvim-lspconfig
 require("mason-lspconfig").setup({
     handlers = {lsp_zero.default_setup},
     ensure_installed = { "pyright", "ts_ls", "bashls", "marksman", "texlab", "lua_ls",
-    "clangd","intelephense"}
+    "clangd", "intelephense" }
 })
 
 -- Formateadores

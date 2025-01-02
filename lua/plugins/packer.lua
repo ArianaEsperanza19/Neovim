@@ -11,7 +11,7 @@ return require('packer').startup(function(use)
   use 'tiagovla/tokyodark.nvim' -- Tema
   use 'cocopon/iceberg.vim' -- Tema
   use 'nvim-tree/nvim-web-devicons' -- Iconos
-  use 'feline-nvim/feline.nvim' -- Barra 
+  use 'feline-nvim/feline.nvim' -- Barra
   use 'sheerun/vim-polyglot' -- Corrector
   use 'lervag/vimtex' -- Latex
   use 'nvim-tree/nvim-tree.lua' -- Arbol
@@ -76,7 +76,7 @@ use {'toppair/peek.nvim'}
       require("nvim-autopairs").setup {}
     end
   }
-  
+
   -- Jump Tag
   use 'harrisoncramer/jump-tag'
   use 'folke/trouble.nvim'

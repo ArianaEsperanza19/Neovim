@@ -43,8 +43,8 @@ trouble.setup {
     information = "",
     other = ""
   },
-  use_diagnostic_signs = true, -- Usar signos de diagnóstico de LSP si están disponibles
-  treesitter = true -- Activar integración de Treesitter
+  use_diagnostic_signs = false, -- Usar signos de diagnóstico de LSP si están disponibles
+  treesitter = false,
 }
 
 -- Configuración de colores para resaltar errores en rojo
