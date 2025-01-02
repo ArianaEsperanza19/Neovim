@@ -79,7 +79,7 @@ use {'toppair/peek.nvim'}
 
   -- Jump Tag
   use 'harrisoncramer/jump-tag'
-  use 'folke/trouble.nvim'
+  use {'folke/trouble.nvim', commit= '40c5317'}
 
   if packer_bootstrap then
     require('packer').sync()

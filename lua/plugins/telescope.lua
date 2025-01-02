@@ -5,7 +5,7 @@ local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
 
 -- Asigna la combinación de teclas <leader>fg al comando de Telescope para hacer búsqueda de texto en vivo (grep)
-vim.api.nvim_set_keymap('n', '<leader>lt', ':Telescope live_grep<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>t', ':Telescope live_grep<CR>', { noremap = true, silent = true })
 
 -- Asigna la combinación de teclas <leader>fb al comando de Telescope para listar y buscar entre buffers abiertos
 vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })

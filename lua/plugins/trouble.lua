@@ -1,3 +1,4 @@
+-- trouble is a Neovim plugin that provides a unified interface for managing diagnostics, references, and other code-related lists, making it easier to navigate and fix issues in your code. For optimal performance, it requires nvim-lspconfig and nvim-treesitter to be installed.
 -- ~/.config/nvim/lua/plugins/trouble.lua
 local trouble = require("trouble")
 
@@ -34,6 +35,7 @@ trouble.setup {
   auto_open = false, -- abrir Trouble automáticamente cuando hay diagnósticos
   auto_close = false, -- cerrar Trouble automáticamente cuando no hay diagnósticos
   auto_preview = false, -- previsualizar automáticamente el item
+  auto_jump = {"lsp_definitions"}, -- saltar automáticamente al resultado si hay solo uno
   auto_fold = false, -- plegar automáticamente la lista de items
   signs = {
     -- iconos de diagnóstico
@@ -43,8 +45,9 @@ trouble.setup {
     information = "",
     other = ""
   },
-  use_diagnostic_signs = false, -- Usar signos de diagnóstico de LSP si están disponibles
+  use_diagnostic_signs = true, -- Usar signos de diagnóstico de LSP si están disponibles
   treesitter = false,
+  ensure_installed = { "markdown_inline" }, -- Instalar con treesitter si no están instalados
 }
 
 -- Configuración de colores para resaltar errores en rojo

@@ -5,12 +5,12 @@ M.show_keymaps = function()
     Clear Search Highlight:
        <leader>h: :nohlsearch<CR>
 
-    Go to end 
+    Go to end
     <leader><right>: $
     Go to beginning
     <leader><left>: ^
 
-    Ir a linea: nG 
+    Ir a linea: nG
 
     Visual Navigation:
        <leader>j: gj
@@ -46,7 +46,12 @@ M.show_keymaps = function()
         mn: :BookmarkNext<CR>
         mp: :BookmarkPrev<CR>
 
-    Open Telescope marks:
+    Telescope
+    -- Open Telescope Navigator de archivos:
+        <leader>ff: :Telescope find_files<CR>
+    -- Open Telescope Searcher for text:
+        <leader>t: :Telescope live_grep<CR>
+    -- Open Telescope marks:
         <leader>fm: :Telescope marks<CR>
   ]]
 

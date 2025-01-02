@@ -1,4 +1,5 @@
 -- Bufferline provides a visual tab bar for open buffers in Neovim, allowing for easier and more intuitive management of multiple buffers. It helps to quickly navigate between open files and visually track which files are currently open, enhancing productivity and workflow.
+
 require('bufferline').setup {
   options = {
     numbers = "ordinal",  -- Mostrar números ordinales
@@ -17,49 +18,50 @@ require('bufferline').setup {
   },
   highlights = {
     fill = {
-      guifg = '#ffffff',  -- Color blanco para el texto
-      guibg = '#485075'  -- Fondo gris más claro para la barra
+      guifg = vim.fn.synIDattr(vim.fn.hlID('TabLineFill'), 'fg'),
+      guibg = vim.fn.synIDattr(vim.fn.hlID('TabLineFill'), 'bg')
     },
     background = {
-      guifg = 'skyblue',  -- Color del texto en las pestañas no seleccionadas
-      guibg = '#3b4252'  -- Fondo gris más claro para pestañas no seleccionadas
+      guifg = vim.fn.synIDattr(vim.fn.hlID('TabLine'), 'fg'),
+      guibg = vim.fn.synIDattr(vim.fn.hlID('TabLine'), 'bg')
     },
     buffer_visible = {
-      guifg = 'skyblue',  -- Color del texto para buffers visibles
-      guibg = '#3b4252',
+      guifg = vim.fn.synIDattr(vim.fn.hlID('TabLine'), 'fg'),
+      guibg = vim.fn.synIDattr(vim.fn.hlID('TabLine'), 'bg')
     },
     buffer_selected = {
-      guifg = '#ff2d62',  -- Color coincidente con Feline para pestañas seleccionadas
-      guibg = '#434c5e',  -- Fondo gris claro para la pestaña seleccionada
+      guifg = vim.fn.synIDattr(vim.fn.hlID('TabLineSel'), 'fg'),
+      guibg = vim.fn.synIDattr(vim.fn.hlID('TabLineSel'), 'bg'),
       gui = "bold"
     },
     separator = {
-      guifg = '#4c566a',  -- Color del separador más claro para distinguir de las pestañas
-      guibg = '#485075'  -- Fondo gris claro para que contraste con el área de texto
+      guifg = vim.fn.synIDattr(vim.fn.hlID('TabLineFill'), 'bg'),
+      guibg = vim.fn.synIDattr(vim.fn.hlID('TabLineFill'), 'bg')
     },
     separator_selected = {
-      guifg = '#4c566a',
-      guibg = '#2e3440'
+      guifg = vim.fn.synIDattr(vim.fn.hlID('TabLineSel'), 'bg'),
+      guibg = vim.fn.synIDattr(vim.fn.hlID('TabLineFill'), 'bg')
     },
     separator_visible = {
-      guifg = '#4c566a',
-      guibg = '#2e3440'
+      guifg = vim.fn.synIDattr(vim.fn.hlID('TabLine'), 'bg'),
+      guibg = vim.fn.synIDattr(vim.fn.hlID('TabLineFill'), 'bg')
     },
     indicator_selected = {
-      guifg = '#4c566a',
-      guibg = '#2e3440'
+      guifg = vim.fn.synIDattr(vim.fn.hlID('TabLineSel'), 'fg'),
+      guibg = vim.fn.synIDattr(vim.fn.hlID('TabLineSel'), 'bg')
     },
     modified = {
-      guifg = '#ff2d62',  -- Color para indicar buffers modificados
-      guibg = '#3b4252',
+      guifg = vim.fn.synIDattr(vim.fn.hlID('WarningMsg'), 'fg'),
+      guibg = vim.fn.synIDattr(vim.fn.hlID('TabLine'), 'bg')
     },
     modified_visible = {
-      guifg = '#ff2d62',
-      guibg = '#3b4252'
+      guifg = vim.fn.synIDattr(vim.fn.hlID('WarningMsg'), 'fg'),
+      guibg = vim.fn.synIDattr(vim.fn.hlID('TabLine'), 'bg')
     },
     modified_selected = {
-      guifg = '#ff2d62',
-      guibg = '#434c5e'
+      guifg = vim.fn.synIDattr(vim.fn.hlID('WarningMsg'), 'fg'),
+      guibg = vim.fn.synIDattr(vim.fn.hlID('TabLineSel'), 'bg')
     },
   }
 }
+

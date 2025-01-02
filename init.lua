@@ -41,20 +41,21 @@ end, { nargs = 0 })
 
 --require('plugins/bootstrap')
 require('plugins/packer')
---require('plugins/tokyodark')
+-- require('plugins/tokyodark')
 require('plugins/iceberg')
 -- Barra inferior ------
 require('plugins/feline')
+-- Buffer --------------
+require('plugins/bufferLine')
 -- Ortografia ----------
 require('plugins/vimPoliglot')
 require('plugins/vimtex')
 -- Visor ---------------
 require('plugins/treesitter')
-require('plugins/tree')
+require('plugins/Neotree')
 require('plugins/nvim-web-devicons')
-require('plugins/bufferLine')
 require('plugins/telescope')
--- require('plugins/markdownPreview')
+-- Markdown ------------
 require('plugins/peek')
 --require('plugins/harpoon')
 -- Autocompletado ------
@@ -74,7 +75,7 @@ require('templates')
 -- Marcar de etiquetas
 require('plugins/jumpTag')
 -- Errores ------------- fallos en su implementacion
--- require('plugins/trouble')
+require('plugins/trouble')
 -- Lo copiado o cortado en Neovim aparecerá en el clipboard externo
 vim.o.clipboard = "unnamedplus"
 -- IA ------------------
