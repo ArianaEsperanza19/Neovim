@@ -9,8 +9,8 @@ require('settings')
 require('keymaps')
 -- Temas
 --require('plugins/temas/iceberg')
--- require('plugins/temas/catppucin')
-require('plugins/temas/gruvbox')
+require('plugins/temas/catppucin')
+-- require('plugins/temas/gruvbox')
 
 vim.api.nvim_create_user_command('KeymapsGit', function()
   require('atajos/atajos_git').show_keymaps()
