@@ -10,7 +10,6 @@ vim.g.bookmark_auto_save_file = vim.fn.expand('~/.vim-bookmarks')
 -- Atajos para gestionar las marcas con vim-bookmarks
 vim.api.nvim_set_keymap('n', 'mm', ':BookmarkToggle<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'mi', ':BookmarkAnnotate<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', 'ma', ':BookmarkShowAll<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'mn', ':BookmarkNext<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'mp', ':BookmarkPrev<CR>', { noremap = true, silent = true })
 

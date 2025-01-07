@@ -42,7 +42,7 @@ M.show_keymaps = function()
     Bookmark Management with vim-bookmarks:
         mm: :BookmarkToggle<CR>
         mi: :BookmarkAnnotate<CR>
-        ma: :BookmarkShowAll<CR>
+        ma: : Telescope vim-bookmarks<CR>
         mn: :BookmarkNext<CR>
         mp: :BookmarkPrev<CR>
 
