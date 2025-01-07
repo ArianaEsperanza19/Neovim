@@ -83,6 +83,7 @@ require('templates')
 require('plugins/jumpTag')
 -- Errores ------------- fallos en su implementacion
 require('plugins/trouble')
+require('plugins/dap')
 -- Lo copiado o cortado en Neovim aparecerá en el clipboard externo
 vim.o.clipboard = "unnamedplus"
 -- IA ------------------
@@ -90,3 +91,5 @@ require('plugins/codeium')
 -- Git -------------
 require('plugins/gitsigns')
 require('plugins/git-fugitive')
+-- Terminal -----------
+require('plugins/toggleTerm')

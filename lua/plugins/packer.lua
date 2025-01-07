@@ -37,12 +37,14 @@ return require('packer').startup(function(use)
   use 'MattesGroeger/vim-bookmarks' -- Marcas
   use 'tpope/vim-abolish' -- Busqueda y sustitucion avanzada
   use 'harrisoncramer/jump-tag' -- Jump Tag
-  use {'folke/trouble.nvim', commit= '40c5317'}
+  -- Debug
+  use {'folke/trouble.nvim', commit= '40c5317'} -- Diagnostics
+  use 'mfussenegger/nvim-dap'
   -- Autocompletacion y snippets
   use 'neovim/nvim-lspconfig' -- LSP
-  use 'williamboman/mason.nvim'
-  use 'VonHeikemen/lsp-zero.nvim'
-  use 'williamboman/mason-lspconfig.nvim'
+  use 'williamboman/mason.nvim' -- Mason
+  use 'VonHeikemen/lsp-zero.nvim' -- LSP Zero
+  use 'williamboman/mason-lspconfig.nvim' -- Mason
   use { 'jose-elias-alvarez/null-ls.nvim', requires = { 'nvim-lua/plenary.nvim' } }
   use 'hrsh7th/nvim-cmp' -- Motor principal de autocompletado
   use 'hrsh7th/cmp-nvim-lsp' -- Integración con LSP
@@ -68,20 +70,12 @@ return require('packer').startup(function(use)
       require("nvim-autopairs").setup {}
     end
   }
+  use 'AndrewRadev/typewriter.vim' -- Sonido de maquina de escribir
   -- Git
   use 'tpope/vim-fugitive'
   use {'lewis6991/gitsigns.nvim', commit = ' 0b04035'}
-
-  -- Harpoon
-  use {
-    'theprimeagen/harpoon',
-    branch = 'harpoon2',
-    requires = {
-      'nvim-lua/plenary.nvim',
-      'nvim-telescope/telescope.nvim'
-    }
-  }
-
+  -- Terminal
+  use 'akinsho/toggleterm.nvim'
   -- Otros
   if packer_bootstrap then
     require('packer').sync()

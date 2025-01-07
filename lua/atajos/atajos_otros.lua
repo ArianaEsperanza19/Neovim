@@ -22,8 +22,7 @@ M.show_keymaps = function()
       z<ESC>: :q<CR> (Normal Mode)
 
     Open or Close Terminal:
-        Normal Mode <Ctrl+\>: :lua ToggleTerminal()<CR>
-        Terminal Mode <Ctrl+\>: <Ctrl+\><Ctrl+n>:lua ToggleTerminal()<CR>
+        Normal Mode <Ctrl+\>: :ToggleTerm()<CR>
 
     Accept Codeium Suggestions:
       <F1><F1>: codeium#Accept()

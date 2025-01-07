@@ -80,16 +80,16 @@ map('', '<left>', '<nop>', {noremap = true})
 map('', '<right>', '<nop>', {noremap = true})
 
 -- Función para abrir o cerrar la terminal
-function ToggleTerminal()
-  local term_buf = vim.fn.bufnr('term://*')
-  if term_buf ~= -1 then
-    -- Si la terminal está abierta, ciérrala
-    vim.api.nvim_buf_delete(term_buf, { force = true })
-  else
-    -- Si la terminal no está abierta, ábrela
-    vim.cmd('split | terminal')
-  end
-end
+-- function ToggleTerminal()
+--   local term_buf = vim.fn.bufnr('term://*')
+--   if term_buf ~= -1 then
+--     -- Si la terminal está abierta, ciérrala
+--     vim.api.nvim_buf_delete(term_buf, { force = true })
+--   else
+--     -- Si la terminal no está abierta, ábrela
+--     vim.cmd('split | terminal')
+--   end
+-- end
 
 -- Mapeo de teclas para Ctrl-\ para abrir o cerrar la terminal
 vim.api.nvim_set_keymap('n', '<C-\\>', ':lua ToggleTerminal()<CR>', { noremap = true, silent = true })
@@ -104,3 +104,5 @@ vim.api.nvim_set_keymap('n', 'z<left>', ':bprevious<CR>', { noremap = true, sile
 vim.api.nvim_set_keymap('n', 'z<down>', ':bd<CR>', { noremap = true, silent = true })
 -- Mapeo para cerrar el buffer actualmente abierto sin guardar cambios
 vim.api.nvim_set_keymap('n', 'zx<down>', ':bd!<CR>', { noremap = true, silent = true })
+-- Remapeo para seleccionar palabra
+-- vim.api.nvim_set_keymap("n", '.vw', '.vaw', {noremap = true, silent = true })
