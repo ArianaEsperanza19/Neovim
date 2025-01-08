@@ -29,5 +29,44 @@ require('toggleterm').setup {
   -- Otras opciones de configuración...
 }
 
+-- Define la función para ejecutar el archivo actual con detección de archivos .c
+function run_current_file()
+  local file_path = vim.api.nvim_buf_get_name(0)
+
+  -- Detecta la extensión del archivo
+  local file_extension = file_path:match("^.+(%..+)$")
+
+  local cmd
+  if file_extension == ".c" then
+    -- Si es un archivo .c, compilar y ejecutar
+    local file_name = vim.fn.fnamemodify(file_path, ':r')
+    cmd = string.format("gcc %s -o %s && %s", file_path, file_name, file_name)
+   elseif file_extension == ".php" then
+     -- Si es un archivo .php, ejecutarlo con el intérprete de php
+     -- local current_dir = vim.fn.getcwd()
+      cmd = string.format("php %s", file_path)
+  else
+    -- Para otros tipos de archivos, simplemente ejecutarlos
+    cmd = file_path
+  end
+
+  local Terminal = require('toggleterm.terminal').Terminal
+  local run_file = Terminal:new({
+    cmd = cmd,
+    direction = "float",
+    close_on_exit = false,
+    on_open = function(term)
+      vim.cmd("startinsert!")
+      -- Puedes agregar más configuraciones aquí si lo deseas
+    end,
+  })
+  run_file:toggle()
+end
+
 -- Mapeo para abrir y cerrar toggleTerm con Control + \
 vim.api.nvim_set_keymap('n', '<C-\\>', ':ToggleTerm<CR>', { noremap = true, silent = true })
+
+-- Mapeo para ejecutar el archivo actual con Leader + r
+vim.api.nvim_set_keymap('n', '<leader>r', ':lua run_current_file()<CR>', { noremap = true, silent = true })
+
+
