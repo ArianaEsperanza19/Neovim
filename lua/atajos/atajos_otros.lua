@@ -9,6 +9,9 @@ M.show_keymaps = function()
     Command to Clear Clipboard Contents:
        <leader>bp: :let @*="" | let @+="" | let @=""<CR>
 
+    Execute current file
+    <leader>rr
+
     Save Current File:
       <C-s>
       :w<CR> (Normal Mode)

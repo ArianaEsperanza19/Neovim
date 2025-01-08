@@ -43,11 +43,15 @@ function run_current_file()
     cmd = string.format("gcc %s -o %s && %s", file_path, file_name, file_name)
    elseif file_extension == ".php" then
      -- Si es un archivo .php, ejecutarlo con el intérprete de php
-     -- local current_dir = vim.fn.getcwd()
+      cmd = string.format("chmod 755 %s", file_path)
       cmd = string.format("php %s", file_path)
   else
     -- Para otros tipos de archivos, simplemente ejecutarlos
-    cmd = file_path
+    cmd = string.format('chmod 755 %s', file_path)
+    -- Bash .sh
+    if(file_extension == '.sh') then
+    cmd = string.format('bash %s', file_path)
+    end -- if Bash
   end
 
   local Terminal = require('toggleterm.terminal').Terminal
@@ -67,6 +71,6 @@ end
 vim.api.nvim_set_keymap('n', '<C-\\>', ':ToggleTerm<CR>', { noremap = true, silent = true })
 
 -- Mapeo para ejecutar el archivo actual con Leader + r
-vim.api.nvim_set_keymap('n', '<leader>r', ':lua run_current_file()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>rr', ':lua run_current_file()<CR>', { noremap = true, silent = true })
 
 

@@ -6,9 +6,9 @@ M.show_keymaps = function()
        <leader>h: :nohlsearch<CR>
 
     Go to end
-    <leader><right>: $
+    <leader>.: $
     Go to beginning
-    <leader><left>: ^
+    <leader>,: ^
 
     Ir a linea: nG
 
@@ -24,6 +24,17 @@ M.show_keymaps = function()
         z<down>: :bd<CR>
         -- Key mapping to close the current buffer without saving changes
         zx<down>: :bd!<CR>
+        -- Open vertical window
+        <C>wv
+        -- Open horizontal window
+        <C>ws
+        -- Close window
+        <C>wc
+        -- Move through windows
+        <C>wk : up
+        <C>wj : down
+        <C>wh : left
+        <C>wl : right
 
     File Manipulation in Neotree:
         -- Key mapping to open Neotree
