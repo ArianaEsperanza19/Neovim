@@ -105,5 +105,3 @@ vim.api.nvim_set_keymap('n', 'z<left>', ':bprevious<CR>', { noremap = true, sile
 vim.api.nvim_set_keymap('n', 'z<down>', ':bd<CR>', { noremap = true, silent = true })
 -- Mapeo para cerrar el buffer actualmente abierto sin guardar cambios
 vim.api.nvim_set_keymap('n', 'zx<down>', ':bd!<CR>', { noremap = true, silent = true })
--- Remapeo para seleccionar palabra
--- vim.api.nvim_set_keymap("n", '.vw', '.vaw', {noremap = true, silent = true })

@@ -53,10 +53,11 @@ telescope.setup({
 })
 
 -- Asigna la combinación de teclas <leader>sr a la nueva función de buscar y reemplazar
-vim.api.nvim_set_keymap('n', '<leader>rr', '<cmd>lua require("plugins.my_telescope").search_and_replace()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>ll', '<cmd>lua require("plugins.my_telescope").Search_and_replace()<CR>', { noremap = true, silent = true })
 
  -- Asigna la combinación de teclas <leader>sg a la nueva función de buscar y reemplazar globalmente
-vim.api.nvim_set_keymap('n', '<leader>r', '<cmd>lua require("plugins.my_telescope").search_and_replace_global()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>gg', '<cmd>lua require("plugins.my_telescope").Search_and_replace_global()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>rc', '<cmd>lua require("plugins.my_telescope").Search_and_replace_in_current_file()<CR>', { noremap = true, silent = true })
 
 -- Asigna la combinación de teclas ma al comando de Telescope para mostrar las marcas
 vim.keymap.set('n', 'ma', '<cmd>Telescope vim_bookmarks<CR>', { desc = 'Telescope bookmarks' })

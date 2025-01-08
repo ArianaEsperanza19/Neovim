@@ -17,9 +17,11 @@ M.show_spell_keymaps = function()
 
        Search and Replace by Telescope & Abolish:
        Search and Replace in a selected file
-       <leader>rr + <C-r>:
+       <leader>ll + <C-r>:
        Search and Remplace globally
-       <leader>r + <C-r>:
+       <leader>gg + <C-r>:
+       Search en Remplace in the current buffer:
+       <leader>rc + <C-r>:
 
        Search and Remplace in vanilla
        Replace all occurrences of 'old_word' with 'new_word'
