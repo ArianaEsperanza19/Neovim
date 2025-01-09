@@ -35,35 +35,6 @@ M.show_keymaps = function()
     <C>wj : down
     <C>wh : left
     <C>wl : right
-
-    File Manipulation in Neotree:
-        -- Key mapping to open Neotree
-        <leader>m: :NvimTreeToggle<CR>
-        -- Default shortcuts to manipulate files
-        a: Create a new file
-        d: Delete file
-        r: Rename file
-        c: Copy file
-        p: Paste file
-        x: Cut file
-        y: Copy file name
-        <C-n>: Navigate to the next node
-        <C-p>: Navigate to the previous node
-
-    Bookmark Management with vim-bookmarks:
-        mm: :BookmarkToggle<CR>
-        mi: :BookmarkAnnotate<CR>
-        ma: : Telescope vim-bookmarks<CR>
-        mn: :BookmarkNext<CR>
-        mp: :BookmarkPrev<CR>
-
-    Telescope
-    -- Open Telescope Navigator de archivos:
-        <leader>ff: :Telescope find_files<CR>
-    -- Open Telescope Searcher for text:
-        <leader>t: :Telescope live_grep<CR>
-    -- Open Telescope marks:
-        <leader>fm: :Telescope marks<CR>
   ]]
 
   local Terminal  = require('toggleterm.terminal').Terminal

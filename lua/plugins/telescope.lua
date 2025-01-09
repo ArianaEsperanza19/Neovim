@@ -8,7 +8,7 @@ local my_telescope = require('plugins.my_telescope')  -- Asegúrate de que el ar
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
 
 -- Asigna la combinación de teclas <leader>t al comando de Telescope para hacer búsqueda de texto en vivo (grep)
-vim.api.nvim_set_keymap('n', '<leader>t', ':Telescope live_grep<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>tt', ':Telescope live_grep<CR>', { noremap = true, silent = true })
 
 -- Asigna la combinación de teclas <leader>fb al comando de Telescope para listar y buscar entre buffers abiertos
 vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
@@ -52,11 +52,13 @@ telescope.setup({
   },
 })
 
--- Asigna la combinación de teclas <leader>sr a la nueva función de buscar y reemplazar
+-- Asigna la busqueda local de terminos para reemplazarlos
 vim.api.nvim_set_keymap('n', '<leader>ll', '<cmd>lua require("plugins.my_telescope").Search_and_replace()<CR>', { noremap = true, silent = true })
 
- -- Asigna la combinación de teclas <leader>sg a la nueva función de buscar y reemplazar globalmente
+-- Asigna la busqueda global de terminos para reemplazarlos
 vim.api.nvim_set_keymap('n', '<leader>gg', '<cmd>lua require("plugins.my_telescope").Search_and_replace_global()<CR>', { noremap = true, silent = true })
+
+-- Asigna la busqueda local para buscar y remplazarlos selectivamente
 vim.api.nvim_set_keymap('n', '<leader>rc', '<cmd>lua require("plugins.my_telescope").Search_and_replace_in_current_file()<CR>', { noremap = true, silent = true })
 
 -- Asigna la combinación de teclas ma al comando de Telescope para mostrar las marcas

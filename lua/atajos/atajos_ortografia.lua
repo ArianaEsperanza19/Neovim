@@ -3,7 +3,6 @@ local M = {}
 M.show_spell_keymaps = function()
   local spell_keymaps = [[
     Shortcuts and Commands for Spell Check:
-
       Spell Check:
        - `z=`: See suggestions for misspelled words
        - `zg`: Add word to the dictionary
@@ -15,13 +14,14 @@ M.show_spell_keymaps = function()
        - `]s`: Jump to the next misspelled word
        - `[s`: Jump to the previous misspelled word
 
-       Search and Replace by Telescope & Abolish:
-       Search and Replace in a selected file
-       <leader>ll + <C-r>:
-       Search and Remplace globally
-       <leader>gg + <C-r>:
-       Search en Remplace in the current buffer:
-       <leader>rc + <C-r>:
+      Commands to Change Spell Check Language:
+       - `:SpellLangEn`: Change spell check language to English
+       - `:SpellLangEs`: Change spell check language to Spanish
+       - `:DisableSpell`: Disable spell check
+
+      Useful Commands:
+       - `:set spell`: Enable spell check
+       - `:set nospell`: Disable spell check
 
        Search and Remplace in vanilla
        Replace all occurrences of 'old_word' with 'new_word'
@@ -32,15 +32,6 @@ M.show_spell_keymaps = function()
        :%s/\<old_word\>/new_word/g
        Replace 'old_word' as a whole word (ignore case)
        :%s/\<old_word\>/new_word/gi
-
-      Commands to Change Spell Check Language:
-       - `:SpellLangEn`: Change spell check language to English
-       - `:SpellLangEs`: Change spell check language to Spanish
-       - `:DisableSpell`: Disable spell check
-
-      Useful Commands:
-       - `:set spell`: Enable spell check
-       - `:set nospell`: Disable spell check
   ]]
 
   local Terminal  = require('toggleterm.terminal').Terminal

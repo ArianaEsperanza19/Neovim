@@ -23,7 +23,7 @@ require('plugins/vimPoliglot')
 require('plugins/vimtex')
 -- Visor ---------------
 require('plugins/treesitter')
-require('plugins/Neotree')
+require('plugins/neotree')
 require('plugins/nvim-web-devicons')
 require('plugins/telescope')
 -- Markdown ------------
@@ -66,11 +66,23 @@ vim.api.nvim_create_user_command('KmpEdicion', function()
   require('atajos/atajos_edicion').show_keymaps()
 end, { nargs = 0 })
 
-vim.api.nvim_create_user_command('KmpNavegacion', function()
+vim.api.nvim_create_user_command('KmpNav', function()
   require('atajos/atajos_navegacion').show_keymaps()
 end, { nargs = 0 })
 
-vim.api.nvim_create_user_command('KmpOrtografia', function()
+vim.api.nvim_create_user_command('KmpNavNeotree', function()
+  require('atajos/atajos_Neotree').show_keymaps()
+end, { nargs = 0 })
+
+vim.api.nvim_create_user_command('KmpNavTelescope', function ()
+  require('atajos/atajos_Telescope').show_keymaps()
+end, { nargs = 0 })
+
+vim.api.nvim_create_user_command('KmpNavMarks', function()
+  require('atajos/atajos_Bookmarks').show_keymaps()
+end, { nargs = 0 })
+
+vim.api.nvim_create_user_command('KmpSpell', function()
   require('atajos/atajos_ortografia').show_spell_keymaps()
 end, { nargs = 0 })
 
@@ -90,10 +102,11 @@ vim.api.nvim_create_user_command('KmpcMd', function()
   require('atajos/atajos_Md').show_keymaps()
 end, { nargs = 0 })
 
+vim.api.nvim_create_user_command('KmpDebug', function()
+  require('atajos/atajos_debug').show_keymaps()
+end, { nargs = 0 })
+
 vim.api.nvim_create_user_command('KmpOtros', function()
   require('atajos/atajos_otros').show_keymaps()
 end, { nargs = 0 })
 
-vim.api.nvim_create_user_command('KmpDebug', function()
-  require('atajos/atajos_debug').show_keymaps()
-end, { nargs = 0 })
