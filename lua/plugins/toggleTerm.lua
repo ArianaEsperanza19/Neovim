@@ -74,3 +74,41 @@ vim.api.nvim_set_keymap('n', '<C-\\>', ':ToggleTerm<CR>', { noremap = true, sile
 vim.api.nvim_set_keymap('n', '<leader>rr', ':lua run_current_file()<CR>', { noremap = true, silent = true })
 
 
+local Terminal  = require('toggleterm.terminal').Terminal
+
+-- Define una terminal dividida horizontalmente
+local split_h_term = Terminal:new({
+  direction = "horizontal",
+  size = 20,  -- Ajusta el tamaño de la terminal dividida horizontalmente
+  close_on_exit = true,
+})
+
+-- Define una terminal dividida verticalmente
+local split_v_term = Terminal:new({
+  direction = "vertical",
+   size = vim.o.columns * 0.10, -- Ajusta el tamaño de la terminal dividida verticalmente al 50% del ancho de la pantalla
+  close_on_exit = true,
+})
+
+-- Funciones para abrir las terminales
+function _SPLIT_H_TERM_TOGGLE()
+  split_h_term:toggle()
+end
+
+function _SPLIT_V_TERM_TOGGLE()
+  split_v_term:toggle()
+end
+
+-- Configura toggleterm
+require('toggleterm').setup {
+  open_mapping = [[<C-\>]], -- Mantén esta configuración para la terminal predeterminada
+  hide_numbers = true,
+  shade_filetypes = {},
+  autochdir = true,
+  -- Otras opciones de configuración...
+}
+
+-- Mapeos para abrir las diferentes terminales
+vim.api.nvim_set_keymap('n', '<leader>th', ':lua _SPLIT_H_TERM_TOGGLE()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>tv', ':lua _SPLIT_V_TERM_TOGGLE()<CR>', { noremap = true, silent = true })
+

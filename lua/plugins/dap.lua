@@ -15,7 +15,7 @@ dap.configurations.php = {
 require('dap').adapters.php = {
   type = 'executable',
   command = 'node',
-  args = {"~/.local/share/nvim/mason/packages/php-debug-adapter/php-debug-adapter"},
+  args = {"php-debug-adapter"},
 }
 
 -- Ver definicion

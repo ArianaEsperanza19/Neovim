@@ -264,6 +264,11 @@ _G.packer_plugins = {
     path = "/home/ariana/.local/share/nvim/site/pack/packer/start/vim-polyglot",
     url = "https://github.com/sheerun/vim-polyglot"
   },
+  ["vim-surround"] = {
+    loaded = true,
+    path = "/home/ariana/.local/share/nvim/site/pack/packer/start/vim-surround",
+    url = "https://github.com/tpope/vim-surround"
+  },
   vimtex = {
     loaded = true,
     path = "/home/ariana/.local/share/nvim/site/pack/packer/start/vimtex",

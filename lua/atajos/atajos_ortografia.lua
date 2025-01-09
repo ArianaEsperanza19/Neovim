@@ -43,7 +43,14 @@ M.show_spell_keymaps = function()
        - `:set nospell`: Disable spell check
   ]]
 
-  vim.api.nvim_echo({{spell_keymaps, "Normal"}}, true, {})
+  local Terminal  = require('toggleterm.terminal').Terminal
+  local keymap_term = Terminal:new({
+    cmd = "echo \""..spell_keymaps.."\" | less",
+    direction = "float",
+    hidden = true,
+  })
+  keymap_term:toggle()
+  -- vim.api.nvim_echo({{spell_keymaps, "Normal"}}, true, {})
 end
 
 return M

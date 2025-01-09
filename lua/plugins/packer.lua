@@ -61,6 +61,7 @@ return require('packer').startup(function(use)
     'Exafunction/codeium.vim',
     event = 'BufEnter'
   }
+  --use 'yetone/avante.nvim'
   use 'numToStr/Comment.nvim' -- Comentar con atajo
   -- Calidad de vida
   use {
@@ -70,6 +71,7 @@ return require('packer').startup(function(use)
       require("nvim-autopairs").setup {}
     end
   }
+  use 'tpope/vim-surround'
   use 'AndrewRadev/typewriter.vim' -- Sonido de maquina de escribir
   -- Git
   use 'tpope/vim-fugitive'
