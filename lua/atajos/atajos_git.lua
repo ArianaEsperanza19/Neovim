@@ -1,7 +1,6 @@
 local M = {}
 
-M.show_keymaps = function()
-  local keymaps = [[
+M.show_keymaps = function() local keymaps = [[
   -- Gitsigns
   -- Watch current hunk (enter to leave)
   <leader><F4>: :Gitsigns preview_hunk<CR>
@@ -10,6 +9,12 @@ M.show_keymaps = function()
   ]c: :Gitsigns next_hunk<CR>
   -- Previous hunk
   [c: :Gitsigns prev_hunk<CR>
+  -- Undo hunk
+  ]u: :Gitsigns undo_hunk<CR>
+  -- Undu stage hunk
+  :Gitsigns undo_stage_hunk<CR>
+  -- Highlight hunk
+  :Gitsigns toggle_linehl<CR>
 
   -- Show current line blame
   <F4>: :Gitsigns toggle_current_line_blame<CR>

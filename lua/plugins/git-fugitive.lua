@@ -9,6 +9,7 @@
 --   - :Gpull: descarga los cambios del repositorio remoto.
 --   - :Gmerge: realiza una fusión de ramas del repositorio.
 -- Git Fugitive se integra perfectamente con Neovim, permitiendo trabajar con Git de manera eficiente y sin tener que salir del editor.
+-- NOTA: ANTES DE USAR, CHEQUEAR LA RAMA ACTUAL
 vim.api.nvim_create_autocmd('User', {
   pattern = 'FugitiveCommand',
   callback = function()

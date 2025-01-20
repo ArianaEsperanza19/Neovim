@@ -47,7 +47,7 @@ ls.add_snippets("php", {
         i(2, "propiedad"),
         t({";", "    public function __construct("}),
         i(3, "$parametro"),
-        t({") {", "        $this->$propiedad"}),
+        t({") {", "        $this->propiedad"}),
         t(i(2)),
         t(" = "),
         t(i(3)),

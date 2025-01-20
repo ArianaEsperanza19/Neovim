@@ -56,6 +56,8 @@ require('gitsigns').setup {
     map('n', ']c', '<cmd>lua vim.schedule(function() if not vim.wo.diff then package.loaded.gitsigns.next_hunk() end end)<CR>', 'Ir al siguiente hunk')
 
     map('n', '[c', '<cmd>lua vim.schedule(function() if not vim.wo.diff then package.loaded.gitsigns.prev_hunk() end end)<CR>', 'Ir al hunk anterior')
+    -- Resetear hunk
+    map('n', ']u', ':Gitsigns reset_hunk<CR>', 'Resetear hunk')
 
     -- Ver el preview del hunk
     map('n', '<leader><F4>', ':Gitsigns preview_hunk<CR>', 'Ver preview del hunk')

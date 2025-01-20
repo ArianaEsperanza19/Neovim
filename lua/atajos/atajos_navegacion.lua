@@ -16,6 +16,10 @@ M.show_keymaps = function()
        <leader>j: gj
        <leader>k: gk
 
+    Go to top from visible scream
+    <Shift>h: Up
+    <Shift>l: Down
+
     Buffer Navigation:
     -- Key mapping to switch to the next buffer
     z<right>: :bnext<CR>
