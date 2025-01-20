@@ -4,35 +4,34 @@
 require("mason").setup({})
 
 -- Configurar LSP Zero manualmente
-local lsp_zero = require('lsp-zero')
+local lsp_zero = require("lsp-zero")
 
 -- Configurar servidores LSP
 lsp_zero.setup_servers({
-    'ts_ls',   -- TypeScript Server (cambiar de 'ts_ls' a 'tsserver')
-    'bashls',
-    'lua_ls',
-    'texlab',
-    "clangd",
-    "intelephense",
-    -- "html-lsp",
+	"ts_ls", -- TypeScript Server (cambiar de 'ts_ls' a 'tsserver')
+	"bashls",
+	"lua_ls",
+	"texlab",
+	"clangd",
+	"intelephense",
+	-- "html-lsp",
 })
 
 -- Integrar Mason con nvim-lspconfig
 require("mason-lspconfig").setup({
-    handlers = {lsp_zero.default_setup},
-    ensure_installed = { "pyright", "ts_ls", "bashls", "texlab", "lua_ls",
-    "clangd", "intelephense",  }
+	handlers = { lsp_zero.default_setup },
+	ensure_installed = { "pyright", "ts_ls", "bashls", "texlab", "lua_ls", "clangd", "intelephense" },
 })
 
 -- Configuración para habilitar la función de renombrado en todos los servidores de lenguaje
 require("mason-lspconfig").setup_handlers({
-  function(server_name)
-    require("lspconfig")[server_name].setup({
-      on_attach = function(client, bufnr)
-        client.server_capabilities.renameProvider = true
-      end,
-    })
-  end,
+	function(server_name)
+		require("lspconfig")[server_name].setup({
+			on_attach = function(client, bufnr)
+				client.server_capabilities.renameProvider = true
+			end,
+		})
+	end,
 })
 
 -- Formateadores
@@ -42,20 +41,28 @@ require("mason-lspconfig").setup_handlers({
 -- latexindent
 
 -- Configuración de TexLab
-local lspconfig = require('lspconfig')
-lspconfig.texlab.setup {
-  cmd = { 'texlab' },
-  on_attach = function(client, bufnr)
-    local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-    local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
-    buf_set_keymap('n', 'gD', '<Cmd>TexLabDiagnostics<CR>', { noremap = true, silent = true })
-    buf_set_keymap('n', 'gd', '<Cmd>TexLabGotoDefinition<CR>', { noremap = true, silent = true })
-    buf_set_keymap('n', 'K', '<Cmd>TexLabDocumentSymbols<CR>', { noremap = true, silent = true })
-  end,
-}
+local lspconfig = require("lspconfig")
+lspconfig.texlab.setup({
+	cmd = { "texlab" },
+	on_attach = function(client, bufnr)
+		local function buf_set_keymap(...)
+			vim.api.nvim_buf_set_keymap(bufnr, ...)
+		end
+		local function buf_set_option(...)
+			vim.api.nvim_buf_set_option(bufnr, ...)
+		end
+		buf_set_keymap("n", "gD", "<Cmd>TexLabDiagnostics<CR>", { noremap = true, silent = true })
+		buf_set_keymap("n", "gd", "<Cmd>TexLabGotoDefinition<CR>", { noremap = true, silent = true })
+		buf_set_keymap("n", "K", "<Cmd>TexLabDocumentSymbols<CR>", { noremap = true, silent = true })
+	end,
+})
 -- Requerir el módulo de diagnóstico
-require('diagnostics')
+require("diagnostics")
 
 -- Asignar la función para alternar diagnósticos a una combinación de teclas
-vim.api.nvim_set_keymap('n', '<leader>td', '<cmd>lua require("diagnostics").toggle_diagnostics()<CR>', { noremap = true, silent = true })
-
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>td",
+	'<cmd>lua require("diagnostics").toggle_diagnostics()<CR>',
+	{ noremap = true, silent = true }
+)

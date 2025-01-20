@@ -15,10 +15,10 @@ vim.api.nvim_set_keymap('n', '<leader><ESC>', ':x<CR>', { noremap = true, silent
 vim.api.nvim_set_keymap('n', 'z<ESC>', ':q<CR>', { noremap = true, silent = true })
 -- Asignar <leader>left para ir al principio de la línea
 vim.api.nvim_set_keymap('n', '<leader>,', '^', { noremap = true, silent = true })
-
+vim.api.nvim_set_keymap('v', '<leader>,', '^', { noremap = true, silent = true })
 -- Asignar <leader>right para ir al final de la línea
--- vim.api.nvim_set_keymap('n', '<leader><right>', '$', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>.', '$', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<leader>.', '$', { noremap = true, silent = true })
 
 
 -- Deshabilitar tabulación de Alt+i
