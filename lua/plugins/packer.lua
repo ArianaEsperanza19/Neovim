@@ -29,6 +29,8 @@ return require("packer").startup(function(use)
 		run = ":TSUpdate",
 	})
 	use("nvim-tree/nvim-web-devicons") -- Iconos
+	use("MunifTanjim/nui.nvim")
+	use("folke/noice.nvim")
 	-- Exploracion y Busqueda
 	use({
 		"nvim-telescope/telescope.nvim",

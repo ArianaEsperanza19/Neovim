@@ -41,6 +41,8 @@ require("plugins/treesitter")
 require("plugins/neotree")
 require("plugins/nvim-web-devicons")
 require("plugins/telescope")
+require("plugins/noice")
+require("plugins/animation") -- Animaciones
 -- Markdown ------------
 require("plugins/peek")
 --require('plugins/harpoon')

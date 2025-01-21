@@ -156,10 +156,20 @@ _G.packer_plugins = {
     path = "/home/ariana/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  ["noice.nvim"] = {
+    loaded = true,
+    path = "/home/ariana/.local/share/nvim/site/pack/packer/start/noice.nvim",
+    url = "https://github.com/folke/noice.nvim"
+  },
   ["none-ls.nvim"] = {
     loaded = true,
     path = "/home/ariana/.local/share/nvim/site/pack/packer/start/none-ls.nvim",
     url = "https://github.com/nvimtools/none-ls.nvim"
+  },
+  ["nui.nvim"] = {
+    loaded = true,
+    path = "/home/ariana/.local/share/nvim/site/pack/packer/start/nui.nvim",
+    url = "https://github.com/MunifTanjim/nui.nvim"
   },
   nvim = {
     loaded = true,
