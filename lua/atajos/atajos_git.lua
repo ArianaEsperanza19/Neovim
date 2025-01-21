@@ -10,9 +10,11 @@ M.show_keymaps = function()
   ]c: :Gitsigns next_hunk<CR>
   -- Previous hunk
   [c: :Gitsigns prev_hunk<CR>
+  -- Stage hunk
+  ]U: :Gitsigns stage_hunk<CR>
   -- Undo hunk
   ]u: :Gitsigns undo_hunk<CR>
-  -- Undu stage hunk
+  -- Undo stage hunk
   :Gitsigns undo_stage_hunk<CR>
   -- Highlight hunk
   :Gitsigns toggle_linehl<CR>
@@ -29,9 +31,13 @@ M.show_keymaps = function()
   -- Reset all changes of this buffer to last commit
   :Gitsigns reset_base<CR>
 
-  -- Show differences in buffer
-  <leader>wg: :Gvimdiffsplit <bratch o commit><CR>
+  -- Show differences in buffer to last commit
+  :Gvimdiffsplit<CR>
   :Gitsigns diffthis<CR>
+  -- Show differences in buffer to a specific commit or branch
+  <leader>wg: :Gvimdiffsplit <bratch o commit><CR>
+  -- Show differences in buffer to staged changes
+  :Gdiff<CR>
 
   ]]
 

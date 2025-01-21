@@ -33,6 +33,8 @@ require("gitsigns").setup({
 		)
 		-- Resetear hunk
 		map("n", "]u", ":Gitsigns reset_hunk<CR>", "Resetear hunk")
+		-- Enviar al stage
+		map("n", "]U", ":Gitsigns stage_hunk<CR>", "Enviar al stage")
 
 		-- Ver el preview del hunk
 		map("n", "<leader>sh", ":Gitsigns preview_hunk<CR>", "Ver preview del hunk")
