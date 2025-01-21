@@ -19,6 +19,10 @@ M.show_keymaps = function()
   -- Highlight hunk
   :Gitsigns toggle_linehl<CR>
 
+  -- Show commits and its diffs
+  :Gllog<CR>
+  -- Show commits & its diffs for a specific branch
+  :Gllog <branch><CR>
   -- Show current line blame
   <F4>: :Gitsigns toggle_current_line_blame<CR>
   -- Show the last commit
@@ -28,8 +32,6 @@ M.show_keymaps = function()
   :Gitsigns reset_buffer<CR>
   -- Reset all no confirmed changes to last commit
   :Gitsigns reset_buffer_index<CR>
-  -- Reset all changes of this buffer to last commit
-  :Gitsigns reset_base<CR>
 
   -- Show differences in buffer to last commit
   :Gvimdiffsplit<CR>
@@ -48,7 +50,6 @@ M.show_keymaps = function()
 		hidden = true,
 	})
 	keymap_term:toggle()
-	-- vim.api.nvim_echo({{keymaps, "Normal"}}, true, {})
 end
 
 return M

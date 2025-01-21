@@ -1,3 +1,18 @@
+--[[
+
+  ██╗███╗   ██╗██╗████████╗██╗     ██╗   ██╗ █████╗
+  ██║████╗  ██║██║╚══██╔══╝██║     ██║   ██║██╔══██╗
+  ██║██╔██╗ ██║██║   ██║   ██║     ██║   ██║███████║
+  ██║██║╚██╗██║██║   ██║   ██║     ██║   ██║██╔══██║
+  ██║██║ ╚████║██║   ██║██╗███████╗╚██████╔╝██║  ██║
+  ╚═╝╚═╝  ╚═══╝╚═╝   ╚═╝╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝
+
+--]]
+
+-----------------------------------------------------------
+-- Import Lua modules
+-----------------------------------------------------------
+
 -- init.lua -----------
 vim.opt.termguicolors = true
 vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>")
@@ -57,6 +72,8 @@ require("plugins/gitsigns")
 require("plugins/git-fugitive")
 -- Terminal -----------
 require("plugins/toggleTerm")
+-- Calidad de vida ----
+require("plugins/nvim-surround")
 -- Atajos ------------
 vim.api.nvim_create_user_command("KmpGit", function()
 	require("atajos/atajos_git").show_keymaps()

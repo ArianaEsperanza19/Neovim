@@ -24,6 +24,7 @@ vim.api.nvim_create_autocmd("BufReadCmd", {
 })
 
 vim.api.nvim_set_keymap("n", "<leader>wg", ":Gvdiffsplit<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>gd", ":Gllog<CR>", { noremap = true, silent = true })
 
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "fugitive",

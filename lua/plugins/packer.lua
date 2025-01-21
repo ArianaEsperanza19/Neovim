@@ -73,8 +73,7 @@ return require("packer").startup(function(use)
 			require("nvim-autopairs").setup({})
 		end,
 	})
-	use("tpope/vim-surround")
-	use("AndrewRadev/typewriter.vim") -- Sonido de maquina de escribir
+	use("kylechui/nvim-surround")
 	-- Git
 	use("tpope/vim-fugitive")
 	use({ "lewis6991/gitsigns.nvim", commit = " 0b04035" })

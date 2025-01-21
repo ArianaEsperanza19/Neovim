@@ -156,11 +156,6 @@ _G.packer_plugins = {
     path = "/home/ariana/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
-  ["none-ls-extras.nvim"] = {
-    loaded = true,
-    path = "/home/ariana/.local/share/nvim/site/pack/packer/start/none-ls-extras.nvim",
-    url = "https://github.com/nvimtools/none-ls-extras.nvim"
-  },
   ["none-ls.nvim"] = {
     loaded = true,
     path = "/home/ariana/.local/share/nvim/site/pack/packer/start/none-ls.nvim",
@@ -193,6 +188,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ariana/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-surround"] = {
+    loaded = true,
+    path = "/home/ariana/.local/share/nvim/site/pack/packer/start/nvim-surround",
+    url = "https://github.com/kylechui/nvim-surround"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
@@ -244,11 +244,6 @@ _G.packer_plugins = {
     path = "/home/ariana/.local/share/nvim/site/pack/packer/start/trouble.nvim",
     url = "https://github.com/folke/trouble.nvim"
   },
-  ["typewriter.vim"] = {
-    loaded = true,
-    path = "/home/ariana/.local/share/nvim/site/pack/packer/start/typewriter.vim",
-    url = "https://github.com/AndrewRadev/typewriter.vim"
-  },
   ["vim-abolish"] = {
     loaded = true,
     path = "/home/ariana/.local/share/nvim/site/pack/packer/start/vim-abolish",
@@ -268,11 +263,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ariana/.local/share/nvim/site/pack/packer/start/vim-polyglot",
     url = "https://github.com/sheerun/vim-polyglot"
-  },
-  ["vim-surround"] = {
-    loaded = true,
-    path = "/home/ariana/.local/share/nvim/site/pack/packer/start/vim-surround",
-    url = "https://github.com/tpope/vim-surround"
   },
   vimtex = {
     loaded = true,
