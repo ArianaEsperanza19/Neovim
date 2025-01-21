@@ -5,7 +5,6 @@ require("mason").setup({})
 
 -- Configurar LSP Zero manualmente
 local lsp_zero = require("lsp-zero")
-
 -- Configurar servidores LSP
 lsp_zero.setup_servers({
 	"ts_ls", -- TypeScript Server (cambiar de 'ts_ls' a 'tsserver')
@@ -14,7 +13,6 @@ lsp_zero.setup_servers({
 	"texlab",
 	"clangd",
 	"intelephense",
-	-- "html-lsp",
 })
 
 -- Integrar Mason con nvim-lspconfig
