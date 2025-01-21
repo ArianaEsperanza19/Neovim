@@ -19,14 +19,20 @@ M.show_keymaps = function()
 
   -- Show current line blame
   <F4>: :Gitsigns toggle_current_line_blame<CR>
+  -- Show the last commit
+  :Gitsigns blame_line<CR>
 
-  -- Reset current buffer
+  -- Reset current buffer to last commit
   :Gitsigns reset_buffer<CR>
-  -- Reset buffer to all
+  -- Reset all no confirmed changes to last commit
   :Gitsigns reset_buffer_index<CR>
+  -- Reset all changes of this buffer to last commit
+  :Gitsigns reset_base<CR>
+
   -- Show differences in buffer
+  <leader>wg: :Gvimdiffsplit <bratch o commit><CR>
   :Gitsigns diffthis<CR>
-  :Gvimdiffsplit <bratch o commit><CR>
+
   ]]
 
 	local Terminal = require("toggleterm.terminal").Terminal
