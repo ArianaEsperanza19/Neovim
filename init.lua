@@ -9,6 +9,7 @@
 
 --]]
 
+---- hola mundo
 -----------------------------------------------------------
 -- Import Lua modules
 -----------------------------------------------------------
@@ -76,6 +77,7 @@ require("plugins/git-fugitive")
 require("plugins/toggleTerm")
 -- Calidad de vida ----
 require("plugins/nvim-surround")
+require("plugins/undotree")
 -- Atajos ------------
 vim.api.nvim_create_user_command("KmpGit", function()
 	require("atajos/atajos_git").show_keymaps()

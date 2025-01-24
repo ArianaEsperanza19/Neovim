@@ -1,7 +1,7 @@
 local M = {}
 
 M.show_keymaps = function()
-  local keymaps = [[
+	local keymaps = [[
 
     Hide Warnings:
     <leader>td: <cmd>lua require("diagnostics").toggle_diagnostics()<CR>
@@ -11,6 +11,9 @@ M.show_keymaps = function()
 
     Execute current file
     <leader>rr
+
+    Show the undotree toggle
+    <leader>u: :UndotreeToggle<CR>
 
     Save Current File:
       <C-s>
@@ -34,14 +37,13 @@ M.show_keymaps = function()
 
   ]]
 
-  local Terminal  = require('toggleterm.terminal').Terminal
-  local keymap_term = Terminal:new({
-    cmd = "echo \""..keymaps.."\" | less",
-    direction = "float",
-    hidden = true,
-  })
-  keymap_term:toggle()
+	local Terminal = require("toggleterm.terminal").Terminal
+	local keymap_term = Terminal:new({
+		cmd = 'echo "' .. keymaps .. '" | less',
+		direction = "float",
+		hidden = true,
+	})
+	keymap_term:toggle()
 end
 
 return M
-

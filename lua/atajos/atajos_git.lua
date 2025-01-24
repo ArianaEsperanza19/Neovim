@@ -28,9 +28,9 @@ M.show_keymaps = function()
   -- Show the last commit
   :Gitsigns blame_line<CR>
 
-  -- Reset current buffer to last commit
-  :Gitsigns reset_buffer<CR>
   -- Reset all no confirmed changes to last commit
+  :Gitsigns reset_buffer<CR>
+  -- Reset current staging to last commit
   :Gitsigns reset_buffer_index<CR>
 
   -- Show differences in buffer to last commit
