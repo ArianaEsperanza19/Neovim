@@ -1,7 +1,7 @@
 local M = {}
 
 M.show_keymaps = function()
-  local keymaps = [[
+	local keymaps = [[
     Clear Search Highlight:
        <leader>h: :nohlsearch<CR>
 
@@ -28,28 +28,16 @@ M.show_keymaps = function()
     z<down>: :bd<CR>
     -- Key mapping to close the current buffer without saving changes
     zx<down>: :bd!<CR>
-    -- Open vertical window
-    <C>wv
-    -- Open horizontal window
-    <C>ws
-    -- Close window
-    <C>wc
-    -- Move through windows
-    <C>wk : up
-    <C>wj : down
-    <C>wh : left
-    <C>wl : right
   ]]
 
-  local Terminal  = require('toggleterm.terminal').Terminal
-  local keymap_term = Terminal:new({
-    cmd = "echo \""..keymaps.."\" | less",
-    direction = "float",
-    hidden = true,
-  })
-  keymap_term:toggle()
-  -- vim.api.nvim_echo({{keymaps, "Normal"}}, true, {})
+	local Terminal = require("toggleterm.terminal").Terminal
+	local keymap_term = Terminal:new({
+		cmd = 'echo "' .. keymaps .. '" | less',
+		direction = "float",
+		hidden = true,
+	})
+	keymap_term:toggle()
+	-- vim.api.nvim_echo({{keymaps, "Normal"}}, true, {})
 end
 
 return M
-

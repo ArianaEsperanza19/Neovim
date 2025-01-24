@@ -1,7 +1,7 @@
 local M = {}
 
 M.show_keymaps = function()
-  local keymaps = [[
+	local keymaps = [[
     Create New Lines Without Changing Mode:
       <leader>o: o<Esc>
       <leader>O: O<Esc>
@@ -15,20 +15,26 @@ M.show_keymaps = function()
     Paste Over Selection with Clipboard Content:
       <C-v>
 
+    Apply surrounds:
+    Visual mode: "S" + simbol
+    Visualline mode: "gS" + simbol
+    Delete & Change surrounds:
+    Delete surrounding: ]d + simbol
+    Change surrounding: ]f + simbol
+
     Format with LSP:
       <leader>F
 
   ]]
 
-  local Terminal  = require('toggleterm.terminal').Terminal
-  local keymap_term = Terminal:new({
-    cmd = "echo \""..keymaps.."\" | less",
-    direction = "float",
-    hidden = true,
-  })
-  keymap_term:toggle()
-  -- vim.api.nvim_echo({{keymaps, "Normal"}}, true, {})
+	local Terminal = require("toggleterm.terminal").Terminal
+	local keymap_term = Terminal:new({
+		cmd = 'echo "' .. keymaps .. '" | less',
+		direction = "float",
+		hidden = true,
+	})
+	keymap_term:toggle()
+	-- vim.api.nvim_echo({{keymaps, "Normal"}}, true, {})
 end
 
 return M
-

@@ -64,8 +64,6 @@ require("plugins/jumpTag")
 -- Errores ------------- fallos en su implementacion
 require("plugins/trouble")
 require("plugins/dap")
--- Lo copiado o cortado en Neovim aparecerá en el clipboard externo
-vim.o.clipboard = "unnamedplus"
 -- IA ------------------
 require("plugins/codeium")
 -- Git -------------
@@ -76,6 +74,10 @@ require("plugins/toggleTerm")
 -- Calidad de vida ----
 require("plugins/nvim-surround")
 require("plugins/undotree")
+-- Lo copiado o cortado en Neovim aparecerá en el clipboard externo
+vim.o.clipboard = "unnamedplus"
+-- Ocultar la barra de estado
+vim.opt.showmode = false
 -- Atajos ------------
 vim.api.nvim_create_user_command("KmpGit", function()
 	require("atajos/atajos_git").show_keymaps()
@@ -99,6 +101,10 @@ end, { nargs = 0 })
 
 vim.api.nvim_create_user_command("KmpNavMarks", function()
 	require("atajos/atajos_Bookmarks").show_keymaps()
+end, { nargs = 0 })
+
+vim.api.nvim_create_user_command("KmpNavWindows", function()
+	require("atajos/atajos_ventanas").show_keymaps()
 end, { nargs = 0 })
 
 vim.api.nvim_create_user_command("KmpSpell", function()
