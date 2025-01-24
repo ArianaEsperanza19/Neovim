@@ -9,7 +9,6 @@
 
 --]]
 
----- hola mundo
 -----------------------------------------------------------
 -- Import Lua modules
 -----------------------------------------------------------
@@ -39,7 +38,6 @@ require("plugins/treesitter")
 require("plugins/neotree")
 require("plugins/nvim-web-devicons")
 require("plugins/telescope")
-require("plugins/noice")
 require("plugins/animation") -- Animaciones
 -- Ortografia ----------
 require("plugins/vimPoliglot")
