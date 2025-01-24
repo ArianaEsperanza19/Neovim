@@ -33,9 +33,6 @@ require("plugins/packer")
 require("plugins/feline")
 -- Buffer --------------
 require("plugins/bufferLine")
--- Ortografia ----------
-require("plugins/vimPoliglot")
-require("plugins/vimtex")
 -- Visor ---------------
 require("plugins/treesitter")
 require("plugins/neotree")
@@ -43,6 +40,9 @@ require("plugins/nvim-web-devicons")
 require("plugins/telescope")
 require("plugins/noice")
 require("plugins/animation") -- Animaciones
+-- Ortografia ----------
+require("plugins/vimPoliglot")
+require("plugins/vimtex")
 -- Markdown ------------
 require("plugins/peek")
 --require('plugins/harpoon')

@@ -19,4 +19,7 @@ require("noice").setup({
 	keys = {
 		{ "j", "k", "next", "prev" },
 	},
+	-- Agregar opciones de ajuste de altura de la línea de comando
+	cmdheight = 2, -- Establece la altura de la línea de comando en 2 líneas
+	cmdwinheight = 10, -- Establece la altura de la ventana de comando en 10 líneas
 })
