@@ -76,6 +76,7 @@ return require("packer").startup(function(use)
 	})
 	use("kylechui/nvim-surround")
 	use("mbbill/undotree")
+	-- use("simeji/winresizer")
 	-- Git
 	use("tpope/vim-fugitive")
 	use({ "lewis6991/gitsigns.nvim", commit = " 0b04035" })
