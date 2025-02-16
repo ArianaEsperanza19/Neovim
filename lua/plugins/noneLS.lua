@@ -12,11 +12,13 @@ null_ls.setup({
 			args = { "--config", vim.fn.expand("~/.config/nvim/utils/prettier-config/.prettierrc.json") },
 		}),
 		null_ls.builtins.formatting.prettierd,
+		null_ls.builtins.formatting.blade_formatter,
 		null_ls.builtins.formatting.stylua,
 		null_ls.builtins.formatting.shfmt,
 		null_ls.builtins.formatting.markdownlint,
-		null_ls.builtins.formatting.phpcsfixer,
-		null_ls.builtins.diagnostics.phpcs,
+		null_ls.builtins.formatting.phpcsfixer.with({
+			extra_args = { "--rules=@PSR12" }, -- Aplica las reglas PSR-12
+		}),
 	},
 	on_attach = function(client, bufnr)
 		if client.supports_method("textDocument/formatting") then
