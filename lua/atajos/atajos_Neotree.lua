@@ -1,7 +1,7 @@
 local M = {}
 
 M.show_keymaps = function()
-  local keymaps = [[
+	local keymaps = [[
     File Manipulation in Neotree:
         -- Key mapping to open Neotree
         <leader>m: :NvimTreeToggle<CR>
@@ -13,20 +13,19 @@ M.show_keymaps = function()
         p: Paste file
         x: Cut file
         y: Copy file name
+        s: Open with system default app
         <C-n>: Navigate to the next node
         <C-p>: Navigate to the previous node
   ]]
 
-  local Terminal  = require('toggleterm.terminal').Terminal
-  local keymap_term = Terminal:new({
-    cmd = "echo \""..keymaps.."\" | less",
-    direction = "float",
-    hidden = true,
-  })
-  keymap_term:toggle()
-  -- vim.api.nvim_echo({{keymaps, "Normal"}}, true, {})
+	local Terminal = require("toggleterm.terminal").Terminal
+	local keymap_term = Terminal:new({
+		cmd = 'echo "' .. keymaps .. '" | less',
+		direction = "float",
+		hidden = true,
+	})
+	keymap_term:toggle()
+	-- vim.api.nvim_echo({{keymaps, "Normal"}}, true, {})
 end
 
 return M
-
-
