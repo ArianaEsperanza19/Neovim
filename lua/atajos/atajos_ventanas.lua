@@ -16,6 +16,7 @@ M.show_keymaps = function()
     -- Resize windows
     Resize mode : <C>e + movement
     movement : h, j, k, l
+    Command: WinResizerStartResize
   ]]
 
 	local Terminal = require("toggleterm.terminal").Terminal
