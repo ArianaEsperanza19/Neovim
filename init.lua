@@ -23,8 +23,8 @@ vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 require("settings")
 require("keymaps")
 -- Temas
---require('plugins/temas/iceberg')
-require("plugins/temas/catppucin")
+require("plugins/temas/iceberg")
+-- require("plugins/temas/catppucin")
 -- require('plugins/temas/gruvbox')
 
 --require('plugins/bootstrap')

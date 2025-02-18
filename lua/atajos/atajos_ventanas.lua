@@ -13,6 +13,9 @@ M.show_keymaps = function()
     <leader>wl : right
     <leader>wk : up
     <leader>wj : down
+    -- Resize windows
+    Resize mode : <C>e + movement
+    movement : h, j, k, l
   ]]
 
 	local Terminal = require("toggleterm.terminal").Terminal

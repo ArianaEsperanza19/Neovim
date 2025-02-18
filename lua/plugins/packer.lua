@@ -74,9 +74,10 @@ return require("packer").startup(function(use)
 			require("nvim-autopairs").setup({})
 		end,
 	})
-	use("kylechui/nvim-surround")
-	use("mbbill/undotree")
-	-- use("simeji/winresizer")
+	use({ "kylechui/nvim-surround", commit = "ec2dc76" }) -- Sustituciones
+	use("mbbill/undotree") -- Undo tree, arbol de historial
+	use("simeji/winresizer")
+	-- use("pogyomo/winresize.nvim")
 	-- Git
 	use("tpope/vim-fugitive")
 	use({ "lewis6991/gitsigns.nvim", commit = " 0b04035" })
