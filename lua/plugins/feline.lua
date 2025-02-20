@@ -95,7 +95,7 @@ table.insert(components.active[1], {
 			style = "bold",
 		}
 	end,
-	right_sep = " ",
+	right_sep = "",
 	left_sep = " ",
 })
 

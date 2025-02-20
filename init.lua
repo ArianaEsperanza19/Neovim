@@ -71,6 +71,8 @@ require("plugins/gitsigns")
 require("plugins/git-fugitive")
 -- Terminal -----------
 require("plugins/toggleTerm")
+-- DB ---------------
+require("plugins/vim-dbbod")
 -- Calidad de vida ----
 require("plugins/nvim-surround")
 require("plugins/undotree")

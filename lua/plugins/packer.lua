@@ -83,6 +83,10 @@ return require("packer").startup(function(use)
 	use({ "lewis6991/gitsigns.nvim", commit = " 0b04035" })
 	-- Terminal
 	use("akinsho/toggleterm.nvim")
+	-- DB
+	use("tpope/vim-dadbod")
+	use("kristijanhusak/vim-dadbod-ui")
+	use("kristijanhusak/vim-dadbod-completion")
 	-- Otros
 	if packer_bootstrap then
 		require("packer").sync()
