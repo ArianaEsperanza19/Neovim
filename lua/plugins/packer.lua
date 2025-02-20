@@ -77,7 +77,8 @@ return require("packer").startup(function(use)
 	use({ "kylechui/nvim-surround", commit = "ec2dc76" }) -- Sustituciones
 	use("mbbill/undotree") -- Undo tree, arbol de historial
 	use("simeji/winresizer")
-	-- use("pogyomo/winresize.nvim")
+	use("AckslD/nvim-neoclip.lua")
+
 	-- Git
 	use("tpope/vim-fugitive")
 	use({ "lewis6991/gitsigns.nvim", commit = " 0b04035" })

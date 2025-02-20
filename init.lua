@@ -71,11 +71,10 @@ require("plugins/gitsigns")
 require("plugins/git-fugitive")
 -- Terminal -----------
 require("plugins/toggleTerm")
--- DB ---------------
-require("plugins/vim-dbbod")
 -- Calidad de vida ----
 require("plugins/nvim-surround")
 require("plugins/undotree")
+require("plugins/neoclip")
 -- Lo copiado o cortado en Neovim aparecerá en el clipboard externo
 vim.o.clipboard = "unnamedplus"
 -- Ocultar la barra de estado
@@ -135,4 +134,8 @@ end, { nargs = 0 })
 
 vim.api.nvim_create_user_command("KmpOtros", function()
 	require("atajos/atajos_otros").show_keymaps()
+end, { nargs = 0 })
+
+vim.api.nvim_create_user_command("KmpClip", function()
+	require("atajos/atajos_clipboard").show_keymaps()
 end, { nargs = 0 })
