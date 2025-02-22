@@ -1,12 +1,3 @@
---[[
-    NeoClip es una herramienta para manejar el portapapeles en aplicaciones modernas, permitiendo copiar,
-    pegar y gestionar texto, imágenes u otros datos. Requiere:
-    - Entorno compatible (APIs del sistema operativo).
-    - Permisos adecuados para acceder al portapapeles.
-    - Compatibilidad con el lenguaje/framework utilizado.
-    - Dependencias opcionales para formatos avanzados.
-    Casos de uso: Copiar/pegar texto, historial de copias, manejo de imágenes o datos estructurados.
---]]
 local fn = vim.fn
 
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
@@ -31,6 +22,7 @@ return require("packer").startup(function(use)
 	-- Markdown
 	use({ "toppair/peek.nvim" })
 	-- Visor
+	use("goolord/alpha-nvim")
 	use("nvim-tree/nvim-tree.lua") -- Arbol
 	use({
 		"nvim-treesitter/nvim-treesitter",

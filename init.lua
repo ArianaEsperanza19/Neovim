@@ -15,7 +15,6 @@
 
 -- init.lua -----------
 vim.opt.termguicolors = true
-vim.keymap.set("n", "<leader>e", ":nohlsearch<CR>")
 vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
@@ -36,6 +35,7 @@ require("plugins/bufferLine")
 -- Visor ---------------
 require("plugins/treesitter")
 require("plugins/neotree")
+require("plugins.alphaNvim")
 require("plugins/nvim-web-devicons")
 require("plugins/telescope")
 require("plugins/animation") -- Animaciones
