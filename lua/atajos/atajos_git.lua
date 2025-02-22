@@ -29,9 +29,15 @@ M.show_keymaps = function()
   :Gitsigns blame_line<CR>
 
   -- Reset all no confirmed changes to last commit
+  -- (In the current buffer)
   :Gitsigns reset_buffer<CR>
   -- Reset current staging to last commit
   :Gitsigns reset_buffer_index<CR>
+  -- Reset all no confirmed changes to last commit
+  -- (In ALL files in the directory)
+  :Gitsigns reset<CR>
+  -- Resent AMBSOLUTLY ALL changes to last commit
+  :Greset --hard --mixed<CR>
 
   -- Show differences in buffer to last commit
   <leader>wg: :Gvimdiffsplit<CR>

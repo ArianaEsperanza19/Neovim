@@ -23,8 +23,8 @@ vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 require("settings")
 require("keymaps")
 -- Temas
-require("plugins/temas/iceberg")
--- require("plugins/temas/catppucin")
+-- require("plugins/temas/iceberg")
+require("plugins/temas/catppucin")
 -- require("plugins/temas/gruvbox")
 
 --require('plugins/bootstrap')
@@ -79,6 +79,8 @@ require("plugins/undotree")
 require("plugins/neoclip")
 require("plugins/ctrlsf")
 require("plugins/winresizer")
+-- Otros ---------------
+require("plugins/obsidian")
 -- Lo copiado o cortado en Neovim aparecerá en el clipboard externo
 vim.o.clipboard = "unnamedplus"
 -- Ocultar la barra de estado

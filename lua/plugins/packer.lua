@@ -97,6 +97,7 @@ return require("packer").startup(function(use)
 	use("kristijanhusak/vim-dadbod-ui")
 	use("kristijanhusak/vim-dadbod-completion")
 	-- Otros
+	use("epwalsh/obsidian.nvim")
 	if packer_bootstrap then
 		require("packer").sync()
 	end

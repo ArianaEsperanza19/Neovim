@@ -8,7 +8,6 @@
 -- La combinación de Git Fugitive y GitSigns proporciona una experiencia de usuario completa para trabajar con Git en Neovim, permitiendo gestionar y visualizar los cambios en el repositorio de manera eficiente.
 
 require("gitsigns").setup({
-	-- ... (resto de la configuración)
 
 	on_attach = function(bufnr)
 		local gs = package.loaded.gitsigns
