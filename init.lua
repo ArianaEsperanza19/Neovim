@@ -24,8 +24,8 @@ require("settings")
 require("keymaps")
 -- Temas
 -- require("plugins/temas/iceberg")
-require("plugins/temas/catppucin")
--- require("plugins/temas/gruvbox")
+-- require("plugins/temas/catppucin")
+require("plugins/temas/tokyoNight")
 
 --require('plugins/bootstrap')
 require("plugins/packer")

@@ -60,6 +60,10 @@ require("nvim-tree").setup({
 		open_file = {
 			quit_on_open = true, -- Cierra Neo-tree al abrir un archivo
 		},
+		change_dir = {
+			enable = true,
+			global = false,
+		},
 	},
 })
 

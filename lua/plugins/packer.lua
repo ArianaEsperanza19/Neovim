@@ -21,7 +21,7 @@ return require("packer").startup(function(use)
 	-- Temas
 	use("cocopon/iceberg.vim")
 	use("catppuccin/nvim")
-	use("ellisonleao/gruvbox.nvim")
+	use("folke/tokyonight.nvim")
 	-- Barra inferior, buffer y pestañas
 	use("feline-nvim/feline.nvim") -- Barra
 	use({ "akinsho/bufferline.nvim", tag = "*" })
@@ -72,7 +72,7 @@ return require("packer").startup(function(use)
 		"Exafunction/codeium.vim",
 		event = "BufEnter",
 	})
-	--use 'yetone/avante.nvim'
+	--use 'yetone/avante.nvim' -- no instalado, necesita neovim > 0.10.0
 	use("numToStr/Comment.nvim") -- Comentar con atajo
 	-- Calidad de vida
 	use({

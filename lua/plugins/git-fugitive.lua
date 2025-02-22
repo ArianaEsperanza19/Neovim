@@ -1,13 +1,5 @@
 -- Git Fugitive: una herramienta de Git integrada en Neovim que proporciona una interfaz de usuario para gestionar repositorios Git.
 -- Permite realizar operaciones de Git como commit, push, pull, merge, etc. directamente desde el editor.
--- También proporciona una serie de comandos y funciones para trabajar con Git, como:
---   - :Gstatus: muestra el estado del repositorio Git.
---   - :Glog: muestra el historial de commits del repositorio.
---   - :Gdiff: muestra las diferencias entre versiones del repositorio.
---   - :Gcommit: realiza un commit del repositorio.
---   - :Gpush: sube los cambios al repositorio remoto.
---   - :Gpull: descarga los cambios del repositorio remoto.
---   - :Gmerge: realiza una fusión de ramas del repositorio.
 -- Git Fugitive se integra perfectamente con Neovim, permitiendo trabajar con Git de manera eficiente y sin tener que salir del editor.
 -- NOTA: ANTES DE USAR, CHEQUEAR LA RAMA ACTUAL O EL COMMIT PODRIA QUEDAR DESACOPLADO
 vim.api.nvim_create_autocmd("User", {
