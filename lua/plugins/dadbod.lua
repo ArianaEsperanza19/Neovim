@@ -1,3 +1,7 @@
+-- This configuration integrates Dadbod with Neovim to manage and interact with databases seamlessly.
+-- It requires the Dadbod plugin and proper keymaps to execute database commands.
+-- Make sure to install Dadbod and set keymaps to effectively use this configuration.
+
 local cmp = require("cmp")
 
 cmp.setup({

@@ -14,6 +14,7 @@ M.show_keymaps = function()
     <leader>wk : up
     <leader>wj : down
     -- Resize windows
+    <leader>wr : Winresizer mode
     Resize mode : <C>e + movement
     movement : h, j, k, l
     Command: WinResizerStartResize

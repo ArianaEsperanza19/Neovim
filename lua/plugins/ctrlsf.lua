@@ -1,3 +1,7 @@
+-- This configuration integrates CtrlSF with Neovim to perform search and replace operations.
+-- It requires the CtrlSF plugin and proper keymaps to toggle the search panel and update buffers.
+-- Make sure to install CtrlSF and set keymaps to effectively use this configuration.
+
 require("keymaps")
 vim.g.ctrlsf_history = 1
 

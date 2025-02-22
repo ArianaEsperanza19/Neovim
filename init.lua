@@ -38,7 +38,6 @@ require("plugins/treesitter")
 require("plugins/neotree")
 require("plugins/nvim-web-devicons")
 require("plugins/telescope")
---require("plugins/vimBookMarks")
 require("plugins/animation") -- Animaciones
 -- Ortografia ----------
 require("plugins/vimPoliglot")
@@ -79,6 +78,7 @@ require("plugins/nvim-surround")
 require("plugins/undotree")
 require("plugins/neoclip")
 require("plugins/ctrlsf")
+require("plugins/winresizer")
 -- Lo copiado o cortado en Neovim aparecerá en el clipboard externo
 vim.o.clipboard = "unnamedplus"
 -- Ocultar la barra de estado
