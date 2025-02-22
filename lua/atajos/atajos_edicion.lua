@@ -15,7 +15,7 @@ M.show_keymaps = function()
     --Paste Over Selection with Clipboard Content:
       <C-v>
 
-    --Apply surrounds:
+    --Apply Surrounds:
     --Add surrounds in N mode:
     Current line: ]y + simbol
     Lines before and after the current line:
@@ -29,8 +29,17 @@ M.show_keymaps = function()
     Delete surrounding: ]d + simbol
     Change surrounding: ]f + simbol + new simbol
 
-    Format with LSP:
-      <leader>F
+    <C-x><C-f> : Directory Hint
+
+    -- Open Remplacing Toggle:
+    Command: CtrlSF Searching
+    Open panel : <leader>s
+    Open where is the searching : enter || o
+    Show in file : p
+    Show in file and explore there : P
+    Change:%s/old_word/new_word/g
+
+    Apply Formatter: <leader>F
 
   ]]
 

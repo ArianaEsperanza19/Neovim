@@ -38,6 +38,7 @@ require("plugins/treesitter")
 require("plugins/neotree")
 require("plugins/nvim-web-devicons")
 require("plugins/telescope")
+--require("plugins/vimBookMarks")
 require("plugins/animation") -- Animaciones
 -- Ortografia ----------
 require("plugins/vimPoliglot")
@@ -71,10 +72,13 @@ require("plugins/gitsigns")
 require("plugins/git-fugitive")
 -- Terminal -----------
 require("plugins/toggleTerm")
+-- DB -----------------
+require("plugins/dadbod")
 -- Calidad de vida ----
 require("plugins/nvim-surround")
 require("plugins/undotree")
 require("plugins/neoclip")
+require("plugins/ctrlsf")
 -- Lo copiado o cortado en Neovim aparecerá en el clipboard externo
 vim.o.clipboard = "unnamedplus"
 -- Ocultar la barra de estado
@@ -138,4 +142,8 @@ end, { nargs = 0 })
 
 vim.api.nvim_create_user_command("KmpClip", function()
 	require("atajos/atajos_clipboard").show_keymaps()
+end, { nargs = 0 })
+
+vim.api.nvim_create_user_command("KmpDB", function()
+	require("atajos/atajos_db").show_keymaps()
 end, { nargs = 0 })
