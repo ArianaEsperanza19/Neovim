@@ -30,7 +30,7 @@ vim.api.nvim_set_keymap("n", "<leader>wc", "<C-w>c", { noremap = true, silent = 
 -- Abrir vertical
 vim.api.nvim_set_keymap("n", "<leader>wv", "<C-w>v", { noremap = true, silent = true })
 -- Abrir horizontal
-vim.api.nvim_set_keymap("n", "<leader>wb", "<C-w>s", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>wh", "<C-w>s", { noremap = true, silent = true })
 
 -- Deshabilitar tabulación de Alt+i
 vim.api.nvim_set_keymap("i", "<C-i>", "<Nop>", { noremap = true, silent = true })
