@@ -55,7 +55,10 @@ function run_current_file()
 		-- Bash .sh
 		if file_extension == ".sh" then
 			cmd = string.format("bash %s", file_path)
-		end -- if Bash
+		end -- if bash
+		if file_extension == ".lua" then
+			cmd = string.format("lua %s", file_path)
+		end -- if bash
 	end
 
 	local Terminal = require("toggleterm.terminal").Terminal

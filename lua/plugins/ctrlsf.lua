@@ -2,38 +2,22 @@
 -- It requires the CtrlSF plugin and proper keymaps to toggle the search panel and update buffers.
 -- Make sure to install CtrlSF and set keymaps to effectively use this configuration.
 
-require("keymaps")
-vim.g.ctrlsf_history = 1
+-- Atajo de teclado para abrir/cerrar CtrlSF
+vim.api.nvim_set_keymap("n", "<leader>sr", ":CtrlSFToggle<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>ss", ":CtrlSF<CR>", { noremap = true, silent = true })
 
--- Función para alternar entre abrir y cerrar el panel de CtrlSF
-_G.toggle_ctrlsf = function()
-	if vim.g.ctrlsf_winnr ~= nil and vim.g.ctrlsf_winnr > 0 then
-		-- Si el panel está abierto, ciérralo y restablece el valor de la variable
-		vim.cmd("CtrlSFClose")
-		vim.g.ctrlsf_winnr = 0
-	else
-		-- Si el panel está cerrado, ábrelo y actualiza el valor de la variable
-		vim.cmd("CtrlSFOpen")
-		-- Esperar un momento para que el panel se abra completamente
-		vim.defer_fn(function()
-			vim.g.ctrlsf_winnr = vim.fn.bufwinid(vim.fn.bufname("CtrlSF"))
-		end, 100)
-	end
-end
+-- Configuración de CtrlSF
+vim.g.ctrlsf_auto_close = {
+	normal = false, -- No cerrar automáticamente en modo normal
+	insert = false, -- No cerrar automáticamente en modo inserción
+}
+vim.g.ctrlsf_auto_focus = {
+	at = "start", -- Enfocar la ventana de CtrlSF al abrir
+}
+vim.g.ctrlsf_populate_qflist = 1 -- Poblar la lista quickfix con los resultados de la búsqueda
+vim.g.ctrlsf_context = "-C 3" -- Mostrar 3 líneas de contexto alrededor de los resultados
+vim.g.ctrlsf_default_root = "cwd" -- Buscar desde el directorio actual
+vim.g.ctrlsf_regex_pattern = 1
 
--- Función para realizar una sustitución con CtrlSF y actualizar el buffer activo
-_G.replace_and_refresh = function()
-	-- Realiza la sustitución
-	vim.cmd("CtrlSFReplace")
-
-	-- Fuerza la actualización del buffer activo
-	vim.defer_fn(function()
-		vim.cmd("checktime")
-	end, 100)
-end
-
--- Asignar el atajo <leader>sr para alternar el panel
-vim.api.nvim_set_keymap("n", "<leader>sr", ":lua toggle_ctrlsf()<CR>", { noremap = true, silent = true })
-
--- Asignar el atajo <leader>rs para realizar la sustitución y actualizar el buffer
-vim.api.nvim_set_keymap("n", "<leader>rs", ":lua replace_and_refresh()<CR>", { noremap = true, silent = true })
+-- Habilitar autoread para que los buffers se actualicen automáticamente
+vim.o.autoread = true

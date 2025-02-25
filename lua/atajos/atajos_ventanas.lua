@@ -5,7 +5,7 @@ M.show_keymaps = function()
     -- Open vertical window
     <leader>wv
     -- Open horizontal window
-    <leader>wh
+    <leader>wb
     -- Close window
     <leader>wc
     -- Move through windows

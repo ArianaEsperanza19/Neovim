@@ -3,7 +3,7 @@ local M = {}
 M.show_keymaps = function()
 	local keymaps = [[
     Clear Search Highlight:
-       <leader>h: :nohlsearch<CR>
+    <leader>e: :nohlsearch<CR>
 
     Go to end
     <leader>.: $

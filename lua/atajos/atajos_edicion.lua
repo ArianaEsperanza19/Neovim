@@ -33,11 +33,14 @@ M.show_keymaps = function()
 
     -- Open Remplacing Toggle:
     Command: CtrlSF Searching
-    Open panel : <leader>s
+    <leader>ss : Search word bellow the cursor
+    Open panel : <leader>sr
     Open where is the searching : enter || o
-    Show in file : p
-    Show in file and explore there : P
+    Open searching in the right buffer: O
+    Show in preview : p
+    Show in preveiw and explore there : P
     Change:%s/old_word/new_word/g
+
 
     Apply Formatter: <leader>F
 
