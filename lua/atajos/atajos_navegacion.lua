@@ -10,6 +10,10 @@ M.show_keymaps = function()
     Go to beginning
     <leader>,: ^
 
+    Leap:
+    <leader>l: leap-forward
+    <leader>h: leap-backward
+
     Ir a linea: nG
     n = line number
 

@@ -27,6 +27,7 @@ require("plugins.alphaNvim")
 require("plugins/nvim-web-devicons")
 require("plugins/telescope")
 require("plugins/aerial")
+require("plugins.leap")
 -- Ortografia ----------
 require("plugins/vimPoliglot")
 require("plugins/vimtex")

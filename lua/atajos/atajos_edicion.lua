@@ -33,8 +33,8 @@ M.show_keymaps = function()
 
     -- Open Remplacing Toggle:
     Command: CtrlSF Searching
+    <leader>sr : Open panel
     <leader>ss : Search word bellow the cursor
-    Open panel : <leader>sr
     Open where is the searching : enter || o
     Open searching in the right buffer: O
     Show in preview : p
