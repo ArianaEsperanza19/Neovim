@@ -13,6 +13,8 @@ M.show_keymaps = function()
     Leap:
     <leader>l: leap-forward
     <leader>h: leap-backward
+    After the keymaps add the two characters you want to jump to.
+    Note: Include spaces.
 
     Ir a linea: nG
     n = line number

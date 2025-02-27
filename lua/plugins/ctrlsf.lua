@@ -18,6 +18,15 @@ vim.g.ctrlsf_populate_qflist = 1 -- Poblar la lista quickfix con los resultados 
 vim.g.ctrlsf_context = "-C 3" -- Mostrar 3 líneas de contexto alrededor de los resultados
 vim.g.ctrlsf_default_root = "cwd" -- Buscar desde el directorio actual
 vim.g.ctrlsf_regex_pattern = 1
+vim.g.ctrlsf_auto_preview = 1
+vim.g.ctrlsf_case_sensitive = "no"
+vim.g.ctrlsf_search_mode = "async"
+
+vim.g.ctrlsf_mapping = {
+	openb = { key = "O", suffix = "<C-w>p" },
+	next = "n",
+	prev = "N",
+}
 
 -- Habilitar autoread para que los buffers se actualicen automáticamente
 --vim.o.autoread = true
