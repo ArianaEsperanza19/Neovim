@@ -19,6 +19,7 @@ vim.api.nvim_set_keymap("v", "<leader>,", "^", { noremap = true, silent = true }
 -- Asignar <leader>right para ir al final de la línea
 vim.api.nvim_set_keymap("n", "<leader>.", "$", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("v", "<leader>.", "$", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-f>", "<C-u>", { noremap = true, silent = true })
 
 -- Movimiento entre ventanas con <leader>w + hjkl
 vim.api.nvim_set_keymap("n", "<leader>wh", "<C-w>h", { noremap = true, silent = true }) -- Ventana izquierda

@@ -20,4 +20,4 @@ vim.g.ctrlsf_default_root = "cwd" -- Buscar desde el directorio actual
 vim.g.ctrlsf_regex_pattern = 1
 
 -- Habilitar autoread para que los buffers se actualicen automáticamente
-vim.o.autoread = true
+--vim.o.autoread = true

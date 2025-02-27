@@ -1,15 +1,4 @@
---[[
-
-  ██╗███╗   ██╗██╗████████╗██╗     ██╗   ██╗ █████╗
-  ██║████╗  ██║██║╚══██╔══╝██║     ██║   ██║██╔══██╗
-  ██║██╔██╗ ██║██║   ██║   ██║     ██║   ██║███████║
-  ██║██║╚██╗██║██║   ██║   ██║     ██║   ██║██╔══██║
-  ██║██║ ╚████║██║   ██║██╗███████╗╚██████╔╝██║  ██║
-  ╚═╝╚═╝  ╚═══╝╚═╝   ╚═╝╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝
-
---]]
-
------------------------------------------------------------
+----------------------------------------------------------
 -- Import Lua modules
 -----------------------------------------------------------
 
@@ -19,15 +8,14 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 -- Archivos requeridos-
+require("plugins/packer")
 require("settings")
 require("keymaps")
 -- Temas
 -- require("plugins/temas/iceberg")
 -- require("plugins/temas/catppucin")
 require("plugins/temas/tokyoNight")
-
---require('plugins/bootstrap')
-require("plugins/packer")
+---------------------------------------
 -- Barra inferior ------
 require("plugins/feline")
 -- Buffer --------------
