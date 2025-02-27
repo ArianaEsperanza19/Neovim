@@ -107,6 +107,17 @@
 -- -- Toggle para abrir/cerrar la UI de dadbod y cerrar sus ventanas y buffers temporales
 -- vim.api.nvim_set_keymap("n", "<leader>db", ":lua Toggle_dadbod_ui()<CR>", { noremap = true, silent = true })
 
+-- Definir la URL de la base de datos como una variable global
+vim.g.laravel = "mysql://root@localhost:3306/laravel"
+
+-- Crear un comando personalizado para ejecutar un comando externo
+vim.api.nvim_create_user_command("DB", function(opts)
+	local command = opts.args
+	vim.fn.system(command)
+end, {
+	nargs = "*", -- Permite pasar argumentos
+})
+
 -- Configuración de cmp (autocompletado)
 local cmp = require("cmp")
 cmp.setup({

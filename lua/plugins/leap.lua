@@ -12,5 +12,5 @@ require("leap").opts.preview_filter = function(ch0, ch1, ch2)
 end
 
 -- Atajo para buscar en leap
-vim.api.nvim_set_keymap("n", "<C-l>", "<Plug>(leap-forward-to)", {})
-vim.api.nvim_set_keymap("n", "<C-h>", "<Plug>(leap-backward-to)", {})
+vim.api.nvim_set_keymap("n", "<C-j>", "<Plug>(leap-forward-to)", {})
+vim.api.nvim_set_keymap("n", "<C-k>", "<Plug>(leap-backward-to)", {})

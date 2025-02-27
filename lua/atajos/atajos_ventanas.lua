@@ -5,14 +5,14 @@ M.show_keymaps = function()
     -- Open vertical window
     <leader>wv
     -- Open horizontal window
-    <leader>wb
+    <leader>wh
     -- Close window
-    <leader>wc
+    <leader>we
     -- Move through windows
-    <leader>wh : left
-    <leader>wl : right
-    <leader>wk : up
-    <leader>wj : down
+    <C-h> : left
+    <C-l> : right
+    <C-k> : up
+    <C-j> : down
     -- Resize windows
     <leader>wr : Winresizer mode
     Resize mode : <C>e + movement
