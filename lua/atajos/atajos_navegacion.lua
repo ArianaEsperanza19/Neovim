@@ -3,7 +3,7 @@ local M = {}
 M.show_keymaps = function()
 	local keymaps = [[
     Clear Search Highlight:
-    <leader>e: :nohlsearch<CR>
+    <leader>h: :nohlsearch<CR>
 
     Go to end
     <leader>.: $
@@ -11,6 +11,7 @@ M.show_keymaps = function()
     <leader>,: ^
 
     Ir a linea: nG
+    n = line number
 
     Visual Navigation:
        <leader>j: gj
@@ -19,6 +20,9 @@ M.show_keymaps = function()
     Go to top from visible scream
     <Shift>h: Up
     <Shift>l: Down
+
+    Content table:
+    <leader>a
 
     Buffer Navigation:
     -- Key mapping to switch to the next buffer

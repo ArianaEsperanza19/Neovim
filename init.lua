@@ -26,7 +26,7 @@ require("plugins/neotree")
 require("plugins.alphaNvim")
 require("plugins/nvim-web-devicons")
 require("plugins/telescope")
-require("plugins/animation") -- Animaciones
+require("plugins/aerial")
 -- Ortografia ----------
 require("plugins/vimPoliglot")
 require("plugins/vimtex")

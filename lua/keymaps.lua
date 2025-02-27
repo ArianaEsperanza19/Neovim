@@ -1,7 +1,7 @@
 -- <leader>
 vim.g.mapleader = " "
 -- Desmarcar busqueda
-vim.keymap.set("n", "<leader>e", ":nohlsearch<CR>")
+vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>")
 -- Asignar un atajo para pegar el contenido del portapapeles sustituyendo la selección actual
 vim.api.nvim_set_keymap("v", "<C-v>", '"_dP', { noremap = true, silent = true })
 

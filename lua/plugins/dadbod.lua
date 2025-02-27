@@ -191,7 +191,7 @@ local function close_temporary_buffers_and_windows()
 			end
 		else
 			-- Si solo queda una ventana, limpiar su contenido en lugar de cerrarla
-			vim.api.nvim_command("enew") -- Crea un nuevo buffer vacío
+			-- vim.api.nvim_command("enew") -- Crea un nuevo buffer vacío
 			break
 		end
 	end

@@ -40,6 +40,7 @@ return require("packer").startup(function(use)
 	use("tom-pollak/telescope-marks.nvim") -- Marcas
 	use("MattesGroeger/vim-bookmarks") -- Marcas
 	use("harrisoncramer/jump-tag") -- Jump Tag
+	use("stevearc/aerial.nvim")
 	-- Debug
 	use({ "folke/trouble.nvim", commit = "40c5317" }) -- Diagnostics
 	use("mfussenegger/nvim-dap")
