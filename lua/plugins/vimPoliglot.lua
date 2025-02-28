@@ -90,9 +90,6 @@ function ChangeLang()
 
 	-- Establecer el nuevo idioma en 'spelllang'
 	vim.api.nvim_buf_set_option(0, "spelllang", next_lang)
-
-	-- Mostrar el idioma actual en la línea de comandos
-	print("Idioma cambiado a: " .. next_lang)
 end
 
 -- Asignar la función al atajo <F6>
