@@ -9,7 +9,7 @@ M.show_spell_keymaps = function()
        - `zug`: Undo add word to the dictionary
        - `zw`: Mark word as misspelled
        - `zuw`: Undo mark word as misspelled
-       - `<F6>`: Change to next language
+       - <F6>: Change to next language
 
       Next or Previous misspelled word:
        - `]z`: Jump to the next misspelled word
