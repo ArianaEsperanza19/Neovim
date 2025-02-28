@@ -1,7 +1,7 @@
 local M = {}
 
 M.show_keymaps = function()
-  local keymaps = [[
+	local keymaps = [[
     Special Characters in Insert Mode:
        Alt+n: ñ
        Alt+a: á
@@ -15,18 +15,17 @@ M.show_keymaps = function()
        Alt+u: ú
        Alt+Shift+u: Ú
        Ctrl+e: ĕ
-       F2+/: ¿
+       Ctrl+i: ¿
   ]]
 
-  local Terminal  = require('toggleterm.terminal').Terminal
-  local keymap_term = Terminal:new({
-    cmd = "echo \""..keymaps.."\" | less",
-    direction = "float",
-    hidden = true,
-  })
-  keymap_term:toggle()
-  -- vim.api.nvim_echo({{keymaps, "Normal"}}, true, {})
+	local Terminal = require("toggleterm.terminal").Terminal
+	local keymap_term = Terminal:new({
+		cmd = 'echo "' .. keymaps .. '" | less',
+		direction = "float",
+		hidden = true,
+	})
+	keymap_term:toggle()
+	-- vim.api.nvim_echo({{keymaps, "Normal"}}, true, {})
 end
 
 return M
-
