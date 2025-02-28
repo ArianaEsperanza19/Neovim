@@ -12,8 +12,8 @@ M.show_spell_keymaps = function()
        - `<F6>`: Change to next language
 
       Next or Previous misspelled word:
-       - `]s`: Jump to the next misspelled word
-       - `[s`: Jump to the previous misspelled word
+       - `]z`: Jump to the next misspelled word
+       - `[z`: Jump to the previous misspelled word
 
       Commands to Change Spell Check Language:
        - `:DisableSpell`: Disable spell check
