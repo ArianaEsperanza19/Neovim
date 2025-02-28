@@ -63,3 +63,37 @@ vim.api.nvim_set_keymap("n", "ĉ", "x", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "Ĉ", "X", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "ŝ", "q", { noremap = true, silent = true })
 -- ŝĝĉŭĥĵ
+
+-- Atajo para cambiar el idioma
+function ChangeLang()
+	-- Lista de idiomas disponibles
+	local langs = { "es", "en", "eo" }
+
+	-- Obtener el valor actual de 'spelllang' para el buffer actual
+	local current_lang = vim.api.nvim_buf_get_option(0, "spelllang")
+
+	-- Dividir 'spelllang' en caso de que tenga múltiples valores separados por comas
+	local current_lang_single = current_lang:match("^[^,]+") or "en"
+
+	-- Encontrar el siguiente idioma en la lista
+	local next_lang = nil
+	for i, lang in ipairs(langs) do
+		if lang == current_lang_single then
+			-- Si es el último idioma, volver al primero
+			next_lang = langs[i + 1] or langs[1]
+			break
+		end
+	end
+
+	-- Si no se encontró el idioma actual en la lista, usar el primero
+	next_lang = next_lang or langs[1]
+
+	-- Establecer el nuevo idioma en 'spelllang'
+	vim.api.nvim_buf_set_option(0, "spelllang", next_lang)
+
+	-- Mostrar el idioma actual en la línea de comandos
+	print("Idioma cambiado a: " .. next_lang)
+end
+
+-- Asignar la función al atajo <F6>
+vim.api.nvim_set_keymap("n", "<F6>", ":lua ChangeLang()<CR>", { noremap = true, silent = true })

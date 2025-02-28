@@ -27,6 +27,10 @@ M.show_keymaps = function()
   <F4>: :Gitsigns toggle_current_line_blame<CR>
   -- Show the last commit
   :Gitsigns blame_line<CR>
+	--- Telescope
+	:Telescope git_commits<CR> -- Show all commits
+	:Telescope git_bcommits<CR> -- Show current buffer commits
+	Note: If you have no commited changes, they will desapear when you go to other commit.
 
   -- Reset all no confirmed changes to last commit
   -- (In the current buffer)
