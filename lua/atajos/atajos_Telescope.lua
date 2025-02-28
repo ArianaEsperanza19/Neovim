@@ -2,13 +2,17 @@ local M = {}
 
 M.show_keymaps = function()
 	local keymaps = [[
-    Telescope
-    -- Open Navigator de archivos:
-        <leader>ff: :Telescope find_files<CR>
-    -- Open Searcher for text:
-        <leader>t: :Telescope live_grep<CR>
-    -- Open marks:
-        <leader>fm: :Telescope marks<CR>
+		Telescope
+	-- Open Navigator de archivos:
+		<leader>ff: :Telescope find_files<CR>
+	-- Open Searcher for text:
+		<leader>tt: :Telescope live_grep<CR>
+	-- Open Marks:
+		ma :Telescope marks<CR>
+	-- Open Messages:
+		<leader>te :NoiceTelescope<CR>
+	-- Open Clipboard:
+		<leader>cp: :Telescope registers<CR>
   ]]
 
 	local Terminal = require("toggleterm.terminal").Terminal

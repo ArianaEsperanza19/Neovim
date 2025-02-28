@@ -9,10 +9,10 @@ M.show_keymaps = function()
     -- Close window
     <leader>we
     -- Move through windows
-    <C-h> : left
-    <C-l> : right
-    <C-k> : up
-    <C-j> : down
+    <A-h> : left
+    <A-l> : right
+    <A-k> : up
+    <A-j> : down
     -- Resize windows
     <leader>wr : Winresizer mode
     Resize mode : <C>e + movement

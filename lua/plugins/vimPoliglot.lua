@@ -32,6 +32,7 @@ vim.api.nvim_create_user_command("DisableSpell", function()
 end, {})
 
 -- Para ver las sugerencias de las palabras mal escritas -> z= sobre la palabra en cuestion
+vim.api.nvim_set_keymap("n", "z=", ":Telescope spell_suggest<CR>", { noremap = true, silent = true })
 -- Para agregar palabra al diccionario -> zg sobre la palabra
 
 -- Atajos para Esperanto

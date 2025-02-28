@@ -1,3 +1,5 @@
+-- leap.nvim is a Neovim plugin that allows for fast and efficient navigation by jumping to visible targets in the buffer.
+
 -- Define equivalence classes for brackets and quotes, in addition to
 -- the default whitespace group:
 require("leap").opts.equivalence_classes = { " \t\r\n", "([{", ")]}", "'\"`" }

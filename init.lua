@@ -60,6 +60,7 @@ require("plugins/gitsigns")
 require("plugins/git-fugitive")
 -- Terminal -----------
 require("plugins/toggleTerm")
+require("plugins.noice")
 -- DB -----------------
 require("plugins/dadbod")
 -- Calidad de vida ----

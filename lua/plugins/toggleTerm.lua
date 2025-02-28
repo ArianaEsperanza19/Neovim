@@ -90,11 +90,11 @@ local split_h_term = Terminal:new({
 })
 
 -- Define una terminal dividida verticalmente
-local split_v_term = Terminal:new({
-	direction = "vertical",
-	size = vim.o.columns * 0.10, -- Ajusta el tamaño de la terminal dividida verticalmente al 50% del ancho de la pantalla
-	close_on_exit = true,
-})
+-- local split_v_term = Terminal:new({
+-- 	direction = "vertical",
+-- 	size = vim.o.columns * 0.10, -- Ajusta el tamaño de la terminal dividida verticalmente al 50% del ancho de la pantalla
+-- 	close_on_exit = true,
+-- })
 
 -- Funciones para abrir las terminales
 function _SPLIT_H_TERM_TOGGLE()
@@ -115,5 +115,34 @@ require("toggleterm").setup({
 })
 
 -- Mapeos para abrir las diferentes terminales
-vim.api.nvim_set_keymap("n", "<leader>th", ":lua _SPLIT_H_TERM_TOGGLE()<CR>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "<leader>th", ":lua _SPLIT_H_TERM_TOGGLE()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>tv", ":lua _SPLIT_V_TERM_TOGGLE()<CR>", { noremap = true, silent = true })
+
+-- Función para alternar la terminal
+function CMDTerminal()
+	-- Verificar si estamos en un buffer de terminal
+	if vim.bo.buftype == "terminal" then
+		-- Si estamos en una terminal, salir del modo inserción
+		vim.cmd("stopinsert")
+	else
+		-- Si no estamos en una terminal, crear una nueva terminal en el buffer actual
+		vim.cmd("enew | terminal")
+	end
+end
+
+-- Función para cerrar el buffer si estamos en una terminal
+function CloseTerminalIfActive()
+	-- Verificar si estamos en un buffer de terminal
+	if vim.bo.buftype == "terminal" then
+		-- Cerrar el buffer actual
+		vim.cmd("bdelete!")
+	else
+		-- Si no estamos en una terminal, simplemente salir del modo inserción
+		vim.cmd("stopinsert")
+	end
+end
+
+-- Terminal vanilla en un buffer
+vim.api.nvim_set_keymap("n", "<leader>\\", ":lua CMDTerminal()<CR>", { noremap = true, silent = true })
+-- Mapeo para cerrar el buffer de la terminal con <Esc>
+vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>:lua CloseTerminalIfActive()<CR>", { noremap = true, silent = true })

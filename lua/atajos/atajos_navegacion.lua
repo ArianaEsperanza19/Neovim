@@ -11,6 +11,7 @@ M.show_keymaps = function()
     <leader>,: ^
 
     Leap:
+    <enter> : leap forward to character under cursor
     <C-j> : leap-forward
     <C-k> : leap-backward
     After the keymaps add the two characters you want to jump to.

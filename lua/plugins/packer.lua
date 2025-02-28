@@ -86,6 +86,7 @@ return require("packer").startup(function(use)
 	use({ "lewis6991/gitsigns.nvim", commit = " 0b04035" })
 	-- Terminal
 	use("akinsho/toggleterm.nvim")
+	use("folke/noice.nvim")
 	-- DB
 	use("tpope/vim-dadbod")
 	use("kristijanhusak/vim-dadbod-ui")
