@@ -37,8 +37,14 @@ vim.api.nvim_set_keymap("n", "z=", ":Telescope spell_suggest<CR>", { noremap = t
 
 -- Atajos para Esperanto
 -- Mover al siguiente error ortográfico
-vim.api.nvim_set_keymap("n", "ĵs", "[z", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "ĥs", "]z", { noremap = true, silent = true })
+-- Mapeo para el siguiente error ortográfico con <leader>
+vim.keymap.set("n", "]z", "]s", { noremap = false, silent = true })
+vim.keymap.set("n", "[z", "[s", { noremap = false, silent = true })
+vim.api.nvim_set_keymap("n", "ĵz", "[s", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "ĥz", "]s", { noremap = true, silent = true })
+-- Deshabilitar los atajos predeterminados
+vim.keymap.set("n", "]s", "<Nop>", { noremap = true, silent = true })
+vim.keymap.set("n", "[s", "<Nop>", { noremap = true, silent = true })
 
 -- Eliminar o cortar
 vim.api.nvim_set_keymap("n", "ĝ", "w", { noremap = true, silent = true })
