@@ -35,11 +35,10 @@ end, {})
 vim.api.nvim_set_keymap("n", "z=", ":Telescope spell_suggest<CR>", { noremap = true, silent = true })
 -- Para agregar palabra al diccionario -> zg sobre la palabra
 
--- Atajos para Esperanto
--- Mover al siguiente error ortográfico
--- Mapeo para el siguiente error ortográfico con <leader>
+-- Mapeo para el siguiente/previo error ortográfico con <leader>
 vim.keymap.set("n", "]z", "]s", { noremap = false, silent = true })
 vim.keymap.set("n", "[z", "[s", { noremap = false, silent = true })
+-- Atajos para Esperanto
 vim.api.nvim_set_keymap("n", "ĵz", "[s", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "ĥz", "]s", { noremap = true, silent = true })
 -- Deshabilitar los atajos predeterminados
