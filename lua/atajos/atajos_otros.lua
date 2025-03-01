@@ -14,6 +14,7 @@ M.show_keymaps = function()
 
     Show the undotree toggle
     <leader>u: :UndotreeToggle<CR>
+    Directorio de archivos del árbol: ~/.nvim/undo
 
     Save Current File:
       <C-s>
