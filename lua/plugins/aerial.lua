@@ -1,4 +1,9 @@
+--[[
+The Aerial.nvim  plugin for Neovim provides a code outline window that allows users to efficiently skim through and navigate complex code structures. It is designed to offer a clean, intuitive, and fast way to explore the hierarchy of symbols in your code, such as functions, classes, and variables, enhancing code readability and navigation
+]]
+--
 require("aerial").setup({
+	backends = { "lsp", "treesitter", "markdown" }, -- Excluye "php"
 	-- optionally use on_attach to set keymaps when aerial has attached to a buffer
 	on_attach = function(bufnr)
 		-- Jump forwards/backwards with '{' and '}'

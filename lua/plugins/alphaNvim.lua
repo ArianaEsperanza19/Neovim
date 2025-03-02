@@ -42,6 +42,11 @@ dashboard.section.buttons.val = {
 -- Configuración adicional
 dashboard.config.layout[1].val = 8 -- Ajustar el espacio superior
 dashboard.config.opts.noautocmd = true
-
+-- Función para obtener la versión de Neovim
+local function get_nvim_version()
+	return vim.fn.system("nvim --version | head -n 1"):gsub("\n", "")
+end
+-- Agrega la versión de Neovim al footer
+dashboard.section.footer.val = "Version: " .. get_nvim_version()
 -- Activar alpha-nvim
 alpha.setup(dashboard.config)

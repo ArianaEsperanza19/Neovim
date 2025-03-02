@@ -36,7 +36,7 @@ require("gitsigns").setup({
 		map("n", "]U", ":Gitsigns stage_hunk<CR>", "Enviar al stage")
 
 		-- Ver el preview del hunk
-		map("n", "<leader>sh", ":Gitsigns preview_hunk<CR>", "Ver preview del hunk")
+		-- map("n", "<leader>sh", ":Gitsigns preview_hunk<CR>", "Ver preview del hunk")
 		-- Habilitar/Desabilitar ver el blame del hunk actual
 		map("n", "<F4>", ":Gitsigns toggle_current_line_blame<CR>", "Ver blame del hunk")
 	end,

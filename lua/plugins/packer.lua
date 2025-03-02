@@ -1,3 +1,11 @@
+--NVIM v0.9.5
+-- Problemas de compatibilidad con:
+-- vimtex
+-- nvim-treesitter
+-- luasnip
+-- trouble
+-- surround
+-- gitsigns
 local fn = vim.fn
 
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
@@ -86,6 +94,7 @@ return require("packer").startup(function(use)
 	use({ "lewis6991/gitsigns.nvim", commit = " 0b04035" })
 	-- Terminal
 	use("akinsho/toggleterm.nvim")
+	use("folke/snacks.nvim")
 	use("folke/noice.nvim")
 	-- DB
 	use("tpope/vim-dadbod")

@@ -3,6 +3,7 @@
 -----------------------------------------------------------
 -- init.lua -----------
 vim.opt.termguicolors = true
+vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 -- Archivos requeridos-
@@ -58,6 +59,7 @@ require("plugins.gitsigns")
 require("plugins.git-fugitive")
 -- Terminal -----------
 require("plugins.toggleTerm")
+require("plugins.snacks")
 require("plugins.noice")
 -- DB -----------------
 require("plugins.dadbod")
