@@ -4,7 +4,7 @@ M.show_keymaps = function()
 	local keymaps = [[
   -- Gitsigns
   -- Watch current hunk (enter to leave)
-  <leader>sh: :Gitsigns preview_hunk<CR>
+  <leader>gb: :Gitsigns preview_hunk<CR>
 
   -- Next hunk
   ]c: :Gitsigns next_hunk<CR>

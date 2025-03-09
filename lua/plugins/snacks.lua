@@ -1,3 +1,5 @@
+-- The snacks.nvim  plugin enhances Neovim by providing seamless Git integration, allowing users to quickly access features like git blame for specific lines . It simplifies retrieving commit details, such as hashes, authors, and dates, directly within the editor, boosting productivity without leaving the workspace .
+
 require("snacks").setup({
 	-- your configuration comes here
 	-- or leave it empty to use the default settings
@@ -16,6 +18,6 @@ require("snacks").setup({
 	words = { enabled = true },
 })
 
-vim.keymap.set("n", "<leader>sh", function()
+vim.keymap.set("n", "<leader>gb", function()
 	require("snacks.git").blame_line()
 end, { desc = "Git Blame Line" })

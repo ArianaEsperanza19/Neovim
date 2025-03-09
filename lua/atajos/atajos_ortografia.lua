@@ -21,6 +21,8 @@ M.show_spell_keymaps = function()
        - `:SpellLangEs`: Change spell check language to Spanish
        - `:SpellLangEo`: Change spell check language to Esperanto
 
+      <leader>d : Search current word in diccionary
+
       Useful Commands:
        - `:set spell`: Enable spell check
        - `:set nospell`: Disable spell check

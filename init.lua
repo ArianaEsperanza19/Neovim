@@ -6,6 +6,7 @@ vim.opt.termguicolors = true
 vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+vim.keymap.set("i", "<C-m>", "<Esc>") -- Remapeo de esc a control + m
 -- Archivos requeridos-
 require("plugins.packer")
 require("settings")
@@ -30,6 +31,7 @@ require("plugins.leap")
 -- Ortografia ----------
 require("plugins.vimPoliglot")
 require("plugins.vimtex")
+require("plugins.dict")
 -- Markdown ------------
 require("plugins.peek")
 --require('plugins.harpoon')

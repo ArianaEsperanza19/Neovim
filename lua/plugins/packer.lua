@@ -27,6 +27,7 @@ return require("packer").startup(function(use)
 	-- Ortografia
 	use("sheerun/vim-polyglot") -- Corrector
 	use({ "lervag/vimtex", commit = "cb94dd3e23cd983082bd01853347b9b1347719e7" }) -- Latex
+	use("jalvesaq/dict.nvim")
 	-- Markdown
 	use({ "toppair/peek.nvim" })
 	-- Visor
