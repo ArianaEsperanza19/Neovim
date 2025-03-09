@@ -110,9 +110,9 @@ vim.api.nvim_set_keymap("t", "<C-\\>", "<C-\\><C-n>:lua ToggleTerminal()<CR>", {
 
 -- Moverse en el buffer
 -- Cambiar al siguiente buffer con z + flecha derecha
-vim.api.nvim_set_keymap("n", "z<right>", ":bnext<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "zk", ":bnext<CR>", { noremap = true, silent = true })
 -- Cambiar al buffer anterior con z + flecha izquierda
-vim.api.nvim_set_keymap("n", "z<left>", ":bprevious<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "zj", ":bprevious<CR>", { noremap = true, silent = true })
 -- Mapeo para cerrar el buffer actualmente abierto
 vim.api.nvim_set_keymap("n", "z<down>", ":bd<CR>", { noremap = true, silent = true })
 -- Mapeo para cerrar el buffer actualmente abierto sin guardar cambios

@@ -33,8 +33,8 @@ M.show_keymaps = function()
 
     Buffer Navigation:
     -- Key mapping to switch to the next buffer
-    z<right>: :bnext<CR>
-    z<left>: :bprevious<CR>
+    zk: :bnext<CR>
+    zj: :bprevious<CR>
     -- Key mapping to close the current buffer with saving changes
     z<down>: :bd<CR>
     -- Key mapping to close the current buffer without saving changes
