@@ -114,6 +114,6 @@ vim.api.nvim_set_keymap("n", "zk", ":bnext<CR>", { noremap = true, silent = true
 -- Cambiar al buffer anterior con z + flecha izquierda
 vim.api.nvim_set_keymap("n", "zj", ":bprevious<CR>", { noremap = true, silent = true })
 -- Mapeo para cerrar el buffer actualmente abierto
-vim.api.nvim_set_keymap("n", "z<down>", ":bd<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>e", ":bd<CR>", { noremap = true, silent = true })
 -- Mapeo para cerrar el buffer actualmente abierto sin guardar cambios
 vim.api.nvim_set_keymap("n", "zx<down>", ":bd!<CR>", { noremap = true, silent = true })

@@ -1,11 +1,8 @@
---NVIM v0.9.5
+--NVIM v0.10.4
 -- Problemas de compatibilidad con:
--- vimtex
 -- nvim-treesitter
 -- luasnip
 -- trouble
--- surround
--- gitsigns
 local fn = vim.fn
 
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
@@ -26,7 +23,7 @@ return require("packer").startup(function(use)
 	use({ "akinsho/bufferline.nvim", tag = "*" })
 	-- Ortografia
 	use("sheerun/vim-polyglot") -- Corrector
-	use({ "lervag/vimtex", commit = "cb94dd3e23cd983082bd01853347b9b1347719e7" }) -- Latex
+	use({ "lervag/vimtex" }) -- Latex
 	use("jalvesaq/dict.nvim")
 	-- Markdown
 	use({ "toppair/peek.nvim" })
@@ -35,7 +32,6 @@ return require("packer").startup(function(use)
 	use("nvim-tree/nvim-tree.lua") -- Arbol
 	use({
 		"nvim-treesitter/nvim-treesitter",
-		commit = "f197a15b0d1e8d555263af20add51450e5aaa1f0",
 		run = ":TSUpdate",
 	})
 	use("nvim-tree/nvim-web-devicons") -- Iconos
@@ -52,7 +48,7 @@ return require("packer").startup(function(use)
 	use("stevearc/aerial.nvim")
 	use("ggandor/leap.nvim")
 	-- Debug
-	use({ "folke/trouble.nvim", commit = "40c5317" }) -- Diagnostics
+	use({ "folke/trouble.nvim" }) -- Diagnostics
 	use("mfussenegger/nvim-dap")
 	-- Autocompletacion y snippets
 	use("neovim/nvim-lspconfig") -- LSP
@@ -67,7 +63,6 @@ return require("packer").startup(function(use)
 	use("saadparwaiz1/cmp_luasnip") -- Fuente para LuaSnip
 	use({
 		"L3MON4D3/LuaSnip",
-		commit = "85c9b3edaa6f5a75bb1d24dc180c15eaea77ad9d",
 		run = "make install_jsregexp", -- Instalar jsregexp (opcional)
 	})
 	-- IA
@@ -85,14 +80,14 @@ return require("packer").startup(function(use)
 			require("nvim-autopairs").setup({})
 		end,
 	})
-	use({ "kylechui/nvim-surround", commit = "ec2dc76" }) -- Sustituciones
+	use({ "kylechui/nvim-surround" }) -- Sustituciones
 	use("mbbill/undotree") -- Undo tree, arbol de historial
 	use("simeji/winresizer")
 	use("AckslD/nvim-neoclip.lua")
 	use("dyng/ctrlsf.vim")
 	-- Git
 	use("tpope/vim-fugitive")
-	use({ "lewis6991/gitsigns.nvim", commit = " 0b04035" })
+	use({ "lewis6991/gitsigns.nvim" })
 	-- Terminal
 	use("akinsho/toggleterm.nvim")
 	use("folke/snacks.nvim")

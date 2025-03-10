@@ -1,16 +1,15 @@
 -- snippets.lua
 
 -- Requiere LuaSnip
-local luasnip = require('luasnip')
+local luasnip = require("luasnip")
 
 -- Configurar LuaSnip
 luasnip.config.set_config({
-  history = true,
-  updateevents = "TextChanged,TextChangedI",
+	history = true,
+	updateevents = "TextChanged,TextChangedI",
 })
 
 -- Cargar tus propios snippets desde un directorio específico
-require('luasnip.loaders.from_vscode').lazy_load({
-  paths = { "~/.config/nvim/snippets" }
+require("luasnip.loaders.from_vscode").lazy_load({
+	paths = { "~/.config/nvim/luasnippets" },
 })
-

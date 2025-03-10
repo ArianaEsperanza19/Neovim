@@ -36,7 +36,7 @@ M.show_keymaps = function()
     zk: :bnext<CR>
     zj: :bprevious<CR>
     -- Key mapping to close the current buffer with saving changes
-    z<down>: :bd<CR>
+    <leader>e: :bd<CR>
     -- Key mapping to close the current buffer without saving changes
     zx<down>: :bd!<CR>
   ]]
