@@ -1,7 +1,6 @@
 --NVIM v0.10.4
 -- Problemas de compatibilidad con:
 -- nvim-treesitter
--- luasnip
 -- trouble
 local fn = vim.fn
 
@@ -39,7 +38,7 @@ return require("packer").startup(function(use)
 	-- Exploracion y Busqueda
 	use({
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.8",
+		-- tag = "0.1.8",
 		requires = { "nvim-lua/plenary.nvim" },
 	})
 	use("tom-pollak/telescope-marks.nvim") -- Marcas
@@ -87,7 +86,7 @@ return require("packer").startup(function(use)
 	use("dyng/ctrlsf.vim")
 	-- Git
 	use("tpope/vim-fugitive")
-	use({ "lewis6991/gitsigns.nvim" })
+	use("lewis6991/gitsigns.nvim")
 	-- Terminal
 	use("akinsho/toggleterm.nvim")
 	use("folke/snacks.nvim")
