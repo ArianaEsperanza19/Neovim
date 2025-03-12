@@ -1,13 +1,14 @@
-----------------------------------------------------------
 -- Import Lua modules
 -----------------------------------------------------------
 -- init.lua -----------
 vim.opt.termguicolors = true
+----------------------------------------------------------
 vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("i", "<C-m>", "<Esc>") -- Remapeo de esc a control + m
 -- Archivos requeridos-
 require("plugins.packer")
+--require("./lazy")
 require("settings")
 require("keymaps")
 -- Temas
