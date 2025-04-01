@@ -2,6 +2,7 @@
 vim.g.mapleader = " "
 -- Desmarcar busqueda
 vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>")
+vim.api.nvim_set_keymap("i", "<CR>", "<CR>", { noremap = true, silent = true })
 -- Asignar un atajo para pegar el contenido del portapapeles sustituyendo la selección actual
 vim.api.nvim_set_keymap("v", "<C-v>", '"_dP', { noremap = true, silent = true })
 
@@ -19,7 +20,8 @@ vim.api.nvim_set_keymap("v", "<leader>,", "^", { noremap = true, silent = true }
 -- Asignar <leader>right para ir al final de la línea
 vim.api.nvim_set_keymap("n", "<leader>.", "$", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("v", "<leader>.", "$", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<C-f>", "<C-u>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-o>", "<C-u>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-l>", "<C-d>", { noremap = true, silent = true })
 
 -- Movimiento entre ventanas con <leader>w + hjkl
 vim.api.nvim_set_keymap("n", "<A-h>", "<C-w>h", { noremap = true, silent = true }) -- Ventana izquierda
@@ -92,6 +94,16 @@ map("", "<down>", "<nop>", { noremap = true })
 map("", "<left>", "<nop>", { noremap = true })
 map("", "<right>", "<nop>", { noremap = true })
 
+-- Moverse en el buffer
+-- Cambiar al siguiente buffer con z + flecha derecha
+vim.api.nvim_set_keymap("n", "zk", ":bnext<CR>", { noremap = true, silent = true })
+-- Cambiar al buffer anterior con z + flecha izquierda
+vim.api.nvim_set_keymap("n", "zj", ":bprevious<CR>", { noremap = true, silent = true })
+-- Mapeo para cerrar el buffer actualmente abierto
+vim.api.nvim_set_keymap("n", "<leader>e", ":bd<CR>", { noremap = true, silent = true })
+-- Mapeo para cerrar el buffer actualmente abierto sin guardar cambios
+vim.api.nvim_set_keymap("n", "zx<down>", ":bd!<CR>", { noremap = true, silent = true })
+
 -- Función para abrir o cerrar la terminal
 -- function ToggleTerminal()
 --   local term_buf = vim.fn.bufnr('term://*')
@@ -104,16 +116,4 @@ map("", "<right>", "<nop>", { noremap = true })
 --   end
 -- end
 
--- Mapeo de teclas para Ctrl-\ para abrir o cerrar la terminal
-vim.api.nvim_set_keymap("n", "<C-\\>", ":lua ToggleTerminal()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("t", "<C-\\>", "<C-\\><C-n>:lua ToggleTerminal()<CR>", { noremap = true, silent = true })
-
--- Moverse en el buffer
--- Cambiar al siguiente buffer con z + flecha derecha
-vim.api.nvim_set_keymap("n", "zk", ":bnext<CR>", { noremap = true, silent = true })
--- Cambiar al buffer anterior con z + flecha izquierda
-vim.api.nvim_set_keymap("n", "zj", ":bprevious<CR>", { noremap = true, silent = true })
--- Mapeo para cerrar el buffer actualmente abierto
-vim.api.nvim_set_keymap("n", "<leader>e", ":bd<CR>", { noremap = true, silent = true })
--- Mapeo para cerrar el buffer actualmente abierto sin guardar cambios
-vim.api.nvim_set_keymap("n", "zx<down>", ":bd!<CR>", { noremap = true, silent = true })
+require("plugins_maps")

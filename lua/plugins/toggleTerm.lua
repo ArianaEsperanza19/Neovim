@@ -1,4 +1,4 @@
--- toggleTerm: un plugin de Neovim que permite abrir y cerrar un terminal flotante en la ventana actual.
+-- INFO: toggleTerm: un plugin de Neovim que permite abrir y cerrar un terminal flotante en la ventana actual.
 -- Permite ejecutar comandos y programas en un entorno de terminal dentro de Neovim,
 -- sin necesidad de salir de la aplicación.
 --
@@ -11,138 +11,144 @@
 --  * Configurar el tamaño y la posición del terminal flotante en la ventana.
 --  * Agregar estilos y personalizaciones adicionales para mejorar la apariencia del terminal.
 --  * Ejecutar comandos y programas en un entorno de terminal dentro de Neovim.
-require("toggleterm").setup({
-	-- Configuración de toggleTerm
-	direction = "float", -- Configura el terminal flotante para que aparezca en el centro de la pantalla
-	float_opts = {
-		border = "single", -- Agrega un borde sencillo alrededor del terminal flotante
-		winblend = 10, -- Ajusta la transparencia del terminal flotante
-		highlights = {
-			border = "FloatBorder", -- Agrega un color de borde al terminal flotante
-			background = "FloatBackground", -- Agrega un color de fondo al terminal flotante
-		},
-	},
-	open_mapping = [[<C-\>]],
-	hide_numbers = true,
-	shade_filetypes = {},
-	autochdir = true,
-	-- Otras opciones de configuración...
-})
 
--- Define la función para ejecutar el archivo actual con detección de archivos .c
-function run_current_file()
-	local file_path = vim.api.nvim_buf_get_name(0)
+return {
+	{
+		"akinsho/toggleterm.nvim", -- Plugin principal de ToggleTerm
+		version = "*", -- Usa la última versión disponible
+		config = function()
+			-- Configuración principal de ToggleTerm
+			require("toggleterm").setup({
+				direction = "float", -- Configura el terminal flotante para que aparezca en el centro de la pantalla
+				float_opts = {
+					border = "single", -- Agrega un borde sencillo alrededor del terminal flotante
+					winblend = 10, -- Ajusta la transparencia del terminal flotante
+					highlights = {
+						border = "FloatBorder", -- Agrega un color de borde al terminal flotante
+						background = "FloatBackground", -- Agrega un color de fondo al terminal flotante
+					},
+				},
+				open_mapping = [[<C-\>]], -- Abre/cierra el terminal con Ctrl + \
+				hide_numbers = true,
+				shade_filetypes = {},
+				autochdir = true,
+				close_on_exit = true, -- Cierra el terminal cuando el proceso termina
+			})
 
-	-- Detecta la extensión del archivo
-	local file_extension = file_path:match("^.+(%..+)$")
+			-- Función para ejecutar el archivo actual con detección de archivos
+			function run_current_file()
+				local file_path = vim.api.nvim_buf_get_name(0)
+				local file_extension = file_path:match("^.+(%..+)$")
 
-	local cmd
-	if file_extension == ".c" then
-		-- Si es un archivo .c, compilar y ejecutar
-		local file_name = vim.fn.fnamemodify(file_path, ":r")
-		cmd = string.format("gcc %s -o %s && %s", file_path, file_name, file_name)
-	elseif file_extension == ".php" then
-		-- Si es un archivo .php, ejecutarlo con el intérprete de php
-		cmd = string.format("chmod 755 %s", file_path)
-		cmd = string.format("php %s", file_path)
-	elseif file_extension == ".js" then
-		-- Si es un archivo .js, ejecutarlo con el intérprete de node
-		cmd = string.format("chmod 755 %s", file_path)
-		cmd = string.format("node %s", file_path)
-	else
-		-- Para otros tipos de archivos, simplemente ejecutarlos
-		cmd = string.format("chmod 755 %s", file_path)
-		-- Bash .sh
-		if file_extension == ".sh" then
-			cmd = string.format("bash %s", file_path)
-		end -- if bash
-		if file_extension == ".lua" then
-			cmd = string.format("lua %s", file_path)
-		end -- if bash
-	end
+				local cmd
+				if file_extension == ".c" then
+					-- Si es un archivo .c, compilar y ejecutar
+					local file_name = vim.fn.fnamemodify(file_path, ":r")
+					cmd = string.format("gcc %s -o %s && %s", file_path, file_name, file_name)
+				elseif file_extension == ".rs" then
+					-- Si es un archivo .rs, compilar y ejecutar con rustc
+					local file_name = vim.fn.fnamemodify(file_path, ":r")
+					cmd = string.format("rustc %s -o %s && ./%s", file_path, file_name, file_name)
+				elseif file_extension == ".php" then
+					-- Si es un archivo .php, ejecutarlo con el intérprete de php
+					cmd = string.format("php %s", file_path)
+				elseif file_extension == ".js" then
+					-- Si es un archivo .js, ejecutarlo con el intérprete de node
+					cmd = string.format("node %s", file_path)
+				elseif file_extension == ".sh" then
+					-- Si es un archivo .sh, ejecutarlo con bash
+					cmd = string.format("bash %s", file_path)
+				elseif file_extension == ".lua" then
+					-- Si es un archivo .lua, ejecutarlo con lua
+					cmd = string.format("lua %s", file_path)
+				elseif file_extension == ".py" then
+					-- Si es un archivo .py, ejecutarlo con python
+					cmd = string.format("python %s", file_path)
+				else
+					-- Para otros tipos de archivos, simplemente mostrar un mensaje
+					vim.notify("Formato de archivo no soportado", vim.log.levels.WARN)
+					return
+				end
 
-	local Terminal = require("toggleterm.terminal").Terminal
-	local run_file = Terminal:new({
-		cmd = cmd,
-		direction = "float",
-		close_on_exit = false,
-		on_open = function(term)
-			vim.cmd("startinsert!")
-			-- Puedes agregar más configuraciones aquí si lo deseas
+				-- Crear una nueva terminal para ejecutar el comando
+				local Terminal = require("toggleterm.terminal").Terminal
+				local run_file = Terminal:new({
+					cmd = cmd,
+					direction = "float",
+					close_on_exit = false,
+					on_open = function(term)
+						vim.cmd("startinsert!") -- Iniciar en modo inserción
+					end,
+				})
+				run_file:toggle()
+			end
+
+			-- Mapeos para abrir y cerrar ToggleTerm
+			vim.api.nvim_set_keymap("n", "<C-\\>", ":ToggleTerm<CR>", { noremap = true, silent = true })
+			vim.api.nvim_set_keymap("n", "<leader>rr", ":lua run_current_file()<CR>", { noremap = true, silent = true })
+
+			-- Define terminales divididas horizontal y verticalmente
+			local split_h_term = require("toggleterm.terminal").Terminal:new({
+				direction = "horizontal",
+				size = 20, -- Tamaño de la terminal horizontal
+				close_on_exit = true,
+			})
+
+			local split_v_term = require("toggleterm.terminal").Terminal:new({
+				direction = "vertical",
+				size = math.floor(vim.o.columns * 0.5), -- Tamaño de la terminal vertical (50% del ancho)
+				close_on_exit = true,
+			})
+
+			-- Funciones para alternar las terminales divididas
+			function _SPLIT_H_TERM_TOGGLE()
+				split_h_term:toggle()
+			end
+
+			function _SPLIT_V_TERM_TOGGLE()
+				split_v_term:toggle()
+			end
+
+			-- Mapeos para abrir las terminales divididas
+			vim.api.nvim_set_keymap(
+				"n",
+				"<leader>th",
+				":lua _SPLIT_H_TERM_TOGGLE()<CR>",
+				{ noremap = true, silent = true }
+			)
+			vim.api.nvim_set_keymap(
+				"n",
+				"<leader>tv",
+				":lua _SPLIT_V_TERM_TOGGLE()<CR>",
+				{ noremap = true, silent = true }
+			)
+
+			-- Función para alternar una terminal vanilla en un buffer
+			function CMDTerminal()
+				if vim.bo.buftype == "terminal" then
+					vim.cmd("stopinsert") -- Salir del modo inserción si estamos en una terminal
+				else
+					vim.cmd("enew | terminal") -- Crear una nueva terminal en el buffer actual
+				end
+			end
+
+			-- Función para cerrar el buffer si estamos en una terminal
+			function CloseTerminalIfActive()
+				if vim.bo.buftype == "terminal" then
+					vim.cmd("bdelete!") -- Cerrar el buffer actual
+				else
+					vim.cmd("stopinsert") -- Salir del modo inserción si no estamos en una terminal
+				end
+			end
+
+			-- Mapeos para la terminal vanilla
+			vim.api.nvim_set_keymap("n", "<leader>\\", ":lua CMDTerminal()<CR>", { noremap = true, silent = true })
+			vim.api.nvim_set_keymap(
+				"t",
+				"<Esc>",
+				"<C-\\><C-n>:lua CloseTerminalIfActive()<CR>",
+				{ noremap = true, silent = true }
+			)
 		end,
-	})
-	run_file:toggle()
-end
-
--- Mapeo para abrir y cerrar toggleTerm con Control + \
-vim.api.nvim_set_keymap("n", "<C-\\>", ":ToggleTerm<CR>", { noremap = true, silent = true })
-
--- Mapeo para ejecutar el archivo actual con Leader + r
-vim.api.nvim_set_keymap("n", "<leader>rr", ":lua run_current_file()<CR>", { noremap = true, silent = true })
-
-local Terminal = require("toggleterm.terminal").Terminal
-
--- Define una terminal dividida horizontalmente
-local split_h_term = Terminal:new({
-	direction = "horizontal",
-	size = 20, -- Ajusta el tamaño de la terminal dividida horizontalmente
-	close_on_exit = true,
-})
-
--- Define una terminal dividida verticalmente
--- local split_v_term = Terminal:new({
--- 	direction = "vertical",
--- 	size = vim.o.columns * 0.10, -- Ajusta el tamaño de la terminal dividida verticalmente al 50% del ancho de la pantalla
--- 	close_on_exit = true,
--- })
-
--- Funciones para abrir las terminales
-function _SPLIT_H_TERM_TOGGLE()
-	split_h_term:toggle()
-end
-
-function _SPLIT_V_TERM_TOGGLE()
-	split_v_term:toggle()
-end
-
--- Configura toggleterm
-require("toggleterm").setup({
-	open_mapping = [[<C-\>]], -- Mantén esta configuración para la terminal predeterminada
-	hide_numbers = true,
-	shade_filetypes = {},
-	autochdir = true,
-	-- Otras opciones de configuración...
-})
-
--- Mapeos para abrir las diferentes terminales
--- vim.api.nvim_set_keymap("n", "<leader>th", ":lua _SPLIT_H_TERM_TOGGLE()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader>tv", ":lua _SPLIT_V_TERM_TOGGLE()<CR>", { noremap = true, silent = true })
-
--- Función para alternar la terminal
-function CMDTerminal()
-	-- Verificar si estamos en un buffer de terminal
-	if vim.bo.buftype == "terminal" then
-		-- Si estamos en una terminal, salir del modo inserción
-		vim.cmd("stopinsert")
-	else
-		-- Si no estamos en una terminal, crear una nueva terminal en el buffer actual
-		vim.cmd("enew | terminal")
-	end
-end
-
--- Función para cerrar el buffer si estamos en una terminal
-function CloseTerminalIfActive()
-	-- Verificar si estamos en un buffer de terminal
-	if vim.bo.buftype == "terminal" then
-		-- Cerrar el buffer actual
-		vim.cmd("bdelete!")
-	else
-		-- Si no estamos en una terminal, simplemente salir del modo inserción
-		vim.cmd("stopinsert")
-	end
-end
-
--- Terminal vanilla en un buffer
-vim.api.nvim_set_keymap("n", "<leader>\\", ":lua CMDTerminal()<CR>", { noremap = true, silent = true })
--- Mapeo para cerrar el buffer de la terminal con <Esc>
-vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>:lua CloseTerminalIfActive()<CR>", { noremap = true, silent = true })
+	},
+}

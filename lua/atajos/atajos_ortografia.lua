@@ -6,14 +6,15 @@ M.show_spell_keymaps = function()
       Spell Check:
        - `z=`: See suggestions for misspelled words
        - `zg`: Add word to the dictionary
+       - `zG`: Don't mark as misspelled temporarily
        - `zug`: Undo add word to the dictionary
        - `zw`: Mark word as misspelled
        - `zuw`: Undo mark word as misspelled
        - <F6>: Change to next language
 
       Next or Previous misspelled word:
-       - `]z`: Jump to the next misspelled word
-       - `[z`: Jump to the previous misspelled word
+       - `]s`: Jump to the next misspelled word
+       - `[s`: Jump to the previous misspelled word
 
       Commands to Change Spell Check Language:
        - `:DisableSpell`: Disable spell check

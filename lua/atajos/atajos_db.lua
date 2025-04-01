@@ -2,6 +2,8 @@ local M = {}
 
 M.show_keymaps = function()
 	local keymaps = [[
+  -- SQL Queries
+  :DB `Query`
   -- Open DB UI
   :DBUI
   -- Url to connect to DB
