@@ -38,11 +38,13 @@ return {
 			vim.api.nvim_set_keymap("n", "ĵz", "[s", { noremap = true, silent = true })
 			vim.api.nvim_set_keymap("n", "ĥz", "]s", { noremap = true, silent = true })
 
-			-- Mapeos para eliminar o cortar
+			-- Mapeos para eliminar, cambiar y cortar
 			vim.api.nvim_set_keymap("n", "ĝ", "w", { noremap = true, silent = true })
 			vim.api.nvim_set_keymap("n", "Ĝ", "W", { noremap = true, silent = true })
 			vim.api.nvim_set_keymap("n", "diĝ", "diw", { noremap = true, silent = true })
 			vim.api.nvim_set_keymap("n", "daĝ", "daw", { noremap = true, silent = true })
+			vim.api.nvim_set_keymap("n", "ciĝ", "ciw", { noremap = true, silent = true })
+			vim.api.nvim_set_keymap("n", "cĝ", "cw", { noremap = true, silent = true })
 
 			-- Mapeos para copiar
 			vim.api.nvim_set_keymap("n", "ŭ", "y", { noremap = true, silent = true })

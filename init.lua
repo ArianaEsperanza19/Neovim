@@ -1,14 +1,20 @@
 -- Import Lua modules
 -----------------------------------------------------------
+-- To instal from 0 you need:
+-- Git
+-- Npm
+-- RipGrep
+-- Devicons and nerd fonts (optional)
+-- Para portapapeles externo en X11 sudo apt install xclip y para Wayland es sudo apt install wl-clipboard
 -- init.lua -----------
 vim.opt.termguicolors = true
 ----------------------------------------------------------
 vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
-vim.keymap.set("i", "<A-.>", "<Esc>") -- Remapeo de esc a alt + .
+vim.keymap.set("i", "<A-z>", "<Esc>", { noremap = true })
 require("settings")
 require("keymaps")
-vim.o.clipboard = "unnamedplus"
+vim.opt.clipboard = "unnamedplus"
 -- Ocultar la barra de estado
 vim.opt.showmode = false
 -- Inicializar Lazy.nvim
@@ -28,7 +34,8 @@ vim.opt.rtp:prepend(lazypath)
 -- Cargar Lazy.nvim
 require("lazy").setup({
 	-- Temas
-	require("plugins.temas.tokyonight"), -- require("plugins.temas.catppuccin"),
+	-- require("plugins.temas.tokyonight"),
+	require("plugins.temas.catppuccin"),
 	-- require("plugins.temas.gruvbox"),
 	-- require("plugins.temas.dracula"),
 	-- -- Git -------------
@@ -43,6 +50,7 @@ require("lazy").setup({
 	require("plugins.noice"),
 	-- Ortografia ----------
 	require("plugins.vimPoliglot"),
+	-- require("plugins.languagetool"),
 	require("plugins.vimtex"),
 	require("plugins.dict"),
 	-- Resaltador
@@ -95,3 +103,4 @@ require("autocompletado")
 require("templates")
 -- Atajos ------------
 require("atajos.atajos")
+vim.cmd([[colorscheme catppuccin]])

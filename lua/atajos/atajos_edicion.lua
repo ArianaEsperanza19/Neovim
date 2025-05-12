@@ -3,8 +3,8 @@ local M = {}
 M.show_keymaps = function()
 	local keymaps = [[
     --Create New Lines Without Changing Mode:
-      <leader>o: o<Esc>
-      <leader>O: O<Esc>
+      <leader>o: Line below
+      <leader>O: Line above
 
     --Move line or selection:
       m+Up: Move line/selection up

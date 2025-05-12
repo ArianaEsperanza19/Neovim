@@ -4,11 +4,15 @@
 --
 -- Instalación de Deno:
 -- curl -fsSL https://deno.land/x/install/install.sh | sh
--- Si el archivo main.bundle.js no esta en su lugar:
--- cd ~/.local/share/nvim/site/pack/packer/start/peek.nvim
--- Ve al directorio: "~/.local/share/nvim/site/pack/packer/start/peek.nvim"
--- Crealo manualmente con este comando
--- deno run --allow-run --allow-net --allow-read --allow-write --allow-env --no-check scripts/build.js
+-- Verifica si deno esta instalado y cual es su ubicacion.
+-- Puedes usar deno --version y which deno para verificar.
+-- Agregalo al path de tu sistema.
+-- export PATH="/home/ariana/.deno/bin:$PATH" y reinicia tu terminal.
+-- Asegurate de que el ejecutable de deno tenga los permisos adecuados.
+-- sudo chmod +x /home/ariana/.deno/bin/deno
+-- Si el `main.bundle.js` ejecuta el comando de construccion dentro del directorio de Peek
+-- cd ~/.local/share/nvim/lazy/peek.nvim && deno task --quiet build:fast
+-- Tambien instala la siguiente dependencia: sudo apt install libwebkit2gtk-4.0-37
 -- NOTA: Si usas Zathura para visualizar, instala xdotool: sudo apt install xdotool
 -- Características:
 -- - Carga automática de vista previa al abrir un archivo Markdown.

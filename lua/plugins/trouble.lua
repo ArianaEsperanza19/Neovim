@@ -64,6 +64,10 @@ return {
 			vim.cmd([[
         highlight TroubleError guifg=#FF0000
       ]])
+			-- diagonistics
+			--BUG: Falla al encontrar el LSP
+			vim.keymap.set("n", "<leader>zd", ":Trouble diagnostics<CR>")
+			--vim.keymap.set("n", "<leader>zd", ":Telescope diagnostics<CR>")
 		end,
 	},
 }

@@ -54,4 +54,5 @@ return {
 		-- end,
 	},
 }
+-- Colocar en init
 -- vim.cmd([[colorscheme dracula]])

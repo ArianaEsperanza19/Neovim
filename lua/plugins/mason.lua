@@ -20,13 +20,15 @@ return {
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"pyright",
-					"ts_ls", -- Cambia 'ts_ls' por 'tsserver'
+					"ts_ls",
+					-- "html_lps",
 					"bashls",
 					"texlab",
 					"lua_ls",
 					"clangd",
 					"intelephense",
 					"sqlls",
+					"ast_grep",
 				},
 			})
 		end,
@@ -47,10 +49,12 @@ return {
 			-- Configurar servidores LSP con LSP Zero
 			lsp_zero.setup_servers({
 				"ts_ls", -- TypeScript Server
+				-- "html_lps",
 				"bashls",
 				"lua_ls",
 				"texlab",
 				"clangd",
+				"ast_grep",
 				"intelephense",
 				"sqlls",
 			})

@@ -8,6 +8,8 @@ M.show_keymaps = function()
   <leader>zx: :lua require("telescope.builtin").lsp_references()<CR>
   Show info about element:
   <leader>zh: :lua vim.lsp.buf.hover()<CR> || enter to close
+	Show diagnostics:
+	:Trouble diagnostics
   ]]
 
 	local Terminal = require("toggleterm.terminal").Terminal

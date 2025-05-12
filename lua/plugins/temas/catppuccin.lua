@@ -6,14 +6,14 @@ return {
 		flavour = "auto", -- latte, frappe, macchiato, mocha
 		background = { -- :h background
 			light = "latte", -- Cambiado a "latte" para modo claro
-			dark = "mocha", -- Cambiado a "mocha" para modo oscuro
+			dark = "macchiato", -- Cambiado a "mocha" para modo oscuro
 		},
-		transparent_background = false, -- Desactiva el color de fondo (true si usas fondos transparentes)
+		transparent_background = true, -- Desactiva el color de fondo (true si usas fondos transparentes)
 		show_end_of_buffer = false, -- Muestra los caracteres '~' después del final del buffer
 		term_colors = true, -- Activa los colores del terminal (recomendado para una mejor integración)
 		dim_inactive = {
-			enabled = false, -- Atenuar el fondo de ventanas inactivas
-			shade = "dark", -- Opciones: "dark" o "light"
+			enabled = true, -- Atenuar el fondo de ventanas inactivas
+			shade = "light", -- Opciones: "dark" o "light"
 			percentage = 0.15, -- Porcentaje de atenuación
 		},
 		no_italic = false, -- Forzar que no se usen estilos en cursiva
@@ -50,7 +50,8 @@ return {
 			},
 			-- Para más integraciones consulta la documentación oficial:
 			-- https://github.com/catppuccin/nvim#integrations [[1]]
-			vim.cmd([[colorscheme catppuccin]]),
+			-- Colocar en init
+			-- vim.cmd([[colorscheme catppuccin]]),
 		},
 	},
 }

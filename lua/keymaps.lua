@@ -22,12 +22,15 @@ vim.api.nvim_set_keymap("n", "<leader>.", "$", { noremap = true, silent = true }
 vim.api.nvim_set_keymap("v", "<leader>.", "$", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-o>", "<C-u>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-l>", "<C-d>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "<C-o>", "<C-u>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "<C-l>", "<C-d>", { noremap = true, silent = true })
 
 -- Movimiento entre ventanas con <leader>w + hjkl
-vim.api.nvim_set_keymap("n", "<A-h>", "<C-w>h", { noremap = true, silent = true }) -- Ventana izquierda
-vim.api.nvim_set_keymap("n", "<A-j>", "<C-w>j", { noremap = true, silent = true }) -- Ventana inferior
-vim.api.nvim_set_keymap("n", "<A-k>", "<C-w>k", { noremap = true, silent = true }) -- Ventana superior
-vim.api.nvim_set_keymap("n", "<A-l>", "<C-w>l", { noremap = true, silent = true }) -- Ventana derecha
+-- vim.api.nvim_set_keymap("n", "<A-h>", "<C-w>h", { noremap = true, silent = true }) -- Ventana izquierda
+vim.api.nvim_set_keymap("n", "<C-left>", "<C-w>h", { noremap = true, silent = true }) -- Ventana izquierda
+vim.api.nvim_set_keymap("n", "<C-down>", "<C-w>j", { noremap = true, silent = true }) -- Ventana inferior
+vim.api.nvim_set_keymap("n", "<C-up>", "<C-w>k", { noremap = true, silent = true }) -- Ventana superior
+vim.api.nvim_set_keymap("n", "<C-right>", "<C-w>l", { noremap = true, silent = true }) -- Ventana derecha
 -- Cerrar ventana
 vim.api.nvim_set_keymap("n", "<leader>we", "<C-w>c", { noremap = true, silent = true })
 -- Abrir vertical

@@ -5,7 +5,7 @@
 return {
 	{
 		"kylechui/nvim-surround", -- Plugin principal de nvim-surround
-		keys = { "]n", "]y", "]Y", "S", "]l", "]d", "]f" },
+		keys = { "]n", "]y", "]Y", "a", "]l", "]d", "]f" },
 		event = "VeryLazy", -- Cargar el plugin de manera diferida
 		config = function()
 			-- Configuración principal de nvim-surround
@@ -18,8 +18,8 @@ return {
 					normal_line = "]n", -- Modo Normal (línea): yS
 					normal_cur = "]y", -- Modo Normal (línea actual): yss
 					normal_cur_line = "]Y", -- Modo Normal (línea actual): ySS
-					visual = "S", -- Modo Visual: S
-					visual_line = "]s", -- Modo Visual (línea): gS
+					visual = "a", -- Modo Visual: S
+					visual_line = "]l", -- Modo Visual (línea): gS
 					delete = "]d", -- Eliminar surrounding en modo normal
 					change = "]f", -- Cambiar surrounding en modo normal
 				},
