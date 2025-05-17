@@ -78,6 +78,7 @@ return {
 			treesitter = true, -- Integración con nvim-treesitter
 			aerial = true, -- Integración con aerial.nvim
 			notify = true, -- Desactiva la integración con notify.nvim
+			leap = true, -- Integración con leap.nvim
 			mini = {
 				enabled = true, -- Integración con mini.nvim
 				indentscope_color = "", -- Color personalizado para mini.indentscope

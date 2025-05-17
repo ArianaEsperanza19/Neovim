@@ -52,6 +52,16 @@ return {
 		--     NonText = { fg = colors.white }, -- set NonText fg to white of theme
 		--   }
 		-- end,
+		default_integrations = true, -- Habilita integraciones por defecto
+		integrations = {
+			cmp = true,
+			gitsigns = true,
+			telescope = true,
+			notify = true,
+			mini = true,
+			leap = true,
+			-- For more plugins integrations please see https://github.com/Mofiqul/dracula.nvim#integrations
+		},
 	},
 }
 -- Colocar en init
