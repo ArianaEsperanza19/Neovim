@@ -6,7 +6,41 @@ return {
 		flavour = "auto", -- latte, frappe, macchiato, mocha
 		background = { -- :h background
 			light = "latte", -- Cambiado a "latte" para modo claro
-			dark = "macchiato", -- Cambiado a "mocha" para modo oscuro
+			dark = "mocha", -- Cambiado a "mocha" para modo oscuro
+		},
+		highlight_overrides = {
+			all = function(colors)
+				return {
+					NvimTreeNormal = { fg = colors.none },
+					CmpBorder = { fg = "#3e4145" },
+				}
+			end,
+			latte = function(colors)
+				return {
+					Normal = { fg = colors.mantle, bg = colors.base }, -- Fondo más equilibrado
+					Comment = { fg = colors.overlay0, style = { "italic" } }, -- Comentarios más suaves
+					LineNr = { fg = colors.overlay1 }, -- Números de línea más claros
+					StatusLine = { fg = colors.text, bg = colors.surface0 }, -- Mejor contraste en la barra de estado
+				}
+			end,
+			frappe = function(colors)
+				return {
+					Normal = { fg = colors.text, bg = colors.base }, -- Fondo más oscuro para mejor contraste
+					Comment = { fg = colors.overlay1, style = { "italic" } }, -- Comentarios con tono más suave
+					CursorLine = { bg = colors.surface0 }, -- Resaltar la línea actual con un tono más definido
+					StatusLine = { fg = colors.text, bg = colors.surface1 }, -- Mejora el contraste en la barra de estado
+				}
+			end,
+			macchiato = function(macchiato)
+				return {
+					LineNr = { fg = macchiato.overlay1 },
+				}
+			end,
+			mocha = function(mocha)
+				return {
+					Comment = { fg = mocha.flamingo },
+				}
+			end,
 		},
 		transparent_background = true, -- Desactiva el color de fondo (true si usas fondos transparentes)
 		show_end_of_buffer = false, -- Muestra los caracteres '~' después del final del buffer

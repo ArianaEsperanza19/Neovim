@@ -36,7 +36,6 @@ require("lazy").setup({
 	-- Temas
 	-- require("plugins.temas.tokyonight"),
 	require("plugins.temas.catppuccin"),
-	-- require("plugins.temas.gruvbox"),
 	-- require("plugins.temas.dracula"),
 	-- -- Git -------------
 	require("plugins.gitsigns"),
@@ -103,4 +102,5 @@ require("autocompletado")
 require("templates")
 -- Atajos ------------
 require("atajos.atajos")
+-- vim.cmd([[colorscheme tokyonight]])
 vim.cmd([[colorscheme catppuccin]])
