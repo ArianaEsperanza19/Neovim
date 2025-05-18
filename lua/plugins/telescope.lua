@@ -36,6 +36,11 @@ return {
 						n = { ["<c-t>"] = require("trouble.sources.telescope").open },
 					},
 				},
+				pickers = {
+					find_files = {
+						hidden = true,
+					},
+				},
 				extensions = {
 					bookmarks = {
 						sources = {

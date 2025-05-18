@@ -1,6 +1,6 @@
-<!- Nombre del archivo: ->
-<!- Author: {{AUTHOR}} ->
-<!- Fecha: {{DATE}} ->
+<!-- Nombre del archivo: -->
+<!-- Author: {{AUTHOR}} -->
+<!-- Fecha: {{DATE}} -->
 <!DOCTYPE html>
 <html lang="es">
 <head>

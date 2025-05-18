@@ -26,6 +26,8 @@ return {
 					"clangd",
 					"ast_grep",
 					"intelephense",
+					"cssls",
+					"html",
 				},
 				handlers = {
 					function(server_name)
@@ -62,6 +64,8 @@ return {
 				"clangd",
 				"ast_grep",
 				"intelephense",
+				"cssls",
+				"html",
 			})
 
 			-- Habilitar la función de renombrado en todos los servidores de lenguaje
