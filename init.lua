@@ -85,6 +85,7 @@ require("lazy").setup({
 	-- -- Calidad de vida ----
 	require("plugins.nvim-surround"),
 	"windwp/nvim-autopairs",
+	require("plugins.autotag"),
 	"mbbill/undotree",
 	require("plugins.neoclip"),
 	require("plugins.ctrlsf"),
