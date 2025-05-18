@@ -28,6 +28,7 @@ return {
 					"intelephense",
 					"cssls",
 					"html",
+					"rust_analyzer",
 				},
 				handlers = {
 					function(server_name)
@@ -66,18 +67,8 @@ return {
 				"intelephense",
 				"cssls",
 				"html",
+				"rust_analyzer",
 			})
-
-			-- Habilitar la función de renombrado en todos los servidores de lenguaje
-			-- require("mason-lspconfig").setup({
-			-- 	function(server_name)
-			-- 		require("lspconfig")[server_name].setup({
-			-- 			on_attach = function(client, bufnr)
-			-- 				client.server_capabilities.renameProvider = true
-			-- 			end,
-			-- 		})
-			-- 	end,
-			-- })
 
 			require("mason-lspconfig").setup({
 				function(server_name)

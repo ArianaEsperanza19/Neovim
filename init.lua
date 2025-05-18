@@ -6,6 +6,7 @@
 -- RipGrep
 -- Devicons and nerd fonts (optional)
 -- Para portapapeles externo en X11 sudo apt install xclip y para Wayland es sudo apt install wl-clipboard
+-- For Rust install rustc, cargo and rustup
 -- init.lua -----------
 vim.opt.termguicolors = true
 ----------------------------------------------------------
