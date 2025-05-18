@@ -43,9 +43,7 @@ return {
 				indent = {
 					enable = true, -- Habilitar indentación basada en Tree-sitter
 				},
-				autotag = {
-					enable = true, -- Habilitar autocompletado de etiquetas HTML/XML
-				},
+				require("nvim-ts-autotag").setup({}),
 				incremental_selection = {
 					enable = true,
 					keymaps = {

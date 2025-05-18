@@ -86,6 +86,8 @@ require("lazy").setup({
 	require("plugins.nvim-surround"),
 	"windwp/nvim-autopairs",
 	require("plugins.autotag"),
+	require("plugins.rainbow-cvs"),
+	--require("nvim-ts-autotag").setup({}),
 	"mbbill/undotree",
 	require("plugins.neoclip"),
 	require("plugins.ctrlsf"),
