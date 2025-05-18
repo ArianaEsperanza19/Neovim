@@ -8,6 +8,10 @@ M.show_keymaps = function()
     <leader>wh
     -- Close window
     <leader>we
+    -- Close all the unactive windows
+    <leader>wq
+    -- Close all current windows
+    <leader><Del>
     -- Move through windows
     <A-h> : left
     <A-l> : right

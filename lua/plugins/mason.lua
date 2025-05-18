@@ -16,19 +16,25 @@ return {
 			"neovim/nvim-lspconfig", -- Plugin principal de LSP
 		},
 		config = function()
-			-- Integrar Mason con nvim-lspconfig
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"pyright",
 					"ts_ls",
-					-- "html_lps",
 					"bashls",
-					"texlab",
 					"lua_ls",
+					"texlab",
 					"clangd",
-					"intelephense",
-					"sqlls",
 					"ast_grep",
+					"intelephense",
+				},
+				handlers = {
+					function(server_name)
+						require("lspconfig")[server_name].setup({
+							on_attach = function(client, bufnr)
+								client.server_capabilities.renameProvider = true
+							end,
+						})
+					end,
 				},
 			})
 		end,
@@ -56,10 +62,19 @@ return {
 				"clangd",
 				"ast_grep",
 				"intelephense",
-				"sqlls",
 			})
 
 			-- Habilitar la función de renombrado en todos los servidores de lenguaje
+			-- require("mason-lspconfig").setup({
+			-- 	function(server_name)
+			-- 		require("lspconfig")[server_name].setup({
+			-- 			on_attach = function(client, bufnr)
+			-- 				client.server_capabilities.renameProvider = true
+			-- 			end,
+			-- 		})
+			-- 	end,
+			-- })
+
 			require("mason-lspconfig").setup({
 				function(server_name)
 					require("lspconfig")[server_name].setup({

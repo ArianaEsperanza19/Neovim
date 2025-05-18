@@ -37,6 +37,10 @@ vim.api.nvim_set_keymap("n", "<leader>we", "<C-w>c", { noremap = true, silent = 
 vim.api.nvim_set_keymap("n", "<leader>wv", "<C-w>v", { noremap = true, silent = true })
 -- Abrir horizontal
 vim.api.nvim_set_keymap("n", "<leader>wh", "<C-w>s", { noremap = true, silent = true })
+-- Cerrar ventanas inactivas
+vim.api.nvim_set_keymap("n", "<leader>wq", ":only<CR>", { noremap = true, silent = true })
+-- Cerrar buffer actual con todo
+vim.api.nvim_set_keymap("n", "<leader><Del>", ":windo bd<CR>", { noremap = true, silent = true })
 
 -- Deshabilitar tabulación de Alt+i
 vim.api.nvim_set_keymap("i", "<C-i>", "<Nop>", { noremap = true, silent = true })
