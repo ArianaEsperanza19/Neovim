@@ -10,6 +10,15 @@
 -- init.lua -----------
 vim.opt.termguicolors = true
 ----------------------------------------------------------
+-- Logs
+-- vim.api.nvim_exec(
+-- 	[[
+--   autocmd VimLeavePre * silent !echo "Neovim cerró con mensaje: " >> ~/.config/nvim/nvim_log.txt
+--   autocmd VimLeavePre * silent !echo v:errmsg >> ~/.config/nvim/nvim_log.txt
+-- ]],
+-- 	false
+-- )
+
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("i", "<A-z>", "<Esc>", { noremap = true })
 require("settings")
@@ -54,12 +63,12 @@ require("lazy").setup({
 	require("plugins.dict"),
 	-- Resaltador
 	require("plugins.treesitter"),
+	-- Interfaz
 	require("plugins.neotree"),
 	require("plugins.alphaNvim"),
 	require("plugins.telescope"),
 	require("plugins.which-key"),
 	require("plugins.aerial"),
-	require("plugins.leap"),
 	-- Markdown ------------
 	require("plugins.peek"),
 	-- Autocompletado ------
@@ -84,13 +93,14 @@ require("lazy").setup({
 	require("plugins.codeium"),
 	require("plugins.avante"),
 	-- -- Calidad de vida ----
+	require("plugins.leap"),
 	require("plugins.nvim-surround"),
 	"windwp/nvim-autopairs",
 	require("plugins.autotag"),
 	require("plugins.rainbow-cvs"),
 	--require("nvim-ts-autotag").setup({}),
 	"mbbill/undotree",
-	require("plugins.neoclip"),
+	-- require("plugins.neoclip"),
 	require("plugins.ctrlsf"),
 	{ "simeji/winresizer" },
 	-- -- Otros ---------------

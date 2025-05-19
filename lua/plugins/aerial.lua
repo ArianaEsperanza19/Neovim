@@ -4,7 +4,7 @@ return {
 	{
 		"stevearc/aerial.nvim", -- Plugin principal de Aerial
 		-- Abrir navegación de Aerial
-		keys = { "<leader>ct", "<leader>tc" },
+		keys = { "<leader>tc" },
 		config = function()
 			-- Configurar Aerial
 			require("aerial").setup({

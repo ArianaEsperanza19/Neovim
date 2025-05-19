@@ -8,7 +8,7 @@ return {
 		vim.g.bookmark_annotation_sign = "󰓽"
 		vim.g.bookmark_auto_save = 1
 		vim.g.bookmark_auto_close = 1
-		vim.g.bookmark_sign_priority = 10
+		vim.g.bookmark_sign_priority = 1000
 		-- Obtener el color del grupo de resaltado actual
 		local function get_hl_color(group, attr)
 			local hl = vim.api.nvim_get_hl_by_name(group, true)
@@ -20,5 +20,12 @@ return {
 		vim.cmd(
 			string.format("highlight BookmarkAnnotationSign guifg=%s gui=bold", get_hl_color("String", "foreground"))
 		)
+
+		-- Definir atajos de teclado personalizados
+		vim.keymap.set("n", "mm", ":BookmarkToggle<CR>", { noremap = true, silent = true })
+		vim.keymap.set("n", "mn", ":BookmarkNext<CR>", { noremap = true, silent = true })
+		vim.keymap.set("n", "mp", ":BookmarkPrev<CR>", { noremap = true, silent = true })
+		-- Telescope marks
+		vim.keymap.set("n", "<leader>tm", ":Telescope vim_bookmarks<CR>", { noremap = true, silent = true })
 	end,
 }

@@ -31,6 +31,14 @@ return {
 			-- Configuración de Telescope
 			telescope.setup({
 				defaults = {
+					layout_strategy = "horizontal",
+					layout_config = {
+						horizontal = {
+							width = 0.9, -- Ajusta el ancho del menú
+							height = 0.8, -- Ajusta la altura del menú
+							preview_width = 0.5, -- Define el ancho de la vista previa
+						},
+					},
 					mappings = {
 						i = { ["<c-t>"] = require("trouble.sources.telescope").open },
 						n = { ["<c-t>"] = require("trouble.sources.telescope").open },

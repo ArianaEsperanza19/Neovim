@@ -4,7 +4,26 @@ return {
 	event = "VeryLazy",
 	config = function()
 		local wk = require("which-key")
-		wk.setup({})
+		wk.setup({
+			win = {
+				-- don't allow the popup to overlap with the cursor
+				no_overlap = true,
+				-- width = 1,
+				height = { min = 5, max = 25 },
+				-- col = 0,
+				-- row = math.huge,
+				-- border = "none",
+				padding = { 1, 2 }, -- extra window padding [top/bottom, right/left]
+				title = true,
+				title_pos = "center",
+				zindex = 1000,
+				-- Additional vim.wo and vim.bo options
+				bo = {},
+				wo = {
+					-- winblend = 10, -- value between 0-100 0 for fully opaque and 100 for fully transparent
+				},
+			},
+		})
 		wk.add({
 			{
 				{ "<leader>f", group = "file", icon = "" }, -- group
@@ -49,12 +68,17 @@ return {
 			{ "<leader>tt", desc = "Comments", icon = "󰒕" },
 			{ "<leader>tg", desc = "Search pattern", icon = "" },
 			{ "<leader>te", desc = "Messages", icon = "󰍢" },
+			{ "<leader>tm", desc = "Marks", icon = "󰛛" },
+			-- { "<leader>tp", desc = "Clipboard", icon = "" },
 			{ "<leader>gb", desc = "Git blame line", icon = "" },
 			{ "<leader>di", desc = "Dict", icon = "" },
 			{ "<leader>lv", desc = "Vimtex View", icon = "" },
 			{ "<leader>lc", desc = "Vimtex View", icon = "󱜧" },
 			{ "<leader>sm", desc = "Show markdown", icon = "" },
 			{ "<leader>xh", desc = "Horizontal Terminal", icon = "" },
+			{ "<leader>zh", desc = "Watch Info", icon = "" },
+			{ "<leader>zx", desc = "Go to implementations", icon = "󰬱" },
+			{ "<leader>zd", desc = "Go to definition", icon = "󰊕" },
 		})
 	end,
 }

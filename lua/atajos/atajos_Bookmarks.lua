@@ -7,7 +7,7 @@ M.show_keymaps = function()
         mi: :BookmarkAnnotate<CR>
         mn: :BookmarkNext<CR>
         mp: :BookmarkPrev<CR>
-        ma: :Telescope vim-bookmarks<CR>
+        tm: :Telescope vim-bookmarks<CR>
   ]]
 
 	local Terminal = require("toggleterm.terminal").Terminal
