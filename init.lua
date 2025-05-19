@@ -98,9 +98,11 @@ require("lazy").setup({
 	"windwp/nvim-autopairs",
 	require("plugins.autotag"),
 	require("plugins.rainbow-cvs"),
+	require("plugins.minty"),
+	require("plugins.colorizer"),
 	--require("nvim-ts-autotag").setup({}),
 	"mbbill/undotree",
-	-- require("plugins.neoclip"),
+	require("plugins.neoclip"),
 	require("plugins.ctrlsf"),
 	{ "simeji/winresizer" },
 	-- -- Otros ---------------

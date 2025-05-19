@@ -1,3 +1,4 @@
+--INFO: which-key is a plugin for Neovim that displays a popup with possible keybindings of the command you currently type.
 return {
 	"folke/which-key.nvim",
 	dependencies = { "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons", "echasnovski/mini.icons" },
@@ -69,13 +70,15 @@ return {
 			{ "<leader>tg", desc = "Search pattern", icon = "" },
 			{ "<leader>te", desc = "Messages", icon = "󰍢" },
 			{ "<leader>tm", desc = "Marks", icon = "󰛛" },
-			-- { "<leader>tp", desc = "Clipboard", icon = "" },
+			{ "<leader>tp", desc = "Clipboard", icon = "" },
 			{ "<leader>gb", desc = "Git blame line", icon = "" },
 			{ "<leader>di", desc = "Dict", icon = "" },
 			{ "<leader>lv", desc = "Vimtex View", icon = "" },
 			{ "<leader>lc", desc = "Vimtex View", icon = "󱜧" },
 			{ "<leader>sm", desc = "Show markdown", icon = "" },
 			{ "<leader>xh", desc = "Horizontal Terminal", icon = "" },
+			{ "<leader>xu", desc = "Open Huefy", icon = "" },
+			{ "<leader>xs", desc = "Open Shades", icon = "" },
 			{ "<leader>zh", desc = "Watch Info", icon = "" },
 			{ "<leader>zx", desc = "Go to implementations", icon = "󰬱" },
 			{ "<leader>zd", desc = "Go to definition", icon = "󰊕" },

@@ -28,3 +28,6 @@ vim.api.nvim_set_keymap("n", "<leader>db", ":DBUIToggle<CR>", { noremap = true, 
 vim.api.nvim_set_keymap("n", "<leader>gw", ":Gvdiffsplit<CR>", { noremap = true, silent = true })
 -- Abrir y cerrar la ventana de Gllog
 vim.api.nvim_set_keymap("n", "<leader>gd", ":Gllog<CR>", { noremap = true, silent = true })
+-- Atajos de Minty
+vim.keymap.set("n", "<leader>xs", "<cmd>Shades<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>xu", "<cmd>Huefy<CR>", { noremap = true, silent = true })

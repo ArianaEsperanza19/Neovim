@@ -1,3 +1,4 @@
+--INFO: rainbow_csv is a plugin for Neovim that highlights CSV files with different colors for each column.
 return {
 	"cameron-wags/rainbow_csv.nvim",
 	config = function()
