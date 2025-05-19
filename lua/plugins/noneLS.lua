@@ -26,7 +26,7 @@ return {
 					null_ls.builtins.formatting.blade_formatter,
 					null_ls.builtins.formatting.stylua,
 					null_ls.builtins.formatting.shfmt,
-					null_ls.builtins.formatting.ast_grep,
+					-- null_ls.builtins.formatting.ast_grep,
 					null_ls.builtins.formatting.markdownlint,
 					null_ls.builtins.formatting.phpcsfixer.with({
 						extra_args = { "--rules=@PSR12" }, -- Aplica las reglas PSR-12

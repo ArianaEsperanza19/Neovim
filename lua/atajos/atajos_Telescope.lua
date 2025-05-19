@@ -6,7 +6,7 @@ M.show_keymaps = function()
 	-- Open Navigator de archivos:
 		<leader>ff: :Telescope find_files<CR>
 	-- Open Searcher for text:
-		<leader>tt: :Telescope live_grep<CR>
+		<leader>tg: :Telescope live_grep<CR>
 	-- Open Marks:
 		ma :Telescope marks<CR>
 	-- Open Messages:

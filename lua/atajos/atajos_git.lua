@@ -45,7 +45,7 @@ M.show_keymaps = function()
   :Git restore .<CR>
 
   -- Show differences in buffer to last commit
-  <leader>wg: :Gvimdiffsplit<CR>
+  <leader>gw: :Gvimdiffsplit<CR>
   :Gitsigns diffthis<CR>
   -- Show differences in buffer to a specific commit or branch
   :Gvimdiffsplit <bratch o commit><CR>

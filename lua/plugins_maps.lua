@@ -25,6 +25,6 @@ vim.api.nvim_set_keymap("n", "<leader>wr", ":WinResizerStartResize<CR>", { norem
 vim.api.nvim_set_keymap("n", "<leader>db", ":DBUIToggle<CR>", { noremap = true, silent = true })
 
 -- Mapeo para abrir y cerrar Gvdiffsplit
-vim.api.nvim_set_keymap("n", "<leader>wg", ":Gvdiffsplit<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>gw", ":Gvdiffsplit<CR>", { noremap = true, silent = true })
 -- Abrir y cerrar la ventana de Gllog
 vim.api.nvim_set_keymap("n", "<leader>gd", ":Gllog<CR>", { noremap = true, silent = true })

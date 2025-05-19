@@ -3,6 +3,7 @@
 return {
 	{
 		"stevearc/aerial.nvim", -- Plugin principal de Aerial
+		-- Abrir navegación de Aerial
 		keys = { "<leader>ct", "<leader>tc" },
 		config = function()
 			-- Configurar Aerial
@@ -17,8 +18,8 @@ return {
 			})
 
 			-- Definir keymaps globales para Aerial
-			vim.keymap.set("n", "<leader>ct", "<cmd>AerialToggle!<CR>", { desc = "Toggle Aerial" }) -- Alternar Aerial
-			vim.api.nvim_set_keymap("n", "<leader>tc", ":AerialNavOpen<CR>", { noremap = true, silent = true }) -- Abrir navegación de Aerial
+			vim.keymap.set("n", "<leader>tc", "<cmd>AerialToggle!<CR>", { desc = "Toggle Aerial" }) -- Alternar Aerial
+			-- vim.api.nvim_set_keymap("n", "<leader>no", ":AerialNavOpen<CR>", { noremap = true, silent = true }) -- Abrir navegación de Aerial
 		end,
 	},
 }

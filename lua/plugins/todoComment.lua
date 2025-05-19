@@ -80,6 +80,6 @@ return {
 		vim.keymap.set("n", "]t", function()
 			require("todo-comments").jump_next({ keywords = { "ERROR", "WARNING" } })
 		end, { desc = "Next error/warning todo comment" }),
-		vim.api.nvim_set_keymap("n", "<leader>cc", ":TodoTelescope<CR>", { noremap = true, silent = true }),
+		vim.api.nvim_set_keymap("n", "<leader>tt", ":TodoTelescope<CR>", { noremap = true, silent = true }),
 	},
 }

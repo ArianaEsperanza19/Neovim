@@ -10,7 +10,6 @@
 -- init.lua -----------
 vim.opt.termguicolors = true
 ----------------------------------------------------------
-vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("i", "<A-z>", "<Esc>", { noremap = true })
 require("settings")
@@ -58,6 +57,7 @@ require("lazy").setup({
 	require("plugins.neotree"),
 	require("plugins.alphaNvim"),
 	require("plugins.telescope"),
+	require("plugins.which-key"),
 	require("plugins.aerial"),
 	require("plugins.leap"),
 	-- Markdown ------------

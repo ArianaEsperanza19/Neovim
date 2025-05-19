@@ -20,7 +20,7 @@ return {
 			vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
 
 			-- Asigna la combinación de teclas <leader>t al comando de Telescope para hacer búsqueda de texto en vivo (grep)
-			vim.api.nvim_set_keymap("n", "<leader>tt", ":Telescope live_grep<CR>", { noremap = true, silent = true })
+			vim.api.nvim_set_keymap("n", "<leader>tg", ":Telescope live_grep<CR>", { noremap = true, silent = true })
 
 			-- Asigna la combinación de teclas <leader>fb al comando de Telescope para listar y buscar entre buffers abiertos
 			vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })

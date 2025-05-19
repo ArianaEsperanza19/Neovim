@@ -72,9 +72,6 @@ vim.api.nvim_set_keymap("n", "dip", "dip", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "dib", "dib", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "dab", "dab", { noremap = true, silent = true })
 
--- Mapeo para borrar el contenido del portapapeles con <leader>bp
-vim.api.nvim_set_keymap("n", "<leader>bp", ':let @*="" | let @+="" | let @=""<CR>', { noremap = true, silent = true })
-
 -- Crear una nueva línea debajo de la línea actual sin cambiar de modo
 vim.api.nvim_set_keymap("n", "<leader>o", "o<Esc>", { noremap = true, silent = true })
 -- Crear una nueva línea encima de la línea actual sin cambiar de modo

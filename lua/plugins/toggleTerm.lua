@@ -112,16 +112,16 @@ return {
 			-- Mapeos para abrir las terminales divididas
 			vim.api.nvim_set_keymap(
 				"n",
-				"<leader>th",
+				"<leader>xh",
 				":lua _SPLIT_H_TERM_TOGGLE()<CR>",
 				{ noremap = true, silent = true }
 			)
-			vim.api.nvim_set_keymap(
-				"n",
-				"<leader>tv",
-				":lua _SPLIT_V_TERM_TOGGLE()<CR>",
-				{ noremap = true, silent = true }
-			)
+			-- vim.api.nvim_set_keymap(
+			-- 	"n",
+			-- 	"<leader>tv",
+			-- 	":lua _SPLIT_V_TERM_TOGGLE()<CR>",
+			-- 	{ noremap = true, silent = true }
+			-- )
 
 			-- Función para alternar una terminal vanilla en un buffer
 			function CMDTerminal()

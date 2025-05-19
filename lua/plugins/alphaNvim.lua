@@ -38,10 +38,10 @@ return {
 			-- Botones del dashboard
 			dashboard.section.buttons.val = {
 				dashboard.button("e", "  New file", ":lua create_new_file()<CR>"), -- Crear un nuevo archivo
-				dashboard.button("f", "  Find file", ":Telescope find_files<CR>"), -- Buscar archivos
+				dashboard.button("f", "󰈞  Find file", ":Telescope find_files<CR>"), -- Buscar archivos
 				dashboard.button("r", "  Recent files", ":Telescope oldfiles<CR>"), -- Archivos recientes
 				dashboard.button("s", "  Settings", ":e $MYVIMRC<CR>"), -- Abrir archivo de configuración
-				dashboard.button("q", "  Quit", ":qa<CR>"), -- Salir de Neovim
+				dashboard.button("q", " 	Quit", ":qa<CR>"), -- Salir de Neovim
 			}
 
 			-- Configuración adicional

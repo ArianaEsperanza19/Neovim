@@ -29,7 +29,7 @@ M.show_keymaps = function()
     <Shift>l: Down
 
     Content table:
-    <leader>ct
+    <leader>nc
 
     Buffer Navigation:
     -- Key mapping to switch to the next buffer

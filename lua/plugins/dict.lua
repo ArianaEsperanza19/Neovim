@@ -15,7 +15,12 @@ return {
 			require("dict").setup()
 
 			-- Mapeo para buscar en el diccionario
-			vim.keymap.set("n", "<leader>d", '<Cmd>lua require("dict").lookup()<CR>', { noremap = true, silent = true })
+			vim.keymap.set(
+				"n",
+				"<leader>di",
+				'<Cmd>lua require("dict").lookup()<CR>',
+				{ noremap = true, silent = true }
+			)
 		end,
 	},
 }
