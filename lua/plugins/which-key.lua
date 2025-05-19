@@ -16,6 +16,9 @@ return {
 				{ "<leader>t", group = "Toggle", icon = "" },
 				{ "<leader>w", group = "Window", icon = "" },
 				{ "<leader>x", group = "Other", icon = "" },
+				{ "<leader>s", group = "Markdown", icon = "" },
+				{ "<leader>l", group = "Latex", icon = "" },
+				{ "<leader><esc>", group = "Escape", icon = "" },
 			},
 			{ "<leader>db", ":DBUIToggle<CR>", desc = "Data Base", icon = "" },
 			{ "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find File", mode = "n", icon = "" },
@@ -47,6 +50,11 @@ return {
 			{ "<leader>tg", desc = "Search pattern", icon = "" },
 			{ "<leader>te", desc = "Messages", icon = "󰍢" },
 			{ "<leader>gb", desc = "Git blame line", icon = "" },
+			{ "<leader>di", desc = "Dict", icon = "" },
+			{ "<leader>lv", desc = "Vimtex View", icon = "" },
+			{ "<leader>lc", desc = "Vimtex View", icon = "󱜧" },
+			{ "<leader>sm", desc = "Show markdown", icon = "" },
+			{ "<leader>xh", desc = "Horizontal Terminal", icon = "" },
 		})
 	end,
 }
