@@ -5,7 +5,7 @@
 return {
 	{
 		"kylechui/nvim-surround", -- Plugin principal de nvim-surround
-		keys = { "]n", "]y", "]Y", "a", "]l", "]d", "]f" },
+		keys = { "]n", "]y", "]Y", "]v", "]V", "]d", "]a" },
 		event = "VeryLazy", -- Cargar el plugin de manera diferida
 		config = function()
 			-- Configuración principal de nvim-surround
@@ -14,14 +14,13 @@ return {
 				keymaps = {
 					insert = false, -- Modo Insert: <C-g>s (desactivado)
 					insert_line = false, -- Modo Insert (línea): <C-g>S (desactivado)
-					-- funcionan
-					normal_line = "]n", -- Modo Normal (línea): yS
+					normal_line = "]n", -- Modo normal -> ]n + lineas + direccion
 					normal_cur = "]y", -- Modo Normal (línea actual): yss
 					normal_cur_line = "]Y", -- Modo Normal (línea actual): ySS
-					visual = "a", -- Modo Visual: S
-					visual_line = "]l", -- Modo Visual (línea): gS
+					visual = "]v", -- Modo Visual: S
+					visual_line = "]V", -- Modo Visual (línea): gS
 					delete = "]d", -- Eliminar surrounding en modo normal
-					change = "]f", -- Cambiar surrounding en modo normal
+					change = "]a", -- Cambiar surrounding en modo normal
 				},
 				surrounds = {
 					-- Surroundings personalizados
@@ -36,6 +35,21 @@ return {
 					['"'] = { '"', '"' }, -- Comillas dobles
 					["'"] = { "'", "'" }, -- Comillas simples
 					["`"] = { "`", "`" }, -- Acentos graves
+					["$"] = {
+						add = function()
+							return { "```", "```" }
+						end,
+					},
+					["?"] = {
+						add = function()
+							return { "¿", "?" }
+						end,
+					},
+					["!"] = {
+						add = function()
+							return { "¡", "!" }
+						end,
+					},
 				},
 			})
 		end,

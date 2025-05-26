@@ -12,7 +12,6 @@
 return {
 	{
 		"AckslD/nvim-neoclip.lua", -- Plugin principal de neoclip
-		keys = { "<leader>tp" },
 		dependencies = {
 			"nvim-telescope/telescope.nvim", -- Dependencia para integración con Telescope
 		},

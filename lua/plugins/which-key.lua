@@ -82,6 +82,14 @@ return {
 			{ "<leader>zh", desc = "Watch Info", icon = "" },
 			{ "<leader>zx", desc = "Go to implementations", icon = "󰬱" },
 			{ "<leader>zd", desc = "Go to definition", icon = "󰊕" },
+
+			{ "]n", desc = "Surround n lineas 󰹹", mode = "n", icon = "󰉸" },
+			{ "]y", desc = "Surround linea entera", mode = "n", icon = "󰅩" },
+			{ "]Y", desc = "Surround 󰹹 de linea", mode = "n", icon = "󰉸" },
+			{ "]v", desc = "Surround visual", mode = "v", icon = "󰅩" },
+			{ "]V", desc = "Surround 󰹹 de lineas", mode = "v", icon = "󰉸" },
+			{ "]d", desc = "Surround delete", mode = "n", icon = "󰷙" },
+			{ "]a", desc = "Surround alter", mode = "n", icon = "" },
 		})
 	end,
 }

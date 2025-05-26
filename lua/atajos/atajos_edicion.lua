@@ -27,7 +27,7 @@ M.show_keymaps = function()
     Visualline mode: "gS" + simbol
     --Delete & Change surrounds in N mode:
     Delete surrounding: ]d + simbol
-    Change surrounding: ]f + simbol + new simbol
+    Change surrounding: ]a + simbol + new simbol
 
     <C-x><C-f> : Directory Hint
 
