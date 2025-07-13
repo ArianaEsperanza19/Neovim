@@ -55,6 +55,9 @@ return {
 				elseif file_extension == ".js" then
 					-- Si es un archivo .js, ejecutarlo con el intérprete de node
 					cmd = string.format("node %s", file_path)
+				elseif file_extension == ".py" then
+					-- Si es un archivo .js, ejecutarlo con el intérprete de node
+					cmd = string.format("python3 %s", file_path)
 				elseif file_extension == ".sh" then
 					-- Si es un archivo .sh, ejecutarlo con bash
 					cmd = string.format("bash %s", file_path)

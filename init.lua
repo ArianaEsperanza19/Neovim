@@ -100,13 +100,13 @@ require("lazy").setup({
 	require("plugins.rainbow-cvs"),
 	require("plugins.minty"),
 	require("plugins.colorizer"),
-	--require("nvim-ts-autotag").setup({}),
 	"mbbill/undotree",
 	require("plugins.neoclip"),
 	require("plugins.ctrlsf"),
 	{ "simeji/winresizer" },
 	-- -- Otros ---------------
 	-- require("plugins.obsidian")
+	-- require("plugins.rust-tools"),
 }, {
 	-- Opciones globales para Lazy.nvim
 	defaults = { lazy = false },

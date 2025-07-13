@@ -39,9 +39,19 @@ return {
 						add = function()
 							return { "```", "```" }
 						end,
+						delete = { "^(```)().-(```)()$" },
 					},
 					["?"] = {
 						add = function()
+							return { "¿", "?" }
+						end,
+						delete = function()
+							return require("nvim-surround.config").get_selections({
+								char = "?",
+								pattern = "^(¿)().-(?)()$",
+							})
+						end,
+						change = function()
 							return { "¿", "?" }
 						end,
 					},
