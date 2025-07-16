@@ -25,13 +25,40 @@ return {
 					end,
 				},
 				mapping = {
-					["<Tab>"] = cmp.mapping.select_next_item(),
-					["<S-Tab>"] = cmp.mapping.select_prev_item(),
 					["<C-b>"] = cmp.mapping.scroll_docs(-4),
 					["<C-f>"] = cmp.mapping.scroll_docs(4),
 					["<C-Space>"] = cmp.mapping.complete(),
 					["<C-e>"] = cmp.mapping.close(),
-					["<CR>"] = cmp.mapping.confirm({ select = true }),
+
+					["<Tab>"] = cmp.mapping(function(fallback)
+						if cmp.visible() then -- Si el menú de completado está abierto
+							cmp.select_next_item() -- Selecciona el siguiente ítem
+						elseif luasnip.expand_or_jumpable() then -- Si hay un snippet para expandir o para saltar
+							luasnip.expand_or_jump() -- Expande el snippet o salta al siguiente placeholder
+						else
+							fallback() -- Si no hay completado ni snippet, inserta un tab normal
+						end
+					end, { "i", "s" }), -- 'i' para modo insert, 's' para modo select (después de expandir un snippet)
+
+					["<S-Tab>"] = cmp.mapping(function(fallback)
+						if cmp.visible() then
+							cmp.select_prev_item()
+						elseif luasnip.jumpable(-1) then -- Para saltar al placeholder anterior
+							luasnip.jump(-1)
+						else
+							fallback()
+						end
+					end, { "i", "s" }),
+
+					["<CR>"] = cmp.mapping(function(fallback)
+						if cmp.visible() and cmp.get_selected_entry() then
+							cmp.confirm({ select = true }) -- Confirma la entrada seleccionada (incluyendo snippets)
+						elseif luasnip.expand_or_jumpable() then
+							luasnip.expand_or_jump() -- Si no hay menú, pero hay un snippet, expándelo
+						else
+							fallback() -- Si no hay completado ni snippet, inserta una nueva línea
+						end
+					end, { "i", "s" }),
 				},
 				sources = cmp.config.sources({
 					{ name = "nvim_lsp" },

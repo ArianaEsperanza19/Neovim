@@ -5,7 +5,7 @@ return {
 	version = false, -- Never set this value to "*"! Never!
 	opts = {
 		provider = "qianwen",
-		vendors = {
+		providers = {
 			qianwen = {
 				__inherited_from = "openai",
 				api_key_name = "DASHSCOPE_API_KEY",
