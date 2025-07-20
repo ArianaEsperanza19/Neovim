@@ -68,6 +68,7 @@ return {
 				"cssls",
 				"html",
 				"rust_analyzer",
+				"pyright",
 			})
 
 			require("mason-lspconfig").setup({
