@@ -13,3 +13,4 @@ luasnip.config.set_config({
 require("luasnip.loaders.from_vscode").lazy_load({
 	paths = { "~/.config/nvim/luasnippets" },
 })
+require("luasnip.loaders.from_snipmate").lazy_load({ paths = { "~/.config/nvim/luasnippets" } }) -- Carga snippets de formato Snipmate
