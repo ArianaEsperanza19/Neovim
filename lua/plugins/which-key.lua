@@ -91,6 +91,8 @@ return {
 			{ "]V", desc = "Surround 󰹹 de lineas", mode = "v", icon = "󰉸" },
 			{ "]d", desc = "Surround delete", mode = "n", icon = "󰷙" },
 			{ "]a", desc = "Surround alter", mode = "n", icon = "" },
+			{ "gu", desc = "Lowercase", icon = "" },
+			{ "gU", desc = "Uppercase", icon = "" },
 		})
 	end,
 }

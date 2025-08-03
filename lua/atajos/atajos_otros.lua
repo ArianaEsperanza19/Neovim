@@ -36,6 +36,10 @@ M.show_keymaps = function()
     Open Codeium Chat:
       <F3>: Codeium Chat
 
+    Vin-Chase: Upper & lowercase
+    g + u = lowercase
+    g + U = uppercase
+
   ]]
 
 	local Terminal = require("toggleterm.terminal").Terminal

@@ -58,6 +58,7 @@ require("lazy").setup({
 	require("plugins.noice"),
 	-- Ortografia ----------
 	require("plugins.vimPoliglot"),
+	require("plugins.vim-chase"),
 	-- require("plugins.languagetool"),
 	require("plugins.vimtex"),
 	require("plugins.dict"),
