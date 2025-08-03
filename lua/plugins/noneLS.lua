@@ -14,7 +14,19 @@ return {
 			null_ls.setup({
 				sources = {
 					null_ls.builtins.formatting.prettierd.with({
-						extra_filetypes = { "sh", "js", "jsx", "php", "cpp", "lua", "tex", "css", "html", "json", "py" },
+						extra_filetypes = {
+							"sh",
+							"js",
+							"jsx",
+							"php",
+							"cpp",
+							"lua",
+							"tex",
+							"css",
+							"html",
+							"json",
+							"py",
+						},
 						env = {
 							PRETTIERD_DEFAULT_CONFIG = vim.fn.expand(
 								"~/.config/nvim/utils/prettier-config/.prettierrc.json"
@@ -23,11 +35,11 @@ return {
 						args = { "--config", vim.fn.expand("~/.config/nvim/utils/prettier-config/.prettierrc.json") },
 					}),
 					null_ls.builtins.formatting.prettierd,
+					-- null_ls.builtins.formatting.rustfmt,
 					null_ls.builtins.formatting.blade_formatter,
 					null_ls.builtins.formatting.stylua,
 					-- null_ls.builtins.formatting.autoflake,
 					null_ls.builtins.formatting.shfmt,
-					-- null_ls.builtins.formatting.ast_grep,
 					null_ls.builtins.formatting.markdownlint,
 					null_ls.builtins.formatting.phpcsfixer.with({
 						extra_args = { "--rules=@PSR12" }, -- Aplica las reglas PSR-12

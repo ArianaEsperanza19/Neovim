@@ -64,6 +64,7 @@ return {
 			{ "<leader>we", desc = "Close Win", icon = "" },
 			{ "<leader>wr", desc = "Resize Win", icon = "" },
 			{ "<leader>m", desc = "NeoTree", icon = "󰙅" },
+			{ "<leader>tb", desc = "Toggle Diagnostics", icon = "" },
 			{ "<leader>tc", desc = "Toggle Aerial", icon = "󱘎" },
 			{ "<leader>td", desc = "Turnoff Diagnostics", icon = "" },
 			{ "<leader>tt", desc = "Comments", icon = "󰒕" },

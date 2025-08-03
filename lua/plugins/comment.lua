@@ -2,7 +2,7 @@
 return {
 	{
 		"numToStr/Comment.nvim", -- Plugin principal de Comment.nvim
-		keys = { "gc", "gcc" },
+		keys = { "gc" },
 		config = function()
 			-- Importar el módulo Comment
 			local comment = require("Comment")

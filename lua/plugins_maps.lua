@@ -32,7 +32,6 @@ vim.api.nvim_set_keymap("n", "<leader>gd", ":Gllog<CR>", { noremap = true, silen
 vim.keymap.set("n", "<leader>xs", "<cmd>Shades<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>xu", "<cmd>Huefy<CR>", { noremap = true, silent = true })
 -- Luasnip
-
 vim.keymap.set({ "i", "s" }, "<Tab>", function()
 	ls.jump(1)
 end, { silent = true })

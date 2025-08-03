@@ -5,7 +5,7 @@ local i = ls.insert_node
 local rep = require("luasnip.extras").rep
 
 -- Cabecera de Bash
-ls.add_snippets("bash", {
+ls.add_snippets("sh", {
 	s("bin", {
 		t("#!/bin/bash"),
 		i(0),
@@ -20,7 +20,6 @@ ls.add_snippets("bash", {
 	}),
 	-- For doble
 	s("bashfor2", {
-		t("#!/bin/bash\n\n"),
 		t("for i in {1..10}\n"),
 		t("do\n"),
 		t("    for j in {1..5}\n"),

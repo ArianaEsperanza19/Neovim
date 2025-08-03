@@ -1,17 +1,25 @@
 -- INFO: Avante is a plugin to integrate AI tools with Neovim
+-- Deepseek
+--sk-ce6501b9f7f141f9a44719d492a97260
 return {
 	"yetone/avante.nvim",
 	event = "VeryLazy",
 	version = false, -- Never set this value to "*"! Never!
 	opts = {
-		provider = "qianwen",
+		provider = "openai",
 		providers = {
-			qianwen = {
+			gemini = {
 				__inherited_from = "openai",
-				api_key_name = "DASHSCOPE_API_KEY",
-				endpoint = "https://dashscope.aliyuncs.com/compatible-mode/v1",
-				model = "qwen/qwen2.5-vl-72b-instruct:free",
+				endpoint = "https://openrouter.ai/api/v1",
+				api_key_name = "GEMINI_API_KEY",
+				model = "google/gemini-2.5-flash",
 			},
+			-- deepseek = {
+			-- 	__inherited_from = "openai",
+			-- 	endpoint = "https://openrouter.ai/api/v1",
+			-- 	api_key_name = "DEEPSEEK_API_KEY",
+			-- 	model = "deepseek/deepseek-r1",
+			-- },
 		},
 	},
 	build = "make", -- O usa el comando de PowerShell si estás en Windows

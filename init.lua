@@ -91,6 +91,7 @@ require("lazy").setup({
 	require("plugins.dap"),
 	-- -- IA ------------------
 	require("plugins.codeium"),
+	require("plugins.dressing"),
 	require("plugins.avante"),
 	-- -- Calidad de vida ----
 	require("plugins.leap"),
