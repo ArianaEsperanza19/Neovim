@@ -3,7 +3,7 @@ return {
 	name = "catppuccin",
 	priority = 1000,
 	opts = {
-		flavour = "auto", -- latte, frappe, macchiato, mocha
+		flavour = "frappe", -- latte, frappe, macchiato, mocha
 		background = { -- :h background
 			light = "latte", -- Cambiado a "latte" para modo claro
 			dark = "mocha", -- Cambiado a "mocha" para modo oscuro

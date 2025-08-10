@@ -1,6 +1,7 @@
 -- INFO: This configuration integrates Dadbod with Neovim to manage and interact with databases seamlessly.
 -- It requires the Dadbod plugin and proper keymaps to execute database commands.
 -- Make sure to install Dadbod and set keymaps to effectively use this configuration.
+-- URL -> mysql://root@localhost/test
 
 return {
 	{
@@ -8,7 +9,13 @@ return {
 		cmd = { "DB", "DBUIToggle" }, -- Cargar el plugin solo cuando se ejecute DB o DBUIToggle
 		config = function()
 			-- Definir alias de bases de datos como variables globales
-			vim.g.db_laravel = "mysql://root@localhost:3306/Social"
+			vim.g.larapp = "mysql://root@localhost:3306/Larapp"
+			vim.g.fgestor = "mysql://root@localhost/Fgestor"
+
+			vim.b.db_queries = {
+				-- Alias para ver todos los usuarios
+				tablas = "show tables;",
+			}
 		end,
 	},
 	{

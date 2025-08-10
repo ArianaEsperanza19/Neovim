@@ -1,11 +1,9 @@
 -- INFO: toggleTerm: un plugin de Neovim que permite abrir y cerrar un terminal flotante en la ventana actual.
 -- Permite ejecutar comandos y programas en un entorno de terminal dentro de Neovim,
 -- sin necesidad de salir de la aplicación.
---
 -- toggleTerm se puede abrir y cerrar utilizando una combinación de teclas personalizable,
 -- y se puede configurar para que aparezca en diferentes posiciones y tamaños en la ventana.
 -- También se pueden agregar estilos y personalizaciones adicionales para mejorar la apariencia del terminal.
---
 -- Algunas de las características clave de toggleTerm incluyen:
 --  * Abrir y cerrar el terminal flotante con una combinación de teclas personalizable.
 --  * Configurar el tamaño y la posición del terminal flotante en la ventana.
@@ -86,45 +84,9 @@ return {
 				run_file:toggle()
 			end
 
-			-- Mapeos para abrir y cerrar ToggleTerm
+			-- Mapeos para abrir y cerrar ToggleTerm Flotante
 			vim.api.nvim_set_keymap("n", "<C-\\>", ":ToggleTerm<CR>", { noremap = true, silent = true })
 			vim.api.nvim_set_keymap("n", "<leader>rr", ":lua run_current_file()<CR>", { noremap = true, silent = true })
-
-			-- Define terminales divididas horizontal y verticalmente
-			local split_h_term = require("toggleterm.terminal").Terminal:new({
-				direction = "horizontal",
-				size = 20, -- Tamaño de la terminal horizontal
-				close_on_exit = true,
-			})
-
-			local split_v_term = require("toggleterm.terminal").Terminal:new({
-				direction = "vertical",
-				size = math.floor(vim.o.columns * 0.5), -- Tamaño de la terminal vertical (50% del ancho)
-				close_on_exit = true,
-			})
-
-			-- Funciones para alternar las terminales divididas
-			function _SPLIT_H_TERM_TOGGLE()
-				split_h_term:toggle()
-			end
-
-			function _SPLIT_V_TERM_TOGGLE()
-				split_v_term:toggle()
-			end
-
-			-- Mapeos para abrir las terminales divididas
-			vim.api.nvim_set_keymap(
-				"n",
-				"<leader>xh",
-				":lua _SPLIT_H_TERM_TOGGLE()<CR>",
-				{ noremap = true, silent = true }
-			)
-			-- vim.api.nvim_set_keymap(
-			-- 	"n",
-			-- 	"<leader>tv",
-			-- 	":lua _SPLIT_V_TERM_TOGGLE()<CR>",
-			-- 	{ noremap = true, silent = true }
-			-- )
 
 			-- Función para alternar una terminal vanilla en un buffer
 			function CMDTerminal()
@@ -146,6 +108,18 @@ return {
 
 			-- Mapeos para la terminal vanilla
 			vim.api.nvim_set_keymap("n", "<leader>\\", ":lua CMDTerminal()<CR>", { noremap = true, silent = true })
+			vim.api.nvim_set_keymap(
+				"n",
+				"<leader>xv",
+				":ToggleTerm size=60 dir=~/Desktop direction=vertical name=TerminalVertical<CR>",
+				{ noremap = true, silent = true }
+			)
+			vim.api.nvim_set_keymap(
+				"n",
+				"<leader>xh",
+				":ToggleTerm size=15 dir=~/Desktop direction=horizontal name=TerminalHorizontal<CR>",
+				{ noremap = true, silent = true }
+			)
 			vim.api.nvim_set_keymap(
 				"t",
 				"<Esc>",

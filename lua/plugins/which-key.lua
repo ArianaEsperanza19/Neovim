@@ -78,6 +78,7 @@ return {
 			{ "<leader>lc", desc = "Vimtex View", icon = "󱜧" },
 			{ "<leader>sm", desc = "Show markdown", icon = "" },
 			{ "<leader>xh", desc = "Horizontal Terminal", icon = "" },
+			{ "<leader>xv", desc = "Vertical Terminal", icon = "" },
 			{ "<leader>xu", desc = "Open Huefy", icon = "" },
 			{ "<leader>xs", desc = "Open Shades", icon = "" },
 			{ "<leader>zh", desc = "Watch Info", icon = "" },

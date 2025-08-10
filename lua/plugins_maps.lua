@@ -22,7 +22,7 @@ vim.api.nvim_set_keymap("n", "<leader>u", ":UndotreeToggle<CR>", { noremap = tru
 vim.api.nvim_set_keymap("n", "<leader>wr", ":WinResizerStartResize<CR>", { noremap = true, silent = true })
 
 -- Toggle para abrir/cerrar la UI de dadbod y cerrar sus ventanas y buffers temporales
-vim.api.nvim_set_keymap("n", "<leader>db", ":DBUIToggle<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>bd", ":DBUIToggle<CR>", { noremap = true, silent = true })
 
 -- Mapeo para abrir y cerrar Gvdiffsplit
 vim.api.nvim_set_keymap("n", "<leader>gw", ":Gvdiffsplit<CR>", { noremap = true, silent = true })
