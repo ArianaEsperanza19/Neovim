@@ -11,23 +11,23 @@ return {
 			-- Definir alias de bases de datos como variables globales
 			vim.g.larapp = "mysql://root@localhost:3306/Larapp"
 			vim.g.fgestor = "mysql://root@localhost/Fgestor"
-
-			vim.b.db_queries = {
-				-- Alias para ver todos los usuarios
-				tablas = "show tables;",
-			}
 		end,
 	},
 	{
-		"kristijanhusak/vim-dadbod-ui", -- Interfaz gráfica para Dadbod
-		dependencies = { "tpope/vim-dadbod" }, -- Dependencia requerida para Dadbod
-		cmd = { "DBUIToggle" }, -- Cargar el plugin solo cuando se ejecute DBUIToggle
-		config = function()
-			-- Configuración de vim-dadbod-ui
-			vim.g.db_ui_use_nerd_fonts = 1 -- Usa iconos de Nerd Fonts
-			vim.g.db_ui_show_database_icon = 1 -- Muestra íconos de bases de datos
-			vim.g.db_ui_win_position = "left" -- Posición de la ventana
-			vim.g.db_ui_auto_execute_table_helpers = 1 -- Ejecuta automáticamente consultas básicas
+		"kristijanhusak/vim-dadbod-ui",
+		dependencies = {
+			{ "tpope/vim-dadbod", lazy = true },
+			{ "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true }, -- Optional
+		},
+		cmd = {
+			"DBUI",
+			"DBUIToggle",
+			"DBUIAddConnection",
+			"DBUIFindBuffer",
+		},
+		init = function()
+			-- Your DBUI configuration
+			vim.g.db_ui_use_nerd_fonts = 1
 		end,
 	},
 	{

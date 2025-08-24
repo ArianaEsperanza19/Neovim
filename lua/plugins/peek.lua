@@ -40,7 +40,7 @@ return {
 
 				update_on_change = true, -- Actualizar la vista previa al cambiar el contenido
 
-				app = "firefox", -- 'webview', 'browser', cadena de texto o una tabla de cadenas
+				app = "browser", -- 'webview', 'browser', cadena de texto o una tabla de cadenas
 
 				filetype = { "markdown" }, -- Lista de tipos de archivos a reconocer como markdown
 

@@ -28,6 +28,8 @@ return {
 			-- Asigna la combinación de teclas <leader>fh al comando de Telescope para buscar entre las etiquetas de ayuda
 			vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
 
+			-- Asigna la combinacion de teclas <leader>zd para visualizar los diagnosticos
+			vim.keymap.set("n", "<leader>zd", ":Telescope diagnostics<CR>")
 			-- Configuración de Telescope
 			telescope.setup({
 				defaults = {
