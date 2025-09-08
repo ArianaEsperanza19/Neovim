@@ -34,8 +34,8 @@ vim.api.nvim_clear_autocmds({ event = { "TextChanged", "TextChangedI" }, pattern
 vim.api.nvim_clear_autocmds({ event = { "TextChanged", "TextChangedI" }, pattern = "*" })
 
 -- Configurar el mapeo para borrar sin copiar al registro
-vim.api.nvim_set_keymap("n", "d", '"_d', { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "D", '"_D', { noremap = true, silent = true })
-vim.api.nvim_set_keymap("v", "d", '"_d', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "d", '"_d', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "D", '"_D', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("v", "d", '"_d', { noremap = true, silent = true })
 
 cmd([[ autocmd BufWritePre * %s/\s\+$//e ]])

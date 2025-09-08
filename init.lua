@@ -18,6 +18,7 @@ vim.opt.termguicolors = true
 -- ]],
 -- 	false
 -- )
+--
 
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("i", "<A-z>", "<Esc>", { noremap = true })
