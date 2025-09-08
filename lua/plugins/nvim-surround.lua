@@ -35,11 +35,34 @@ return {
 					['"'] = { '"', '"' }, -- Comillas dobles
 					["'"] = { "'", "'" }, -- Comillas simples
 					["`"] = { "`", "`" }, -- Acentos graves
+					-- Triples de comillas
 					["$"] = {
 						add = function()
 							return { "```", "```" }
 						end,
-						delete = { "^(```)().-(```)()$" },
+					},
+					-- Negrita markdown
+					["n"] = {
+						add = function()
+							return { "**", "**" }
+						end,
+					},
+					["k"] = {
+						add = function()
+							return { "_", "_" }
+						end,
+					},
+					["s"] = {
+						add = function()
+							return { "~~", "~~" }
+						end,
+					},
+					["l"] = {
+						add = function()
+							return { "==", "==" }
+						end,
+						target = { "==", "==" },
+						command = { "==", "==" },
 					},
 					["?"] = {
 						add = function()
@@ -65,3 +88,5 @@ return {
 		end,
 	},
 }
+---
+---

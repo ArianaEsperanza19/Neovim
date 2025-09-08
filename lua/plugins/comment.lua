@@ -2,7 +2,7 @@
 return {
 	{
 		"numToStr/Comment.nvim", -- Plugin principal de Comment.nvim
-		keys = { "gc" },
+		keys = { "\\g" },
 		config = function()
 			-- Importar el módulo Comment
 			local comment = require("Comment")
@@ -10,7 +10,10 @@ return {
 			-- Configurar Comment.nvim
 			comment.setup({
 				toggler = {
-					line = "gc", -- Atajo para comentar/descomentar líneas
+					line = "\\g", -- Atajo para comentar/descomentar líneas
+				},
+				opleader = {
+					line = "\\g", -- Atajo para comentar/descomentar líneas
 				},
 			})
 		end,
