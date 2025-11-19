@@ -31,15 +31,10 @@ return {
 					["<C-Space>"] = cmp.mapping.complete(),
 					["<C-c>"] = cmp.mapping.close(),
 
-					["<CR>"] = cmp.mapping(function(fallback)
-						if cmp.visible() and cmp.get_selected_entry() then
-							cmp.confirm({ select = true }) -- Confirma la entrada seleccionada (incluyendo snippets)
-						elseif luasnip.expand_or_jumpable() then
-							luasnip.expand_or_jump() -- Si no hay menú, pero hay un snippet, expándelo
-						else
-							fallback() -- Si no hay completado ni snippet, inserta una nueva línea
-						end
-					end, { "i", "s" }),
+					["<CR>"] = cmp.mapping.confirm({
+						behavior = cmp.ConfirmBehavior.Insert,
+						select = false,
+					}),
 				},
 				sources = cmp.config.sources({
 					{ name = "nvim_lsp" },

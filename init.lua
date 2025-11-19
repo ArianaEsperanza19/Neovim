@@ -69,6 +69,9 @@ require("lazy").setup({
 	require("plugins.telescope"),
 	require("plugins.which-key"),
 	require("plugins.aerial"),
+	-- -- Errores ------------- fallos en su implementacion
+	require("plugins.trouble"),
+	require("plugins.dap"),
 	-- Markdown ------------
 	require("plugins.peek"),
 	-- Autocompletado ------
@@ -86,9 +89,6 @@ require("lazy").setup({
 	-- require("plugins.jumpTag")
 	-- -- DB -----------------
 	require("plugins.dadbod"),
-	-- -- Errores ------------- fallos en su implementacion
-	require("plugins.trouble"),
-	require("plugins.dap"),
 	-- -- IA ------------------
 	require("plugins.codeium"),
 	require("plugins.dressing"),

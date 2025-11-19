@@ -1,6 +1,7 @@
 -- INFO: Telescope is a plugin for Neovim that provides a fast and flexible tool for finding and navigating through files, buffers, and other items in your workspace.
 -- Note: To use live_grep you need have installed "ripgrep"
 -- sudo apt install ripgrep
+-- It can make errors if Trouble had not been installed before.
 return {
 	{
 		"nvim-telescope/telescope.nvim", -- Plugin principal de Telescope

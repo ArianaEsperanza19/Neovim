@@ -29,6 +29,7 @@ return {
 					"cssls",
 					"html",
 					"rust_analyzer",
+					"tinymist",
 				},
 				handlers = {
 					function(server_name)
@@ -69,6 +70,7 @@ return {
 				"html",
 				"rust_analyzer",
 				"pyright",
+				"tinymist",
 			})
 
 			require("mason-lspconfig").setup({
