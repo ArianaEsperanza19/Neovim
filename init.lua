@@ -7,6 +7,18 @@
 -- Devicons and nerd fonts (optional)
 -- Para portapapeles externo en X11 sudo apt install xclip y para Wayland es sudo apt install wl-clipboard
 -- For Rust install rustc, cargo and rustup
+--
+-- Instalar la herramienta de Búsqueda Ultra-Rápida (ripgrep)
+-- # Es necesario para Telescope y fzf-lua.
+-- sudo apt install ripgrep
+--
+-- # 4. Instalar el Gestor de Paquetes de Lua (LuaRocks)
+-- # Necesario para ciertas dependencias de plugins de Neovim.
+-- sudo apt install luarocks
+--
+-- # 5. [OPCIONAL] Herramientas para previsualización de imágenes en fzf-lua
+-- # Instala uno o ambos para ver imágenes en la terminal
+-- # sudo apt install viu chafa
 -- init.lua -----------
 vim.opt.termguicolors = true
 ----------------------------------------------------------
@@ -18,7 +30,8 @@ vim.opt.termguicolors = true
 -- ]],
 -- 	false
 -- )
-
+-----------------------------------------------------------
+-- Cambia el nombre del archivo para que sea tomado como init.lua
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("i", "<A-z>", "<Esc>", { noremap = true })
 require("settings")
