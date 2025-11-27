@@ -34,7 +34,7 @@ return {
 						},
 						args = { "--config", vim.fn.expand("~/.config/nvim/utils/prettier-config/.prettierrc.json") },
 					}),
-					-- null_ls.builtins.formatting.prettierd,
+					null_ls.builtins.formatting.prettierd,
 					-- null_ls.builtins.formatting.rustfmt,
 					-- null_ls.builtins.formatting.blade_formatter,
 					null_ls.builtins.formatting.stylua,

@@ -30,10 +30,11 @@ return {
 					"html",
 					"rust_analyzer",
 					"tinymist",
+					"stylua",
 				},
 				handlers = {
 					function(server_name)
-						require("lspconfig")[server_name].setup({
+						vim.lsp.enable[server_name].setup({
 							on_attach = function(client, bufnr)
 								client.server_capabilities.renameProvider = true
 							end,
@@ -54,10 +55,9 @@ return {
 		config = function()
 			-- Importar módulos necesarios
 			local lsp_zero = require("lsp-zero")
-			local lspconfig = require("lspconfig")
+			local lspconfig = vim.lsp.enable -- Configurar servidores LSP con LSP Zero
 
-			-- Configurar servidores LSP con LSP Zero
-			lsp_zero.setup_servers({
+			lspconfig({
 				"ts_ls", -- TypeScript Server
 				-- "html_lps",
 				"bashls",
@@ -71,11 +71,20 @@ return {
 				"rust_analyzer",
 				"pyright",
 				"tinymist",
+				"prettierd",
+				"shfmt",
+				"markdownlint",
+				"phpcsfixer",
 			})
+			-- Procura tenerlos instalados:
+			-- "prettierd",
+			-- "shfmt",
+			-- "markdownlint",
+			-- "phpcsfixer",
 
 			require("mason-lspconfig").setup({
 				function(server_name)
-					require("lspconfig")[server_name].setup({
+					vim.lsp.enable[server_name].setup({
 						on_attach = function(client, bufnr)
 							client.server_capabilities.renameProvider = true
 						end,
@@ -84,7 +93,7 @@ return {
 			})
 
 			-- Configuración específica para TexLab
-			lspconfig.texlab.setup({
+			vim.lsp.config("texlab", {
 				cmd = { "texlab" },
 				on_attach = function(client, bufnr)
 					local function buf_set_keymap(...)

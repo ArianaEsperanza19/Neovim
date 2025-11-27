@@ -42,7 +42,7 @@ cmp.setup.cmdline(":", {
 local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- Ejemplo de configuración para un servidor LSP (ajusta según tus necesidades)
-lspconfig["pyright"].setup({ capabilities = capabilities })
+-- lspconfig( "pyright" ).setup({ capabilities = capabilities })
 -- Cargar configuración de snippets
 require("snippets")
 
