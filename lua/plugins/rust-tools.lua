@@ -1,7 +1,14 @@
 return {
-	"simrat39/rust-tools.nvim", -- Plugin de Rust
-	config = function()
-		-- Configuración personalizada para rust-tools
-		require("rust-tools").setup({})
-	end,
+	"simrat39/rust-tools.nvim", -- Este plugin tiene un setup específico para RA
+	ft = { "rust" },
+	dependencies = { "neovim/nvim-lspconfig" },
+	opts = {
+		server = {
+			settings = {
+				["rust-analyzer"] = {
+					inlayHints = { enable = true },
+				},
+			},
+		},
+	},
 }

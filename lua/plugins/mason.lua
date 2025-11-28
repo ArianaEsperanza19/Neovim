@@ -19,6 +19,7 @@ return {
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"pyright",
+					"tinymist",
 					"ts_ls",
 					"bashls",
 					"lua_ls",
@@ -106,6 +107,34 @@ return {
 					buf_set_keymap("n", "gd", "<Cmd>TexLabGotoDefinition<CR>", { noremap = true, silent = true })
 					buf_set_keymap("n", "K", "<Cmd>TexLabDocumentSymbols<CR>", { noremap = true, silent = true })
 				end,
+			})
+			-- Configuración específica para Rust
+			vim.lsp.config("rust_analyzer", {
+				settings = {
+					["rust-analyzer"] = {
+						-- Habilitar Inlay Hints (Tipos Inferidos)
+						inlayHints = {
+							enable = true,
+							-- Opcional: si quieres mostrar tipos para closures, etc.
+							typeHints = {
+								enable = true,
+							},
+							chainingHints = {
+								enable = true,
+							},
+							parameterHints = {
+								enable = true,
+							},
+						},
+						-- Habilitar Code Lenses (Funciones de prueba, implementación de traits)
+						procMacro = {
+							enable = true,
+						},
+						checkOnSave = {
+							command = "clippy", -- Se recomienda usar clippy en lugar de check
+						},
+					},
+				},
 			})
 		end,
 	},

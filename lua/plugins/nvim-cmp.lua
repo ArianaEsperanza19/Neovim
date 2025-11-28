@@ -48,6 +48,7 @@ return {
 			-- Configuración para autocompletado en línea de comandos
 			cmp.setup.cmdline(":", {
 				sources = {
+					{ name = "nvim_lsp" },
 					{ name = "path" },
 					{ name = "cmdline" },
 				},
