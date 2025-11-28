@@ -1,3 +1,5 @@
+-- INFO: This file contains the keymaps for Neovim itself and some special characters.
+
 -- <leader>
 vim.g.mapleader = " "
 -- Desmarcar busqueda

@@ -1,3 +1,5 @@
+-- INFO This file contains mappings for various plugins and commands in Neovim, someone of them can be setted in their own files.
+
 -- Mapeo de teclas para Ctrl-\ para abrir o cerrar la terminal
 vim.api.nvim_set_keymap("n", "<C-\\>", ":lua ToggleTerminal()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("t", "<C-\\>", "<C-\\><C-n>:lua ToggleTerminal()<CR>", { noremap = true, silent = true })
