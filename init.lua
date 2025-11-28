@@ -87,6 +87,7 @@ require("lazy").setup({
 	require("plugins.dap"),
 	-- Markdown ------------
 	require("plugins.peek"),
+	require("plugins.tinymist"),
 	-- Autocompletado ------
 	require("plugins.lsp"),
 	require("plugins.lspzero"),
