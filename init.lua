@@ -130,6 +130,7 @@ require("plugins.autopairs")
 --------------------------
 require("autocompletado")
 require("templates")
+require("filetypes.typ")
 -- Atajos ------------
 require("atajos.atajos")
 vim.cmd([[colorscheme catppuccin]])
