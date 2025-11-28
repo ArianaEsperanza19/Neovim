@@ -23,8 +23,8 @@ return {
 			vim.g.vimtex_format_enabled = 1
 
 			-- Mapeos útiles para LaTeX
-			vim.api.nvim_set_keymap("n", "<leader>lv", "<cmd>VimtexView<CR>", { noremap = true, silent = true })
-			vim.api.nvim_set_keymap("n", "<leader>lc", "<cmd>VimtexCompile<CR>", { noremap = true, silent = true })
+			vim.api.nvim_set_keymap("n", "<leader>sl", "<cmd>VimtexView<CR>", { noremap = true, silent = true })
+			vim.api.nvim_set_keymap("n", "<leader>rl", "<cmd>VimtexCompile<CR>", { noremap = true, silent = true })
 		end,
 	},
 }
